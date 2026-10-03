@@ -1,0 +1,21 @@
+# Cloudflare Pages / Workers Static Assets redirects
+#
+# Rewrites /r/<code> straight to the CANONICAL, extensionless path
+# "/referral/page" (not "/referral/page.html"), passing the code as a
+# query parameter (?code=...).
+#
+# Why not target "/referral/page.html"? Because Wrangler's
+# "html_handling": "auto-trailing-slash" setting issues a REAL, second
+# redirect from "/referral/page.html" to "/referral/page" (stripping the
+# .html). That second redirect was found to DROP THE QUERY STRING
+# entirely (not just the path), so "?code=..." got lost along the way
+# and the page ended up with no code at all. By targeting the
+# extensionless canonical path directly, the rewrite already matches
+# what html_handling expects, so that second redirect never fires and
+# the query string survives.
+#
+# NOTE: target filename intentionally is NOT "index.html" -- Wrangler's
+# _redirects validator has a known false-positive bug (workers-sdk#11824)
+# that flags ANY rewrite target ending in "index.html" as an infinite loop,
+# even when it isn't one. Renaming the file sidesteps that check.
+/r/:code    /referral/page?code=:code   200

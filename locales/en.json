@@ -1,0 +1,552 @@
+{
+  "meta": {
+    "home": {
+      "title": "Chevrette — A Premium Digital Ecosystem",
+      "description": "Chevrette is a premium digital ecosystem built on quality, innovation and long-term growth. Collect Daily Points, invite friends and grow with the community. Available now for Android."
+    },
+    "about": {
+      "title": "About Chevrette — Vision, Mission & Philosophy",
+      "description": "Learn what Chevrette is, the vision and mission behind it, and the long-term ecosystem we're building — one deliberate stage at a time."
+    },
+    "features": {
+      "title": "Features — Chevrette",
+      "description": "Daily Points, referrals, the global leaderboard, secure authentication and more. Explore what's inside the Chevrette application."
+    },
+    "roadmap": {
+      "title": "Roadmap — Chevrette",
+      "description": "From Foundation to Global Ecosystem — the five stages guiding Chevrette's long-term development."
+    },
+    "faq": {
+      "title": "FAQ — Chevrette",
+      "description": "Answers to common questions about Chevrette, Daily Points, the referral program and what comes next."
+    },
+    "contact": {
+      "title": "Contact — Chevrette",
+      "description": "Get in touch with the Chevrette team by email, X (Twitter) or Telegram."
+    },
+    "privacy": {
+      "title": "Privacy Policy — Chevrette",
+      "description": "How Chevrette collects, uses and protects your information."
+    },
+    "terms": {
+      "title": "Terms of Service — Chevrette",
+      "description": "The terms that govern your use of the Chevrette application and this website."
+    },
+    "news": {
+      "title": "News — Chevrette",
+      "description": "The latest news, updates and announcements from Chevrette."
+    },
+    "advertise": {
+      "title": "Advertise with Chevrette | Reach Our Community",
+      "description": "Promote your project, product or brand through Chevrette. Submit an advertising request to explore available advertising opportunities."
+    }
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "features": "Features",
+    "roadmap": "Roadmap",
+    "faq": "FAQ",
+    "contact": "Contact",
+    "download": "Google Play",
+    "advertise": "Advertise",
+    "nft": "NFT"
+  },
+  "common": {
+    "androidOnly": "Android only",
+    "comingSoon": "Available on Google Play",
+    "stage1": "Stage 1 — Foundation, live now",
+    "backHome": "Back to home",
+    "appVersion": "New version available — 1.2.0"
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "A Premium Digital Ecosystem",
+      "title": "CHEVRETTE",
+      "titleAccent": "Built with restraint.",
+      "lede": "Chevrette is a digital ecosystem designed around quality, simplicity and long-term growth — not hype. Collect your Daily Points, grow your circle, and follow the ecosystem as it's built in the open, one deliberate stage at a time.",
+      "ledeLeft": "Chevrette is a digital ecosystem designed around quality, simplicity and long-term growth — not hype.",
+      "ledeRight": "Collect your Daily Points, grow your circle, and follow the ecosystem as it's built in the open, one deliberate stage at a time.",
+      "ctaPrimary": "Get it on Google Play",
+      "ctaSecondary": "Explore the ecosystem",
+      "note": "Free to use. Available on Google Play.",
+      "techTag": "Enter the Ecosystem",
+      "stageLabel": "Roadmap Stage"
+    },
+    "stats": {
+      "points": {
+        "num": "50",
+        "label": "Points per daily claim"
+      },
+      "referral": {
+        "num": "100",
+        "label": "Points per referral"
+      },
+      "languages": {
+        "num": "2",
+        "label": "Languages supported"
+      },
+      "stage": {
+        "num": "01",
+        "label": "Current roadmap stage"
+      },
+      "community": {
+        "label": "Global Community"
+      }
+    },
+    "gallery": {
+      "eyebrow": "The Application",
+      "title": "A calm, considered interface.",
+      "lede": "Every screen in Chevrette follows the same discipline as this website — grayscale, generous spacing, and typography that does the talking.",
+      "s1": "Daily Points",
+      "s2": "Referral System",
+      "s3": "Leaderboard",
+      "s4": "Profile",
+      "s5": "Galaxy"
+    },
+    "features": {
+      "eyebrow": "What's Inside",
+      "title": "A foundation built to last.",
+      "lede": "Seven pillars, already live in the application today.",
+      "f1t": "Daily Points",
+      "f1d": "Claim your points every 24 hours and watch a simple habit compound over time.",
+      "f2t": "Referral Program",
+      "f2d": "Invite friends with your personal code. Both of you are rewarded when they join.",
+      "f3t": "Global Leaderboard",
+      "f3d": "See where you stand against the wider Chevrette community, updated in real time.",
+      "f4t": "Secure Authentication",
+      "f4d": "Email verification and account protection built in from the very first release.",
+      "f5t": "Multi-language",
+      "f5d": "A fully localized experience in English and Russian, with more languages planned.",
+      "viewAll": "View all features",
+      "viewAllSub": "See every pillar of the ecosystem in detail.",
+      "viewAllCta": "Explore features"
+    },
+    "community": {
+      "eyebrow": "Community",
+      "title": "Grown by referral, not by noise.",
+      "lede": "Chevrette doesn't rely on paid promotion or artificial hype. Every member joins because someone they trust invited them — and every invitation is rewarded on both sides. That's the entire growth model: quiet, personal, and self-selecting for people who actually stick around.",
+      "point1": "Invite with a personal referral code",
+      "point2": "Earn points when your invite joins",
+      "point3": "Climb the global leaderboard together"
+    },
+    "cta": {
+      "title": "Join the foundation stage.",
+      "lede": "Chevrette is available today on Google Play. Install the app and be part of the ecosystem from the very beginning.",
+      "primary": "Get it on Google Play",
+      "secondary": "Read the FAQ"
+    },
+    "advertiseCta": {
+      "eyebrow": "Advertise with Chevrette",
+      "title": "Looking to promote your project, product or brand?",
+      "button": "Advertise with Chevrette"
+    }
+  },
+  "about": {
+    "header": {
+      "eyebrow": "About Chevrette",
+      "title": "A digital ecosystem, built deliberately.",
+      "lede": "Chevrette isn't a mining app, an investment platform, or a gambling product. It's a long-term digital ecosystem — and this page explains exactly what that means."
+    },
+    "what": {
+      "eyebrow": "What Is Chevrette",
+      "title": "A membership in something being built, not a promise of profit.",
+      "p1": "Chevrette is a premium digital ecosystem centered on quality, innovation, simplicity and long-term growth. At its core today is an Android application where members register, verify their account, collect Daily Points, invite friends through a referral system, and follow the community's progress on a global leaderboard.",
+      "p2": "Nothing about Chevrette is designed to look like a financial product. There is no trading, no yield, and no promise of returns. The application exists to give an early community a simple, well-made place to gather while the wider ecosystem is developed in public, stage by stage."
+    },
+    "vision": {
+      "eyebrow": "Vision",
+      "title": "Technology that respects the people using it.",
+      "p1": "We believe digital products can be premium without being loud — that restraint, clarity and craftsmanship are still a competitive advantage. The long-term vision for Chevrette is an ecosystem of digital services, membership benefits and community tools that feel considered rather than rushed to market."
+    },
+    "mission": {
+      "eyebrow": "Mission",
+      "title": "Build the foundation first. Everything else follows.",
+      "p1": "Our mission is to earn trust before we ask for anything else. That starts with a stable, secure application and an honest roadmap — no unrealistic promises, no shifting goalposts. Every future feature, from a premium store to new digital services, is built on top of a foundation that already works."
+    },
+    "philosophy": {
+      "eyebrow": "Brand Philosophy",
+      "title": "Grayscale by design.",
+      "p1": "Chevrette is intentionally monochrome — in the application, and on this website. The absence of color is a decision, not a limitation: it removes noise, keeps attention on content, and lets typography and spacing carry the brand's personality. It's an approach borrowed from watchmaking and premium hardware more than it is from typical app design."
+    },
+    "values": {
+      "eyebrow": "Core Values",
+      "title": "What guides every decision.",
+      "v1t": "Quality over speed",
+      "v1d": "We'd rather ship something considered later than something rushed now.",
+      "v2t": "Simplicity",
+      "v2d": "Every feature has to earn its place. Complexity is a cost, not a feature.",
+      "v3t": "Transparency",
+      "v3d": "The roadmap is public, described in stages, and updated honestly as things change.",
+      "v4t": "Long-term thinking",
+      "v4d": "Chevrette is built for years, not for a single announcement cycle."
+    },
+    "current": {
+      "eyebrow": "Current Ecosystem",
+      "title": "What exists today.",
+      "c1": "Android application",
+      "c2": "Secure registration & login",
+      "c3": "Email verification",
+      "c4": "Daily Points system",
+      "c5": "Referral program",
+      "c6": "Global leaderboard",
+      "c7": "Official in-app news",
+      "c8": "Multi-language support"
+    },
+    "future": {
+      "eyebrow": "Future Ecosystem",
+      "title": "What we're building toward.",
+      "f1": "Utility token",
+      "f2": "Premium online store",
+      "f3": "Digital products",
+      "f4": "Premium membership",
+      "f5": "Community rewards",
+      "f6": "Exclusive benefits",
+      "f7": "New digital services",
+      "note": "The future ecosystem is directional, not guaranteed. It will evolve as the community and the foundation grow — see the Roadmap for how we sequence this work."
+    },
+    "goal": {
+      "eyebrow": "Long-Term Goal",
+      "title": "A global ecosystem people are proud to belong to.",
+      "p1": "The long-term goal is simple to state and deliberately slow to achieve: turn an early community around a well-made Android application into a global, multi-service digital ecosystem — without ever compromising the quality and restraint Chevrette started with."
+    },
+    "cta": {
+      "title": "See how we plan to get there.",
+      "lede": "The full, stage-by-stage roadmap is public.",
+      "primary": "View the roadmap"
+    }
+  },
+  "features": {
+    "header": {
+      "eyebrow": "Features",
+      "title": "Everything already inside the application.",
+      "lede": "No vaporware, no \"coming soon\" claims — these seven pillars are live in the current Android release."
+    },
+    "f1t": "Daily Points",
+    "f1d": "Claim your points once every 24 hours. A simple countdown keeps the habit honest, and points accumulate the more consistent you are.",
+    "f2t": "Referral Program",
+    "f2d": "Share your personal referral code. When someone joins with it, you're both rewarded — a straightforward, transparent way to grow together.",
+    "f3t": "Global Leaderboard",
+    "f3d": "A live ranking of the entire community. See exactly where your points and referrals place you against everyone else.",
+    "f4t": "Secure Authentication",
+    "f4d": "Registration and login are protected end to end, with email verification required before an account is fully active.",
+    "f5t": "User Profile",
+    "f5d": "A clean profile view of your points, referral stats and account details — nothing buried, nothing cluttered.",
+    "f6t": "Multi-language Support",
+    "f6d": "The application and this website are fully available in English and Russian, with the architecture ready for more.",
+    "f7t": "Premium Experience",
+    "f7d": "A grayscale, distraction-free interface built with the same discipline you'd expect from a premium hardware brand — not a typical crypto app.",
+    "cta": {
+      "title": "Try it yourself.",
+      "lede": "Get the Android application on Google Play and see the full experience firsthand.",
+      "primary": "Get it on Google Play"
+    }
+  },
+  "roadmap": {
+    "header": {
+      "eyebrow": "Roadmap",
+      "title": "Five stages. No dates — just sequence.",
+      "lede": "Chevrette's roadmap is organized by stage rather than by calendar date, because quality work doesn't run on a fixed schedule. Here's exactly where we are, and what comes next."
+    },
+    "s1": {
+      "status": "Complete — live today",
+      "title": "Stage 1 — Foundation",
+      "i1": "Android application",
+      "i2": "User registration",
+      "i3": "Secure login",
+      "i4": "Email verification",
+      "i5": "Daily Points",
+      "i6": "Referral system",
+      "i7": "Global leaderboard",
+      "i8": "Multi-language support",
+      "i9": "User profile",
+      "i10": "In-app news system"
+    },
+    "s2": {
+      "status": "In progress",
+      "title": "Stage 2 — Preparing for Launch",
+      "i1": "UI improvements",
+      "i2": "Performance optimization",
+      "i3": "Bug fixes",
+      "i4": "Security improvements",
+      "i5": "Community growth",
+      "i6": "Official website",
+      "i7": "Google Play launch"
+    },
+    "s3": {
+      "status": "Upcoming",
+      "title": "Stage 3 — Official Public Launch",
+      "i1": "Google Play release",
+      "i2": "Public availability",
+      "i3": "Marketing campaign",
+      "i4": "Community expansion",
+      "i5": "Continuous updates"
+    },
+    "s4": {
+      "status": "Upcoming",
+      "title": "Stage 4 — Ecosystem Expansion",
+      "i1": "Utility token",
+      "i2": "Premium online store",
+      "i3": "Digital products",
+      "i4": "Premium membership",
+      "i5": "Community rewards",
+      "i6": "Exclusive features"
+    },
+    "s5": {
+      "status": "Upcoming",
+      "title": "Stage 5 — Global Ecosystem",
+      "i1": "International expansion",
+      "i2": "Strategic partnerships",
+      "i3": "More languages",
+      "i4": "AI features",
+      "i5": "New digital services",
+      "i6": "Continuous innovation"
+    },
+    "cta": {
+      "title": "Be here for Stage 1.",
+      "lede": "The earliest members are the ones who joined at the start — install the app from Google Play and begin now.",
+      "primary": "Get it on Google Play"
+    }
+  },
+  "faq": {
+    "header": {
+      "eyebrow": "FAQ",
+      "title": "Questions, answered plainly.",
+      "lede": "If something isn't covered here, reach out on the Contact page."
+    },
+    "q1": "What is Chevrette?",
+    "a1": "Chevrette is a premium digital ecosystem built around quality, innovation, simplicity and long-term growth. Today it centers on an Android application where members collect Daily Points, invite friends and follow the community leaderboard.",
+    "q2": "Is Chevrette a mining, investment or gambling app?",
+    "a2": "No. Chevrette is not a mining application, an investment platform, a financial service or a gambling app. There is no trading, no yield and no promise of financial returns.",
+    "q3": "How do Daily Points work?",
+    "a3": "Once you're registered and verified, you can claim Daily Points every 24 hours from inside the app. A countdown shows exactly when your next claim is available.",
+    "q4": "Is Chevrette free?",
+    "a4": "Yes. The application is free to install and use.",
+    "q5": "Why is the application only available for Android?",
+    "a5": "We focused entirely on making the Android experience excellent before expanding anywhere else, and the app is now available on Google Play.",
+    "q6": "Is Chevrette available on Google Play?",
+    "a6": "Yes. Chevrette is available on Google Play — use the Google Play button on this website to install it on your Android device.",
+    "q7": "What are Points?",
+    "a7": "Points are Chevrette's core in-app metric, earned through Daily Points claims and referrals. They determine your position on the global leaderboard.",
+    "q8": "Can I invite friends?",
+    "a8": "Yes. Every account has a personal referral code that can be shared with anyone.",
+    "q9": "How does the referral system work?",
+    "a9": "Share your referral code with a friend. When they register using it, you both receive a referral reward automatically — no extra steps required.",
+    "q10": "Do I need to verify my email?",
+    "a10": "Yes. Email verification is required to fully activate your account and keep the community secure.",
+    "q11": "Is my data safe?",
+    "a11": "Account security and email verification are built into Chevrette from the first release. See the Privacy Policy for full details on how information is handled.",
+    "q12": "Will there be more features?",
+    "a12": "Yes. Stage 2 through Stage 5 of the roadmap outline planned improvements and a wider ecosystem, including a premium store, membership benefits and new digital services.",
+    "q13": "What is the future vision for Chevrette?",
+    "a13": "A global digital ecosystem — expanding beyond the current application into a utility token, a premium store, digital products, membership benefits and community rewards, all built on the same foundation of quality and restraint.",
+    "q14": "How can I contact the team?",
+    "a14": "You can reach us by email, X (Twitter) or Telegram — all listed on the Contact page.",
+    "q15": "How do I get the app?",
+    "a15": "Use the Google Play button on this website, or search for Chevrette in the Google Play Store on your Android device."
+  },
+  "contact": {
+    "header": {
+      "eyebrow": "Contact",
+      "title": "Talk to us directly.",
+      "lede": "No ticket systems, no chatbots — just the channels the team actually reads."
+    },
+    "emailT": "Email",
+    "emailD": "For support, partnership or general questions.",
+    "twitterT": "X (Twitter)",
+    "twitterD": "Announcements and community updates.",
+    "telegramT": "Telegram",
+    "telegramD": "The most direct way to reach the community and the team.",
+    "note": "Chevrette is an early-stage ecosystem run by a small team — replies may take a little time, but every message is read."
+  },
+  "privacy": {
+    "header": {
+      "eyebrow": "Legal",
+      "title": "Privacy Policy"
+    },
+    "updated": "Last updated: August 2026",
+    "s1t": "1. Overview",
+    "s1p": "This Privacy Policy explains how Chevrette (\"we\", \"our\", \"the application\") collects, uses and protects information when you use the Chevrette Android application and this website. Chevrette is not a financial, investment, mining or gambling service.",
+    "s2t": "2. Information We Collect",
+    "s2p": "To provide the application's core features, we collect the information necessary for account creation and operation, including:",
+    "s2l1": "Account details you provide, such as your name and email address",
+    "s2l2": "Authentication data used to keep your account secure",
+    "s2l3": "In-app activity relevant to the service, such as Daily Points claims, referral relationships and leaderboard standing",
+    "s2l4": "Basic technical information such as device type and app version, used for stability and security",
+    "s2l5": "Your cryptocurrency wallet address, if you choose to add one to your profile — used only to contact you regarding a potential future token distribution, should one be introduced. Providing a wallet address is optional and is never required to use the application.",
+    "s3t": "3. How We Use Information",
+    "s3p": "Information is used to operate and secure your account, calculate Daily Points and referral rewards, maintain the global leaderboard, communicate important updates, and improve the reliability and security of the application over time.",
+    "s4t": "4. Email Verification",
+    "s4p": "Email verification is required to activate your account. Your email address is used for authentication, account recovery and important service communications — never sold to third parties.",
+    "s5t": "5. Data Sharing",
+    "s5p": "We do not sell your personal information. Limited data may be shared with service providers strictly necessary to operate the application (such as secure infrastructure and authentication providers), under obligations to protect it.",
+    "s6t": "6. Data Retention",
+    "s6p": "Account information is retained for as long as your account is active. You may request deletion of your account and associated data by contacting us through the Contact page.",
+    "s7t": "7. Your Rights",
+    "s7p": "Depending on your location, you may have rights to access, correct or delete your personal information. To exercise these rights, contact us using the details on the Contact page.",
+    "s8t": "8. Changes to This Policy",
+    "s8p": "This Privacy Policy may be updated as the application and ecosystem evolve. Material changes will be reflected on this page with an updated date.",
+    "s9t": "9. Contact",
+    "s9p": "Questions about this policy can be sent to the email address listed on the Contact page."
+  },
+  "terms": {
+    "header": {
+      "eyebrow": "Legal",
+      "title": "Terms of Service"
+    },
+    "updated": "Last updated: July 2026",
+    "s1t": "1. Acceptance of Terms",
+    "s1p": "By downloading, installing or using the Chevrette Android application, or by using this website, you agree to these Terms of Service. If you do not agree, please do not use the application or this website.",
+    "s2t": "2. Description of Service",
+    "s2p": "Chevrette is a digital ecosystem application. It is not a mining application, an investment platform, a financial service or a gambling application. Daily Points and referral rewards are in-app engagement metrics only, with no cash value, redemption guarantee, or promise of financial return unless explicitly stated otherwise in a future update to these Terms.",
+    "s3t": "3. Eligibility & Accounts",
+    "s3p": "You must provide accurate information when registering and are responsible for maintaining the confidentiality of your account credentials. Email verification is required to activate full access to the application.",
+    "s4t": "4. Acceptable Use",
+    "s4p": "You agree not to misuse the referral system (including through fake accounts or automated activity), attempt to compromise the security of the application, or use the service for any unlawful purpose.",
+    "s5t": "5. Availability of Distribution Channels",
+    "s5p": "Chevrette is distributed as an Android application through Google Play. Availability may change as development continues.",
+    "s6t": "6. Future Ecosystem Features",
+    "s6p": "References on this website to a future utility token, premium store, digital products, membership tiers or other ecosystem features describe current development intentions, not commitments, guarantees or offers of any product, security or financial instrument.",
+    "s7t": "7. Intellectual Property",
+    "s7p": "The Chevrette name, logo and application content are the property of Chevrette and may not be copied, reproduced or redistributed without permission.",
+    "s8t": "8. Termination",
+    "s8p": "We may suspend or terminate accounts that violate these Terms, including misuse of the referral or Daily Points systems.",
+    "s9t": "9. Disclaimer",
+    "s9p": "The application and this website are provided \"as is\", without warranties of any kind, express or implied, to the fullest extent permitted by law.",
+    "s10t": "10. Changes to These Terms",
+    "s10p": "These Terms may be updated as the application and ecosystem evolve. Continued use of the application after changes constitutes acceptance of the updated Terms.",
+    "s11t": "11. Contact",
+    "s11p": "Questions about these Terms can be sent to the email address listed on the Contact page."
+  },
+  "footer": {
+    "tagline": "A premium digital ecosystem, built on quality, simplicity and long-term growth.",
+    "colProduct": "Product",
+    "colCompany": "Company",
+    "colLegal": "Legal",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "rights": "All rights reserved.",
+    "androidNote": "Currently available for Android only."
+  },
+  "advertise": {
+    "header": {
+      "eyebrow": "Advertise With Chevrette",
+      "title": "Reach the Chevrette Community",
+      "lede": "Promote your project, product or brand to the growing Chevrette community.",
+      "description": "Chevrette offers advertising opportunities across our website and mobile application. Submit your request and our team will review your project and contact you with available advertising options, pricing and next steps.",
+      "cta": "Submit Advertising Request"
+    },
+    "options": {
+      "eyebrow": "Advertising Opportunities",
+      "title": "Choose where you'd like to be seen.",
+      "lede": "Three straightforward placements across the Chevrette ecosystem.",
+      "c1t": "Chevrette Website",
+      "c1d": "Promote your project directly to visitors of the official Chevrette website.",
+      "c2t": "Chevrette App",
+      "c2d": "Reach users directly inside the Chevrette mobile application.",
+      "c3t": "Website + App",
+      "c3d": "Maximum visibility across both Chevrette platforms."
+    },
+    "how": {
+      "eyebrow": "How It Works",
+      "title": "A simple, three-step process.",
+      "s1n": "01",
+      "s1t": "Submit",
+      "s1d": "Send us your advertising request through the official form.",
+      "s2n": "02",
+      "s2t": "Review",
+      "s2d": "Our team reviews your project and advertising requirements.",
+      "s3n": "03",
+      "s3t": "Launch",
+      "s3d": "After approval and agreement, your advertisement can be published across the selected Chevrette platform."
+    },
+    "cta": {
+      "title": "Ready to reach the community?",
+      "lede": "Submit your advertising request and our team will be in touch with the available options.",
+      "primary": "Submit Advertising Request"
+    }
+  },
+  "nft": {
+    "eyebrow": "Genesis Collection",
+    "title": "Chevrette Premium.\nThe Collection Is Live.",
+    "lede": "An exclusive, hand-crafted collectible art collection of 222 pieces on Ethereum. Real scarcity, zero promises beyond the art itself.",
+    "badge": "Minting Live",
+    "ctaPrimary": "Buy NFT",
+    "ctaSecondary": "Follow on X",
+    "galleryEyebrow": "First Looks",
+    "galleryTitle": "A few faces from the herd.",
+    "galleryLede": "Every goat is generated from a shared set of traits — coat, outerwear, accessory, expression, background — combined to create rarity.",
+    "traitsEyebrow": "How Rarity Works",
+    "traitsTitle": "Same herd. No two alike.",
+    "traitsLede": "Individually generated pieces, each built from layered traits of varying scarcity.",
+    "t1Title": "Coat & Pattern",
+    "t1Desc": "From solid charcoal to holographic swirl — coat rarity ranges from common to legendary.",
+    "t2Title": "Outerwear",
+    "t2Desc": "A dozen distinct fits, from bomber jackets to tuxedos, layered over every goat.",
+    "t3Title": "Accessory",
+    "t3Desc": "Chains, shades, piercings, crowns — small details that set a piece apart.",
+    "t4Title": "Background",
+    "t4Desc": "Ten flat colorways forming the backdrop of the collection.",
+    "noteEyebrow": "A Note On What This Is",
+    "noteTitle": "Art first. Nothing promised beyond it.",
+    "noteLede": "This is a collectible digital art series — a piece of Chevrette's identity, not a financial product. No yield, no roadmap-linked utility, no guarantee of future value. Just original art for people who like where this brand is headed.",
+    "ctaTitle": "The herd has dropped.",
+    "ctaLede": "Minting is live — grab yours on OpenSea before the next batch sells out.",
+    "ctaBtn": "Buy NFT",
+    "metaPriceLabel": "Starting price",
+    "metaChainLabel": "Chain",
+    "metaLaunchLabel": "Status",
+    "metaLaunchDate": "Live now",
+    "ctaExplore": "Explore Collection",
+    "ctaOpensea": "View on OpenSea",
+    "metaListedLabel": "Listed",
+    "stripEyebrow": "Fresh From The Herd",
+    "stripTitle": "Listed right now.",
+    "viewCollection": "View Collection",
+    "featuredEyebrow": "Genesis Collection",
+    "featuredTitle": "Currently listed on OpenSea.",
+    "loadMore": "Load More",
+    "popularEyebrow": "Popular Collection",
+    "popularTitle": "Every piece, one collection.",
+    "popularLede": "Chevrette Genesis is a single collection — no sub-drops, no hidden tiers. More real listings below.",
+    "collectionsEyebrow": "NFT Collections",
+    "collectionsTitle": "Two collections. One Chevrette identity.",
+    "collectionsLede": "Chevrette Genesis carries the original herd. Chevrette Premium is a rarer, more exclusive expression of the same identity — 222 pieces on Ethereum.",
+    "genesisKicker": "Collection 02",
+    "genesisCardTitle": "Chevrette Genesis",
+    "genesisCardDesc": "A generative collectible art collection born from the Chevrette mark. Minting is live now on Polygon.",
+    "genesisCardMeta1": "Polygon",
+    "genesisCardMeta2": "Floor $1.00",
+    "genesisCardMeta3": "Live · Minting Open",
+    "genesisCardCta": "Explore Genesis",
+    "genesisTag": "Collection 02 · Chevrette Genesis",
+    "premiumKicker": "Collection 01",
+    "premiumCardTitle": "Chevrette Premium",
+    "premiumCardDesc": "An exclusive 222-piece NFT collection built for collectors who want a rarer expression of the Chevrette identity, on Ethereum.",
+    "premiumCardMeta1": "Ethereum",
+    "premiumCardMeta2": "222 NFTs",
+    "premiumCardMeta3": "Minting Live",
+    "premiumCardCta": "Discover Premium",
+    "premiumTag": "Collection 01 · Chevrette Premium",
+    "premiumBadge": "Minting Live",
+    "premiumTitle": "CHEVRETTE PREMIUM",
+    "premiumLede": "An exclusive collection of 222 NFTs on Ethereum.",
+    "premiumDesc": "Chevrette Premium is an exclusive 222-piece NFT collection built for collectors who want a rarer expression of the Chevrette identity.",
+    "premiumStatSupply": "NFTs",
+    "premiumStatChain": "Network",
+    "premiumStatStatus": "Status",
+    "premiumStatType": "Exclusive",
+    "premiumStatTypeLabel": "Collection Type",
+    "premiumCtaOpensea": "View on OpenSea",
+    "mintEyebrow": "Mint",
+    "mintTitle": "Mint Chevrette Premium",
+    "mintSub": "Mints directly from the official OpenSea SeaDrop contract on Ethereum Mainnet, using your connected wallet.",
+    "mintPriceLabel": "Price",
+    "mintRemainingLabel": "Remaining",
+    "mintButton": "Mint Now",
+    "mintPerWalletNote": "Loading live mint limits…",
+    "premiumGalleryEyebrow": "Preview",
+    "premiumGalleryTitle": "A first look at Chevrette Premium.",
+    "premiumGalleryNote": "222 unique pieces. Full artwork and traits reveal at mint."
+  }
+}
