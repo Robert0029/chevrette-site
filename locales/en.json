@@ -357,6 +357,12 @@
     "twitterD": "Announcements and community updates.",
     "telegramT": "Telegram",
     "telegramD": "The most direct way to reach the community and the team.",
+    "youtubeT": "YouTube",
+    "youtubeD": "Short videos and updates about the app.",
+    "tiktokT": "TikTok",
+    "tiktokD": "Short clips and community highlights.",
+    "mediumT": "Medium",
+    "mediumD": "Articles and updates from the team.",
     "note": "Chevrette is an early-stage ecosystem run by a small team — replies may take a little time, but every message is read."
   },
   "privacy": {
