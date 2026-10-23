@@ -2079,3 +2079,25 @@ a.card-view-all:hover .card-view-all-link svg{transform:translateX(4px);}
   body[data-page="nft"] .premium-cta-row .btn,
   body[data-page="nft"] .premium-cta-row .premium-soon-pill{width:100%;}
 }
+
+
+/* ---------- Roadmap v2: built stats, current stage, reward milestones ---------- */
+.rm-built{font-size:16px;color:var(--text-secondary);max-width:680px;margin-bottom:28px;}
+.rm-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+.rm-stat{background:var(--gray950);border:1px solid var(--gray800);border-radius:var(--radius-md);padding:24px 16px;text-align:center;}
+.rm-stat b{display:block;font-size:clamp(26px,3.4vw,36px);font-weight:800;color:var(--white);letter-spacing:-.01em;}
+.rm-stat span{display:block;margin-top:6px;font-size:13px;color:var(--text-tertiary);}
+@media (max-width:760px){.rm-stats{grid-template-columns:repeat(2,1fr);}}
+.stage.current .stage-marker{border-color:var(--gray200);box-shadow:0 0 0 4px var(--violet-glow-soft);color:var(--white);}
+.stage.current .stage-status{color:var(--white);}
+.stage.current .stage-card{border-color:var(--gray600, var(--gray700));}
+.stage.current .stage-items li::before{background:var(--gray300);}
+.rm-lead{font-size:16px;color:var(--text-secondary);max-width:680px;}
+.reward-table{width:100%;border-collapse:collapse;margin:28px 0 24px;}
+.reward-table th,.reward-table td{padding:14px 18px;border-bottom:1px solid var(--gray800);text-align:left;}
+.reward-table th{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--text-tertiary);font-weight:700;}
+.reward-table td{font-size:16px;color:var(--text-secondary);}
+.reward-table tr.now td{color:var(--white);font-weight:700;}
+.rm-notes{margin:0 0 24px;padding-left:20px;list-style:disc;}
+.rm-notes li{color:var(--text-secondary);font-size:15px;margin-bottom:10px;}
+.rm-foot{font-size:13px;color:var(--text-tertiary);}

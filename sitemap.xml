@@ -161,4 +161,20 @@
     <xhtml:link rel="alternate" hreflang="ru" href="https://chevrette.shop/ru/terms.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://chevrette.shop/terms.html"/>
   </url>
+  <url>
+    <loc>https://chevrette.shop/whitepaper.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://chevrette.shop/whitepaper.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://chevrette.shop/ru/whitepaper.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chevrette.shop/whitepaper.html"/>
+  </url>
+  <url>
+    <loc>https://chevrette.shop/ru/whitepaper.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://chevrette.shop/whitepaper.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://chevrette.shop/ru/whitepaper.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chevrette.shop/whitepaper.html"/>
+  </url>
 </urlset>
