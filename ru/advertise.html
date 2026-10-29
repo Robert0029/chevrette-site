@@ -48,6 +48,7 @@
   ]
 }
 </script>
+<link rel="stylesheet" href="/css/ad-form.css?v=202610292300">
 </head>
 <body data-page="advertise">
 
@@ -111,7 +112,7 @@
       <p class="lede" data-i18n="advertise.header.lede">Продвигайте свой проект, продукт или бренд среди растущего сообщества Chevrette.</p>
       <p style="margin-top:22px;max-width:640px;" data-i18n="advertise.header.description">Chevrette предлагает возможности размещения рекламы на сайте и в мобильном приложении. Отправьте заявку — наша команда рассмотрит ваш проект и свяжется с вами, чтобы обсудить доступные варианты, стоимость и дальнейшие шаги.</p>
       <div class="hero-actions" style="margin-top:40px;">
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdhRimVdsxyoc8NfAoGh_YB3PlhPnSD24GXfIMoJgcvAQS1Mg/viewform?usp=dialog" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg" aria-label="Submit advertising request — opens the official Chevrette advertising form in a new tab">
+        <a href="#request" class="btn btn-primary btn-lg">
           <span data-i18n="advertise.header.cta">Отправить заявку на рекламу</span>
         </a>
       </div>
@@ -173,6 +174,61 @@
     </div>
   </section>
 
+  <!-- ============ REQUEST FORM ============ -->
+  <section class="section" id="request">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Заявка на рекламу</span>
+        <h2>Расскажите о вашей рекламе.</h2>
+        <p>Мы рады бизнесу, проектам и частным лицам. Заполните форму, и мы ответим по email с вариантами, стоимостью и дальнейшими шагами.</p>
+      </div>
+      <div class="ad-form-wrap reveal">
+        <form id="adForm" class="ad-form" novalidate>
+          <div class="row">
+            <div><label for="ad-type">Я рекламирую как</label>
+              <select id="ad-type" name="type" required>
+                <option value="business">Бизнес / компания</option>
+                <option value="project">Проект / сообщество</option>
+                <option value="individual">Частное лицо</option>
+              </select></div>
+            <div><label for="ad-placement">Размещение</label>
+              <select id="ad-placement" name="placement" required>
+                <option value="both">Сайт + приложение</option>
+                <option value="website">Сайт Chevrette</option>
+                <option value="app">Приложение Chevrette</option>
+              </select></div>
+          </div>
+          <div class="row">
+            <div><label for="ad-name">Ваше имя</label><input id="ad-name" name="name" type="text" maxlength="100" required autocomplete="name"></div>
+            <div><label for="ad-email">Email</label><input id="ad-email" name="email" type="email" maxlength="200" required autocomplete="email"></div>
+          </div>
+          <div class="row">
+            <div><label for="ad-company">Компания / проект <span class="opt">(необязательно)</span></label><input id="ad-company" name="company" type="text" maxlength="150"></div>
+            <div><label for="ad-website">Сайт или ссылка <span class="opt">(необязательно)</span></label><input id="ad-website" name="website" type="text" maxlength="300" placeholder="https://"></div>
+          </div>
+          <div class="row">
+            <div><label for="ad-contact">Telegram / X <span class="opt">(необязательно)</span></label><input id="ad-contact" name="contact" type="text" maxlength="120" placeholder="@username"></div>
+            <div><label for="ad-budget">Бюджет <span class="opt">(необязательно)</span></label>
+              <select id="ad-budget" name="budget">
+                <option value="">Пока не знаю</option>
+                <option value="under 100 USD">До $100</option>
+                <option value="100-500 USD">$100 – $500</option>
+                <option value="500-2000 USD">$500 – $2,000</option>
+                <option value="over 2000 USD">Более $2 000</option>
+              </select></div>
+          </div>
+          <div><label for="ad-message">Что вы хотите рекламировать?</label>
+            <textarea id="ad-message" name="message" maxlength="3000" required placeholder="Опишите продукт, вашу цель и желаемые сроки."></textarea></div>
+          <div class="hp" aria-hidden="true"><label>Leave empty<input type="text" name="hp" tabindex="-1" autocomplete="off"></label></div>
+          <label class="check"><input type="checkbox" name="consent" required>
+            <span>Я согласен, что Chevrette сохранит мои данные, чтобы ответить на эту заявку. См. <a href="privacy.html">Политику конфиденциальности</a>.</span></label>
+          <div class="ad-msg" role="status" aria-live="polite"></div>
+          <button type="submit" class="btn btn-primary btn-lg">Отправить заявку</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
   <!-- ============ CTA ============ -->
   <section class="cta">
     <div class="container">
@@ -181,7 +237,7 @@
         <h2 data-i18n="advertise.cta.title">Готовы охватить сообщество?</h2>
         <p data-i18n="advertise.cta.lede">Отправьте заявку на рекламу — наша команда свяжется с вами и расскажет о доступных вариантах.</p>
         <div class="cta-actions">
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLSdhRimVdsxyoc8NfAoGh_YB3PlhPnSD24GXfIMoJgcvAQS1Mg/viewform?usp=dialog" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg" aria-label="Submit advertising request — opens the official Chevrette advertising form in a new tab">
+          <a href="#request" class="btn btn-primary btn-lg">
             <span data-i18n="advertise.cta.primary">Отправить заявку на рекламу</span>
           </a>
         </div>
@@ -249,6 +305,7 @@
   </footer>
 
 <script src="../js/i18n.js?v=202610031200"></script>
+<script src="/js/ad-form.js?v=202610292300"></script>
 <script src="../js/main.js?v=202610031200"></script>
 </body>
 </html>
