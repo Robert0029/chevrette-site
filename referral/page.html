@@ -9,7 +9,7 @@
 <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@700;800&family=Unbounded:wght@700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/style-v2.css?v=202611130100">
 <style>
   .ref-hero{
@@ -24,19 +24,26 @@
     position:absolute;
     inset:0;
     z-index:0;
-    background:
-      radial-gradient(ellipse 900px 520px at 50% -8%, rgba(255,31,112,.12), transparent 60%),
-      radial-gradient(ellipse 700px 440px at 90% 100%, rgba(139,92,246,.14), transparent 60%),
-      linear-gradient(180deg,#030305 0%, #030305 70%, #08060D 100%);
+    background:#030304;
+    overflow:hidden;
   }
+  @keyframes ref-galaxy{
+    from{transform:translate(-50%,-50%) perspective(1500px) rotateX(63deg) rotate(0deg);}
+    to{transform:translate(-50%,-50%) perspective(1500px) rotateX(63deg) rotate(360deg);}
+  }
+  .ref-bg::before{
+    content:'';position:absolute;left:68%;top:50%;width:max(110vw,900px);aspect-ratio:1;
+    background:url(/assets/home/galaxy-v1.webp) center/contain no-repeat;
+    animation:ref-galaxy 180s linear infinite;opacity:.85;
+  }
+  @media (max-width:900px){.ref-bg::before{left:50%;top:20%;opacity:.7;}}
+  @media (prefers-reduced-motion:reduce){.ref-bg::before{animation:none;}}
   .ref-horn{
     position:absolute;
     top:-120px; right:-180px;
     width:900px;
     max-width:none;
-    opacity:.5;
-    z-index:0;
-    pointer-events:none;
+    display:none;
   }
   .ref-inner{
     position:relative;
@@ -53,15 +60,17 @@
     display:flex;
     align-items:center;
     gap:11px;
-    font-weight:800;
-    font-size:18px;
-    letter-spacing:-.01em;
+    font-family:'Unbounded','Manrope',sans-serif;
+    font-weight:700;
+    font-size:14px;
+    letter-spacing:.28em;
+    text-transform:uppercase;
     margin-bottom:36px;
   }
-  .ref-brand img{width:30px;height:30px;border-radius:8px;}
+  .ref-brand img{width:34px;height:34px;object-fit:contain;}
   .ref-card h1{
     max-width:520px;
-    font-size:clamp(30px,4vw,44px);
+    font-size:clamp(32px,4.6vw,60px);line-height:1.02;
     margin:18px 0 14px;
   }
   .ref-card p.lede{margin-bottom:0;}
@@ -70,8 +79,8 @@
     align-items:center;
     justify-content:space-between;
     gap:16px;
-    background:var(--surface);
-    border:1px solid var(--border);
+    background:#0B0B0E;
+    border:1px solid rgba(227,181,86,.5);
     border-radius:var(--radius-md);
     padding:18px 22px;
     margin:32px 0 40px;
@@ -87,17 +96,19 @@
     margin-bottom:4px;
   }
   .ref-code-box span.code-val{
-    font-size:22px;
+    font-size:24px;
     font-weight:800;
-    letter-spacing:2px;
-    font-family:var(--font-display);
+    letter-spacing:3px;
+    font-family:'Unbounded','Manrope',sans-serif;
+    color:#E3B556;
   }
   .ref-code-box button{
     background:transparent;
     border:1px solid var(--gray700);
     color:var(--white);
     border-radius:var(--radius-pill);
-    padding:10px 18px;
+    padding:0 18px;
+    min-height:44px;
     font-size:12px;
     font-weight:700;
     letter-spacing:.06em;
@@ -107,8 +118,8 @@
     transition:border-color .25s ease,transform .25s ease,box-shadow .25s ease;
     flex:none;
   }
-  .ref-code-box button:hover{border-color:var(--pink-500);box-shadow:0 0 0 1px rgba(255,31,112,.12) inset;transform:translateY(-1px);}
-  .ref-code-box button.copied{background:linear-gradient(135deg,var(--pink-500),var(--violet-500));color:#fff;border-color:transparent;}
+  .ref-code-box button:hover{border-color:#E3B556;color:#E3B556;transform:translateY(-1px);}
+  .ref-code-box button.copied{background:#E3B556;color:#0A0804;border-color:#E3B556;}
 
   .ref-steps{
     display:flex;
@@ -128,14 +139,14 @@
     flex:none;
     width:32px;height:32px;
     border-radius:50%;
-    border:1px solid rgba(255,31,112,.35);
-    background:var(--black);
+    border:1px solid #E3B556;
+    background:#030304;
     display:flex;align-items:center;justify-content:center;
     font-weight:800;
     font-size:13px;
     margin-top:1px;
-    color:var(--pink-300);
-    box-shadow:0 0 12px -4px var(--pink-glow);
+    color:#E3B556;
+    font-family:'Unbounded','Manrope',sans-serif;
   }
   .ref-steps p{
     font-size:14.5px;
@@ -258,7 +269,7 @@
   if (valid) {
     grid.innerHTML =
       '<div class="ref-card">' +
-        '<div class="ref-brand"><img src="/assets/icons/icon-192.png" alt=""><span>Chevrette</span></div>' +
+        '<div class="ref-brand"><img src="/assets/home/mark.png" alt=""><span>CHEVRETTE</span></div>' +
         '<span class="eyebrow">' + t.eyebrow + '</span>' +
         '<h1>' + t.title + '</h1>' +
         '<p class="lede">' + t.body + '</p>' +
@@ -296,7 +307,7 @@
   } else {
     grid.innerHTML =
       '<div class="ref-card" style="grid-column:1 / -1;max-width:520px;">' +
-        '<div class="ref-brand"><img src="/assets/icons/icon-192.png" alt=""><span>Chevrette</span></div>' +
+        '<div class="ref-brand"><img src="/assets/home/mark.png" alt=""><span>CHEVRETTE</span></div>' +
         '<span class="eyebrow">' + t.badEyebrow + '</span>' +
         '<h1>' + t.badTitle + '</h1>' +
         '<p class="lede">' + t.badBody + '</p>' +
