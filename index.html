@@ -3,25 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Chevrette — A Premium Digital Ecosystem</title>
-<meta name="description" content="Chevrette is a premium digital ecosystem built on quality, innovation and long-term growth. Collect Daily Points, invite friends and grow with the community. Available now for Android.">
+<title>Chevrette — Claim Your Place in the Galaxy</title>
+<meta name="description" content="Chevrette is a free Android app: daily points, your own star in a shared galaxy, a country race and the survival game The Last Survivor.">
 <link rel="canonical" href="https://chevrette.shop/">
 <link rel="alternate" hreflang="en" href="https://chevrette.shop/">
 <link rel="alternate" hreflang="ru" href="https://chevrette.shop/ru/index.html">
 <link rel="alternate" hreflang="x-default" href="https://chevrette.shop/">
 
-
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Chevrette">
-<meta property="og:title" content="Chevrette — A Premium Digital Ecosystem">
-<meta property="og:description" content="A premium digital ecosystem built on quality, innovation and long-term growth. Available now for Android.">
+<meta property="og:title" content="Chevrette — Claim Your Place in the Galaxy">
+<meta property="og:description" content="Chevrette is a free Android app: daily points, your own star in a shared galaxy, a country race and the survival game The Last Survivor.">
 <meta property="og:image" content="https://chevrette.shop/assets/og-image.png">
 <meta property="og:url" content="https://chevrette.shop/">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Chevrette — A Premium Digital Ecosystem">
-<meta name="twitter:description" content="A premium digital ecosystem built on quality, innovation and long-term growth. Available now for Android.">
+<meta name="twitter:title" content="Chevrette — Claim Your Place in the Galaxy">
+<meta name="twitter:description" content="Chevrette is a free Android app: daily points, your own star in a shared galaxy, a country race and the survival game The Last Survivor.">
 <meta name="twitter:image" content="https://chevrette.shop/assets/og-image.png">
-<meta name="theme-color" content="#000000">
+<meta name="theme-color" content="#030304">
 
 <link rel="icon" href="assets/icons/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="icon" href="assets/icons/favicon-16.png" sizes="16x16" type="image/png">
@@ -30,8 +29,41 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=202610031200">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@700;800&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="assets/brand/chevrette-goat-suit.webp?v=2" type="image/webp">
+<style>
+body{margin:0;background:#030304}
+a{color:#E3B556}a:hover{color:#F6DFA0}
+.page{font-variant-ligatures:none;font-feature-settings:"liga" 0,"calt" 0,"dlig" 0}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes drift{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,-12px)}}
+@keyframes ticker{to{transform:translateX(-50%)}}
+@keyframes twinkle{0%,100%{opacity:.2}50%{opacity:1}}
+.spin{animation:spin 180s linear infinite}
+.float{animation:drift 7s ease-in-out infinite}
+.ticker{animation:ticker 40s linear infinite}
+.tw{animation:twinkle 3.4s ease-in-out infinite}
+.row-link{transition:padding-left .25s ease,color .25s ease}
+.row-link:hover{padding-left:18px;color:#E3B556 !important}
+.card{transition:transform .35s ease,border-color .35s ease}
+.card:hover{transform:translateY(-6px);border-color:rgba(227,181,86,.6) !important}
+@media (prefers-reduced-motion:reduce){.spin,.float,.ticker,.tw{animation:none}}
+@media (max-width:860px){.nav-links{display:none !important}.only-wide{display:none !important}}
+@media (min-width:900px){.span2{grid-column:span 2}}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+img{max-width:100%}
+:focus-visible{outline:2px solid #E3B556;outline-offset:3px}
+.burger{display:none;width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,.22);background:transparent;color:#F4F1EA;align-items:center;justify-content:center;cursor:pointer;padding:0}
+.menu{position:fixed;inset:0;z-index:100;background:#030304;display:none;flex-direction:column;padding:22px 24px 32px;overflow:auto}
+.menu.open{display:flex}
+.menu a.m-link{display:flex;align-items:center;min-height:64px;border-bottom:1px solid rgba(255,255,255,.14);color:#F4F1EA;text-decoration:none;font-family:'Unbounded',sans-serif;font-weight:800;font-size:26px}
+@media (max-width:860px){.burger{display:inline-flex}}
+.js .rv{opacity:0;transform:translateY(30px)}
+.js .rv.in{opacity:1;transform:none;transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1),border-color .35s ease}
+.js .card.rv.in:hover{transform:translateY(-6px)}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.js .rv{opacity:1;transform:none}}
+
+</style>
 
 <script type="application/ld+json">
 {
@@ -61,355 +93,418 @@
 }
 </script>
 </head>
-<body data-page="home">
+<body>
+<div class="page" style="--accent: #E3B556; background-color: #030304; color: #F4F1EA; font-family: 'Manrope', system-ui, sans-serif; font-size: 16px; line-height: 1.55; overflow: hidden">
 
-  <nav class="nav">
-    <div class="container nav-inner">
-      <a href="index.html" class="brand"><img src="assets/brand/chevrette-mark-transparent.png" alt="Chevrette"> Chevrette</a>
-      <div class="nav-links">
-        <a href="index.html" data-nav="home" data-i18n="nav.home">Home</a>
-        <a href="advertise.html" data-nav="advertise" data-i18n="nav.advertise">Advertise</a>
-        <a href="nft.html" data-nav="nft" data-i18n="nav.nft">NFT</a>
-        <a href="about.html" data-nav="about" data-i18n="nav.about">About</a>
-        <a href="features.html" data-nav="features" data-i18n="nav.features">Features</a>
-        <a href="roadmap.html" data-nav="roadmap" data-i18n="nav.roadmap">Roadmap</a>
-        <a href="faq.html" data-nav="faq" data-i18n="nav.faq">FAQ</a>
-        <a href="contact.html" data-nav="contact" data-i18n="nav.contact">Contact</a>
-      </div>
-      <div class="nav-right">
-        <div class="lang-switch">
-          <a href="/index.html" data-lang="en" class="active">EN</a>
-          <a href="/ru/index.html" data-lang="ru">RU</a>
-        </div>
-        <a href="https://play.google.com/store/apps/details?id=com.chevrette.app&amp;pcampaignid=web_share" target="_blank" rel="noopener" class="btn btn-primary">
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M5 3.5v17a.5.5 0 0 0 .76.43l14-8.5a.5.5 0 0 0 0-.86l-14-8.5A.5.5 0 0 0 5 3.5z"/></svg>
-          <span data-i18n="nav.download">Google Play</span>
-        </a>
-        <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
-        </button>
-      </div>
-    </div>
-  </nav>
+<!-- NAV -->
+<nav style="position: relative; z-index: 20; max-width: 1320px; margin: 0 auto; padding: 22px 24px; display: flex; align-items: center; justify-content: space-between; gap: 20px">
+<a href="#top" style="display: flex; align-items: center; gap: 12px; color: #F4F1EA; text-decoration: none; font-family: 'Unbounded', sans-serif; font-weight: 700; font-size: 14px; letter-spacing: 4px">
+<img src="assets/home/mark.png" alt="" style="width: 34px; height: 34px; object-fit: contain">
+<span class="only-wide">CHEVRETTE</span>
+</a>
+<div class="nav-links" style="display: flex; gap: 6px; padding: 6px; border: 1px solid rgba(255,255,255,.14); border-radius: 100px; background: rgba(3,3,4,.6); font-size: 13px; font-weight: 700">
+<a href="#survivor" style="display: flex; align-items: center; min-height: 36px; padding: 0 16px; border-radius: 100px; color: #E6E2D8; text-decoration: none">Survival</a>
+<a href="#features" style="display: flex; align-items: center; min-height: 36px; padding: 0 16px; border-radius: 100px; color: #E6E2D8; text-decoration: none">Inside the app</a>
+<a href="#nft" style="display: flex; align-items: center; min-height: 36px; padding: 0 16px; border-radius: 100px; color: #E6E2D8; text-decoration: none">NFT</a>
+<a href="#community" style="display: flex; align-items: center; min-height: 36px; padding: 0 16px; border-radius: 100px; color: #E6E2D8; text-decoration: none">Community</a>
+<a href="roadmap.html" style="display: flex; align-items: center; min-height: 36px; padding: 0 16px; border-radius: 100px; color: #E6E2D8; text-decoration: none">Roadmap</a>
+<a href="faq.html" style="display: flex; align-items: center; min-height: 36px; padding: 0 16px; border-radius: 100px; color: #E6E2D8; text-decoration: none">FAQ</a>
+</div>
+<div style="display: flex; align-items: center; gap: 12px">
+<div class="only-wide" style="display: flex; border: 1px solid rgba(255,255,255,.18); border-radius: 100px; overflow: hidden; font-size: 12px; font-weight: 800; letter-spacing: 1px">
+<a href="/index.html" style="padding: 0 13px; min-height: 44px; display: flex; align-items: center; background: #F4F1EA; color: #030304; text-decoration: none">EN</a>
+<a href="/ru/index.html" style="padding: 0 13px; min-height: 44px; display: flex; align-items: center; color: #E6E2D8; text-decoration: none">RU</a>
+</div>
+<a href="https://play.google.com/store/apps/details?id=com.chevrette.app&amp;pcampaignid=web_share" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 9px; min-height: 44px; padding: 0 20px; background: var(--accent); color: #0A0804; border-radius: 100px; font-weight: 800; font-size: 14px; text-decoration: none">
+<svg aria-hidden="true" viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M5 3.5v17a.5.5 0 0 0 .76.43l14-8.5a.5.5 0 0 0 0-.86l-14-8.5A.5.5 0 0 0 5 3.5z"></path></svg>
+Get the app
+</a>
+<button class="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="menu"><svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7h18M3 12h18M3 17h18"></path></svg></button>
+</div>
+</nav>
 
-  <div class="mobile-panel">
-    <div class="mobile-panel-links">
-      <a href="index.html" data-i18n="nav.home">Home</a>
-      <a href="advertise.html" data-i18n="nav.advertise">Advertise</a>
-      <a href="nft.html" data-i18n="nav.nft">NFT</a>
-      <a href="about.html" data-i18n="nav.about">About</a>
-      <a href="features.html" data-i18n="nav.features">Features</a>
-      <a href="roadmap.html" data-i18n="nav.roadmap">Roadmap</a>
-      <a href="faq.html" data-i18n="nav.faq">FAQ</a>
-      <a href="contact.html" data-i18n="nav.contact">Contact</a>
-    </div>
-    <div class="mobile-panel-bottom">
-      <div class="lang-switch">
-      <a href="/index.html" data-lang="en" class="active">EN</a>
-      <a href="/ru/index.html" data-lang="ru">RU</a>
-    </div>
-      <a href="https://play.google.com/store/apps/details?id=com.chevrette.app&amp;pcampaignid=web_share" target="_blank" rel="noopener" class="btn btn-primary btn-lg mobile-panel-cta">
-      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M5 3.5v17a.5.5 0 0 0 .76.43l14-8.5a.5.5 0 0 0 0-.86l-14-8.5A.5.5 0 0 0 5 3.5z"/></svg>
-      <span data-i18n="nav.download">Google Play</span>
-    </a>
-    </div>
-  </div>
 
-  <!-- ============ SIDE SOCIAL RAIL ============ -->
-  <aside class="side-social" aria-hidden="true">
-    <span class="side-caption">Follow Us</span>
-    <span class="side-line"></span>
-    <a href="https://x.com/chevrette_net?s=21" target="_blank" rel="noopener" aria-label="X (Twitter)">
-      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-7.6 8.7L23.3 22H16.9l-5-6.5-5.7 6.5H2.9l8.1-9.3L2 2h6.6l4.5 6 5.8-6Zm-1.1 18h1.7L7.3 3.9H5.5L17.8 20Z"/></svg>
-    </a>
-    <a href="https://t.me/chevrette_network" target="_blank" rel="noopener" aria-label="Telegram">
-      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.9 4.3 18.7 20c-.2 1-.9 1.3-1.7.8l-4.7-3.5-2.3 2.2c-.3.3-.5.5-1 .5l.3-4.9 8.9-8c.4-.3-.1-.5-.6-.2L6.8 13 2.2 11.6c-1-.3-1-1 .2-1.5L20.6 3.1c.8-.3 1.6.2 1.3 1.2Z"/></svg>
-    </a>
-    <a href="https://www.youtube.com/@ChevretteNetwork" target="_blank" rel="noopener" aria-label="YouTube">
-      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-    </a>
-    <a href="https://www.tiktok.com/@chevrette_network" target="_blank" rel="noopener" aria-label="TikTok">
-      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
-    </a>
-    <a href="https://medium.com/@chevrette.shop" target="_blank" rel="noopener" aria-label="Medium">
-      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/></svg>
-    </a>
-  </aside>
+<div class="menu" id="menu">
+<div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 18px">
+<img src="assets/home/mark.png" alt="Chevrette" style="width: 34px; height: 34px; object-fit: contain">
+<button class="burger" type="button" data-close aria-label="Close menu" style="display: inline-flex"><svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 5l14 14M19 5L5 19"></path></svg></button>
+</div>
+<a class="m-link" href="#survivor">Survival</a>
+<a class="m-link" href="#features">Inside the app</a>
+<a class="m-link" href="#nft">NFT</a>
+<a class="m-link" href="#community">Community</a>
+<a class="m-link" href="roadmap.html">Roadmap</a>
+<a class="m-link" href="faq.html">FAQ</a>
+<div style="margin-top: 28px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap">
+<div style="display: flex; border: 1px solid rgba(255,255,255,.18); border-radius: 100px; overflow: hidden; font-size: 13px; font-weight: 800; letter-spacing: 1px">
+<a href="/index.html" style="background: #F4F1EA; color: #030304; padding: 0 18px; min-height: 48px; display: flex; align-items: center; text-decoration: none">EN</a>
+<a href="/ru/index.html" style="color: #E6E2D8; padding: 0 18px; min-height: 48px; display: flex; align-items: center; text-decoration: none">RU</a>
+</div>
+<a href="https://play.google.com/store/apps/details?id=com.chevrette.app&amp;pcampaignid=web_share" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; min-height: 56px; padding: 0 28px; background: #E3B556; color: #0A0804; border-radius: 100px; font-weight: 800; font-size: 16px; text-decoration: none">Get it on Google Play</a>
+</div>
+</div>
 
-  <!-- ============ HERO ============ -->
-  <header class="hero">
-    <div class="hero-bg"></div>
-    <img src="assets/horn-line.svg" class="hero-horn" alt="" aria-hidden="true">
-    <div class="container hero-inner hero-inner--centered">
-      <div class="hero-tech-labels" aria-hidden="true">
-        <span class="tag"><span class="dot"></span> <span data-i18n="home.hero.techTag">Enter the Ecosystem</span></span>
-        <span class="stage-count"><span data-i18n="home.hero.stageLabel">Roadmap Stage</span><br><b data-i18n="home.stats.stage.num">01</b></span>
-      </div>
-      <span class="eyebrow" data-i18n="home.hero.eyebrow">A Premium Digital Ecosystem</span>
+<!-- HERO STAGE -->
+<header id="top" style="position: relative; height: clamp(560px, 56vw, 820px); margin-top: -40px; overflow: hidden">
+<div aria-hidden="true" style="position: absolute; left: 50%; top: 58%; width: max(132vw, 980px); aspect-ratio: 1; transform: translate(-50%, -50%) perspective(1500px) rotateX(63deg)">
+<img class="spin" src="assets/home/galaxy-v1.webp" alt="" style="width: 100%; height: 100%; display: block">
+</div>
+<div style="position: absolute; left: 0; right: 0; top: 13%; text-align: center; font-family: 'Unbounded', sans-serif; font-weight: 800; font-size: 12.4vw; line-height: 1; letter-spacing: -0.02em; white-space: nowrap; color: var(--accent)">CHEVRETTE</div>
+<img class="float" fetchpriority="high" src="assets/brand/chevrette-goat-suit.webp?v=2" alt="Chevrette mascot: a goat in a pinstripe suit with golden horns" style="position: absolute; left: 50%; bottom: -3%; height: min(80%, 118vw); width: auto; transform: translate(-50%, 0)">
+<span class="tw" aria-hidden="true" style="position: absolute; left: 9%; top: 62%; width: 8px; height: 8px; border-radius: 50%; background: var(--accent)"></span>
+<span class="tw" aria-hidden="true" style="position: absolute; right: 12%; top: 52%; width: 6px; height: 6px; border-radius: 50%; background: #F4F1EA; animation-delay: 1.2s"></span>
+<span class="tw" aria-hidden="true" style="position: absolute; right: 24%; top: 82%; width: 5px; height: 5px; border-radius: 50%; background: #9AA6FF; animation-delay: 2.1s"></span>
+<div class="only-wide" style="position: absolute; left: 32px; bottom: 74px; font-size: 12px; font-weight: 800; letter-spacing: 3px; color: #E6E2D8; line-height: 2">FREE ON ANDROID<br><span style="color: var(--accent)">5,500+ MEMBERS</span></div>
+<div class="only-wide" style="position: absolute; right: 32px; bottom: 74px; text-align: right; font-size: 12px; font-weight: 800; letter-spacing: 3px; color: #E6E2D8; line-height: 2">A PREMIUM<br>DIGITAL ECOSYSTEM</div>
+</header>
 
-      <div class="hero-centerpiece">
-        <h1 class="hero-giant"><span data-i18n="home.hero.title">CHEVRETTE</span></h1>
-        <picture class="hero-portrait-wrap">
-          <source srcset="assets/brand/chevrette-goat-suit.webp?v=2" type="image/webp">
-          <img src="assets/brand/chevrette-goat-suit.png?v=2" class="hero-portrait" alt="Chevrette mascot" width="1229" height="1280">
-        </picture>
-      </div>
+<!-- TICKER -->
+<div aria-hidden="true" style="position: relative; z-index: 6; margin-top: -30px; transform: rotate(-1.6deg) scale(1.03); background: var(--accent); color: #0A0804; overflow: hidden; padding: 15px 0">
+<div class="ticker" style="display: flex; width: max-content; font-family: 'Unbounded', sans-serif; font-weight: 800; font-size: clamp(14px, 1.5vw, 20px); letter-spacing: 2px; white-space: nowrap">
+<span style="padding-right: 40px">DAILY POINTS &nbsp;✦&nbsp; GALAXY &nbsp;✦&nbsp; THE LAST SURVIVOR &nbsp;✦&nbsp; COUNTRY RACE &nbsp;✦&nbsp; DAILY WORD &nbsp;✦&nbsp; JOURNEY &nbsp;✦&nbsp; NFT &nbsp;✦&nbsp; DAILY POINTS &nbsp;✦&nbsp; GALAXY &nbsp;✦&nbsp; THE LAST SURVIVOR &nbsp;✦&nbsp; COUNTRY RACE &nbsp;✦&nbsp; DAILY WORD &nbsp;✦&nbsp; JOURNEY &nbsp;✦&nbsp; NFT &nbsp;✦</span>
+<span style="padding-right: 40px">DAILY POINTS &nbsp;✦&nbsp; GALAXY &nbsp;✦&nbsp; THE LAST SURVIVOR &nbsp;✦&nbsp; COUNTRY RACE &nbsp;✦&nbsp; DAILY WORD &nbsp;✦&nbsp; JOURNEY &nbsp;✦&nbsp; NFT &nbsp;✦&nbsp; DAILY POINTS &nbsp;✦&nbsp; GALAXY &nbsp;✦&nbsp; THE LAST SURVIVOR &nbsp;✦&nbsp; COUNTRY RACE &nbsp;✦&nbsp; DAILY WORD &nbsp;✦&nbsp; JOURNEY &nbsp;✦&nbsp; NFT &nbsp;✦</span>
+</div>
+</div>
 
-      <div class="hero-split">
-        <p class="lede lede-left" data-i18n="home.hero.ledeLeft">Chevrette is a digital ecosystem designed around quality, simplicity and long-term growth — not hype.</p>
-        <p class="lede lede-right" data-i18n="home.hero.ledeRight">Collect your Daily Points, grow your circle, and follow the ecosystem as it's built in the open, one deliberate stage at a time.</p>
-      </div>
+<!-- HERO STATEMENT -->
+<section style="max-width: 1320px; margin: 0 auto; padding: clamp(56px, 7vw, 110px) 24px 0; display: flex; flex-wrap: wrap; align-items: flex-end; gap: 40px">
+<h1 style="flex: 1 1 560px; min-width: 0; margin: 0; font-family: 'Unbounded', sans-serif; font-weight: 800; font-size: clamp(40px, 6.6vw, 100px); line-height: .98; letter-spacing: -0.03em">Claim your place in the <span style="color: var(--accent)">galaxy.</span></h1>
+<div style="flex: 1 1 340px; min-width: 0; max-width: 460px">
+<p style="margin: 0; font-size: 18px; color: #D5D1C6">Chevrette turns one small daily habit into a universe. Collect points, forge your own star, race for your country and outlast everyone in The Last Survivor.</p>
+<div style="margin-top: 28px; display: flex; flex-wrap: wrap; gap: 12px">
+<a href="https://play.google.com/store/apps/details?id=com.chevrette.app&amp;pcampaignid=web_share" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 12px; min-height: 60px; padding: 0 30px; background: var(--accent); color: #0A0804; border-radius: 100px; font-weight: 800; font-size: 17px; text-decoration: none">
+<svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M5 3.5v17a.5.5 0 0 0 .76.43l14-8.5a.5.5 0 0 0 0-.86l-14-8.5A.5.5 0 0 0 5 3.5z"></path></svg>
+Get it on Google Play
+</a>
+</div>
+<p style="margin: 16px 0 0; font-size: 13px; color: #A29E94">Free to use. No paid advantages.</p>
+</div>
+</section>
 
-      <div class="hero-badges">
-        <span class="badge"><span class="dot"></span><span data-i18n="common.androidOnly">Android only</span></span>
-        <span class="badge"><span class="dot pulse"></span><span data-i18n="common.comingSoon">Available on Google Play</span></span>
-      </div>
+<!-- NUMBERS -->
+<section aria-label="Chevrette in numbers" style="max-width: 1320px; margin: 0 auto; padding: clamp(64px, 8vw, 120px) 24px 0">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); border-top: 1px solid rgba(255,255,255,.18); border-left: 1px solid rgba(255,255,255,.18)">
+<div style="padding: 28px 24px 24px; border-right: 1px solid rgba(255,255,255,.18); border-bottom: 1px solid rgba(255,255,255,.18)">
+<div style="font-family: 'Unbounded', sans-serif; font-weight: 800; font-size: clamp(38px, 3.5vw, 52px); line-height: 1; color: var(--accent)">5,500+</div>
+<div style="margin-top: 14px; font-size: 12px; letter-spacing: 3px; color: #C9C5BA; font-weight: 800">MEMBERS</div>
+</div>
+<div style="padding: 28px 24px 24px; border-right: 1px solid rgba(255,255,255,.18); border-bottom: 1px solid rgba(255,255,255,.18)">
+<div style="font-family: 'Unbounded', sans-serif; font-weight: 800; font-size: clamp(38px, 3.5vw, 52px); line-height: 1; color: #F4F1EA">850+</div>
+<div style="margin-top: 14px; font-size: 12px; letter-spacing: 3px; color: #C9C5BA; font-weight: 800">STARS FORGED</div>
+</div>
+<div style="padding: 28px 24px 24px; border-right: 1px solid rgba(255,255,255,.18); border-bottom: 1px solid rgba(255,255,255,.18)">
+<div style="font-family: 'Unbounded', sans-serif; font-weight: 800; font-size: clamp(38px, 3.5vw, 52px); line-height: 1; color: #F4F1EA">70</div>
+<div style="margin-top: 14px; font-size: 12px; letter-spacing: 3px; color: #C9C5BA; font-weight: 800">COUNTRIES</div>
+</div>
+<div style="padding: 28px 24px 24px; border-right: 1px solid rgba(255,255,255,.18); border-bottom: 1px solid rgba(255,255,255,.18)">
+<div style="font-family: 'Unbounded', sans-serif; font-weight: 800; font-size: clamp(38px, 3.5vw, 52px); line-height: 1; color: #F4F1EA">100K+</div>
+<div style="margin-top: 14px; font-size: 12px; letter-spacing: 3px; color: #C9C5BA; font-weight: 800">DAILY CLAIMS MADE</div>
+</div>
+<div style="padding: 28px 24px 24px; border-right: 1px solid rgba(255,255,255,.18); border-bottom: 1px solid rgba(255,255,255,.18)">
+<div style="font-family: 'Unbounded', sans-serif; font-weight: 800; font-size: clamp(38px, 3.5vw, 52px); line-height: 1; color: #F4F1EA">10</div>
+<div style="margin-top: 14px; font-size: 12px; letter-spacing: 3px; color: #C9C5BA; font-weight: 800">LANGUAGES</div>
+</div>
+</div>
+</section>
 
-      <div class="hero-actions">
-        <a href="https://play.google.com/store/apps/details?id=com.chevrette.app&amp;pcampaignid=web_share" target="_blank" rel="noopener" class="btn btn-primary btn-lg">
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M5 3.5v17a.5.5 0 0 0 .76.43l14-8.5a.5.5 0 0 0 0-.86l-14-8.5A.5.5 0 0 0 5 3.5z"/></svg>
-          <span data-i18n="home.hero.ctaPrimary">Get it on Google Play</span>
-        </a>
-        <a href="features.html" class="btn btn-ghost btn-lg" data-i18n="home.hero.ctaSecondary">Explore the ecosystem</a>
-      </div>
-      <p class="small-note" data-i18n="home.hero.note">Free to use. Available on Google Play.</p>
+<!-- THE LAST SURVIVOR — inverted, bone white -->
+<section id="survivor" style="margin-top: clamp(80px, 10vw, 150px); background: #EDEAE2; color: #060606; position: relative; overflow: hidden">
+<div style="max-width: 1320px; margin: 0 auto; padding: clamp(40px, 6vw, 90px) 24px 0">
+<div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
+<span style="display: inline-flex; align-items: center; gap: 10px; min-height: 34px; padding: 0 16px; background: #060606; color: #EDEAE2; border-radius: 100px; font-size: 11px; font-weight: 800; letter-spacing: 3px">
+<span class="tw" style="width: 7px; height: 7px; border-radius: 50%; background: #E3B556"></span>
+NEW GAME · NOW LIVE
+</span>
+<span style="font-size: 12px; font-weight: 800; letter-spacing: 3px; color: #3D3A33">SEASON 1 STARTS AT 500 SURVIVORS</span>
+</div>
 
-      <div class="hero-stats glass">
-        <div class="hero-stat">
-          <div class="num" data-i18n="home.stats.points.num">50</div>
-          <div class="label" data-i18n="home.stats.points.label">Points per daily claim</div>
-        </div>
-        <div class="hero-stat">
-          <div class="num" data-i18n="home.stats.referral.num">100</div>
-          <div class="label" data-i18n="home.stats.referral.label">Points per referral</div>
-        </div>
-        <div class="hero-stat">
-          <div class="num" data-i18n="home.stats.languages.num">2</div>
-          <div class="label" data-i18n="home.stats.languages.label">Languages supported</div>
-        </div>
-        <a href="#community" class="hero-stat-community">
-          <span class="label" data-i18n="home.stats.community.label">Global Community</span>
-          <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        </a>
-      </div>
-    </div>
-  </header>
+<h2 class="rv" style="margin: clamp(24px, 3vw, 44px) 0 0; font-family: 'Unbounded', sans-serif; font-weight: 800; font-size: 12.6vw; line-height: .92; letter-spacing: -0.02em">THE LAST<br>SURVIVOR</h2>
 
-  <!-- ============ GALLERY ============ -->
-  <section class="section">
-    <div class="container">
-      <div class="section-head reveal">
-        <span class="eyebrow" data-i18n="home.gallery.eyebrow">The Application</span>
-        <h2 data-i18n="home.gallery.title">A calm, considered interface.</h2>
-        <p data-i18n="home.gallery.lede">Every screen in Chevrette follows the same discipline as this website.</p>
-      </div>
-      <div class="gallery reveal">
-        <div class="phone">
-          <div class="phone-frame"><span class="notch"></span>
-            <div class="phone-screen has-image">
-              <img src="assets/screenshots/daily-points-v3.jpg" alt="Daily Points screen" loading="lazy">
-            </div>
-          </div>
-          <div class="phone-caption" data-i18n="home.gallery.s1">Daily Points</div>
-        </div>
-        <div class="phone">
-          <div class="phone-frame"><span class="notch"></span>
-            <div class="phone-screen has-image">
-              <img src="assets/screenshots/country-competition-v3.jpg" alt="Country Competition screen" loading="lazy">
-            </div>
-          </div>
-          <div class="phone-caption" data-i18n="home.gallery.s2">Country Competition</div>
-        </div>
-        <div class="phone">
-          <div class="phone-frame"><span class="notch"></span>
-            <div class="phone-screen has-image">
-              <img src="assets/screenshots/referral-v3.jpg" alt="Referral System screen" loading="lazy">
-            </div>
-          </div>
-          <div class="phone-caption" data-i18n="home.gallery.s3">Referral System</div>
-        </div>
-        <div class="phone">
-          <div class="phone-frame"><span class="notch"></span>
-            <div class="phone-screen has-image">
-              <img src="assets/screenshots/daily-word-v3.jpg" alt="Daily Word screen" loading="lazy">
-            </div>
-          </div>
-          <div class="phone-caption" data-i18n="home.gallery.s4">Daily Word</div>
-        </div>
-        <div class="phone">
-          <div class="phone-frame"><span class="notch"></span>
-            <div class="phone-screen has-image">
-              <img src="assets/screenshots/galaxy-v3.jpg" alt="Galaxy screen" loading="lazy">
-            </div>
-          </div>
-          <div class="phone-caption" data-i18n="home.gallery.s5">Galaxy</div>
-        </div>
-      </div>
-    </div>
-  </section>
+<div style="margin-top: clamp(22px, 3vw, 40px); display: flex; flex-wrap: wrap; align-items: center; gap: 24px 40px">
+<div role="img" aria-label="Two of three lives left" style="display: flex; gap: 10px">
+<svg aria-hidden="true" viewBox="0 0 24 24" width="46" height="46" fill="#060606"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path></svg>
+<svg aria-hidden="true" viewBox="0 0 24 24" width="46" height="46" fill="#060606"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path></svg>
+<svg aria-hidden="true" viewBox="0 0 24 24" width="46" height="46" fill="none" stroke="#060606" stroke-width="1.6"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path></svg>
+</div>
+<p style="margin: 0; font-family: 'Unbounded', sans-serif; font-weight: 700; font-size: clamp(13px, 1.5vw, 19px); letter-spacing: 1px; line-height: 1.5">ONE GALAXY. THOUSANDS OF PLAYERS.<br>ONLY ONE SURVIVOR.</p>
+</div>
 
-  <!-- ============ FEATURES ============ -->
-  <section class="section section-alt">
-    <div class="container">
-      <div class="section-head reveal">
-        <span class="eyebrow" data-i18n="home.features.eyebrow">What's Inside</span>
-        <h2 data-i18n="home.features.title">A foundation built to last.</h2>
-        <p data-i18n="home.features.lede">Seven pillars, already live in the application today.</p>
-      </div>
-      <div class="grid grid-3 reveal-stagger">
-        <div class="card reveal">
-          <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
-          <h3 data-i18n="home.features.f1t">Daily Points</h3>
-          <p data-i18n="home.features.f1d">Claim your points every 24 hours and watch a simple habit compound over time.</p>
-        </div>
-        <div class="card reveal">
-          <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="9" cy="8" r="3"/><path d="M2 21c0-3.9 3.1-7 7-7s7 3.1 7 7"/><path d="M16 4a3 3 0 0 1 0 6M18 14a5 5 0 0 1 4 5"/></svg></div>
-          <h3 data-i18n="home.features.f2t">Referral Program</h3>
-          <p data-i18n="home.features.f2d">Invite friends with your personal code. Both of you are rewarded when they join.</p>
-        </div>
-        <div class="card reveal">
-          <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 21V10M12 21V4M20 21v-7"/></svg></div>
-          <h3 data-i18n="home.features.f3t">Global Leaderboard</h3>
-          <p data-i18n="home.features.f3d">See where you stand against the wider Chevrette community, updated in real time.</p>
-        </div>
-        <div class="card reveal">
-          <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3 4 6.5v5C4 16.5 7.4 20.3 12 21c4.6-.7 8-4.5 8-9.5v-5L12 3Z"/></svg></div>
-          <h3 data-i18n="home.features.f4t">Secure Authentication</h3>
-          <p data-i18n="home.features.f4d">Email verification and account protection built in from the very first release.</p>
-        </div>
-        <div class="card reveal">
-          <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 5h16M4 12h16M4 19h10"/></svg></div>
-          <h3 data-i18n="home.features.f5t">Multi-language</h3>
-          <p data-i18n="home.features.f5d">A fully localized experience in English and Russian, with more languages planned.</p>
-        </div>
-        <a href="features.html" class="card card-view-all reveal">
-          <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2 3 7v6c0 5 4 8 9 9 5-1 9-4 9-9V7l-9-5Z"/></svg></div>
-          <h3 data-i18n="home.features.viewAll">View all features</h3>
-          <p data-i18n="home.features.viewAllSub">See every pillar of the ecosystem in detail.</p>
-          <span class="card-view-all-link"><span data-i18n="home.features.viewAllCta">Explore features</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        </a>
-      </div>
-    </div>
-  </section>
+<div style="margin-top: clamp(36px, 5vw, 70px); display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 0 28px">
+<div style="border-top: 3px solid #060606; padding: 18px 0 30px">
+<div style="font-family: 'Unbounded', sans-serif; font-weight: 800; font-size: 40px; line-height: 1">3</div>
+<p style="margin: 12px 0 0; font-weight: 700; font-size: 17px">lives to start with</p>
+<p style="margin: 6px 0 0; color: #3D3A33; font-size: 15px">Confirm your survival once a day to keep them.</p>
+</div>
+<div style="border-top: 3px solid #060606; padding: 18px 0 30px">
+<div style="font-family: 'Unbounded', sans-serif; font-weight: 800; font-size: 40px; line-height: 1">24h</div>
+<p style="margin: 12px 0 0; font-weight: 700; font-size: 17px">between confirmations</p>
+<p style="margin: 6px 0 0; color: #3D3A33; font-size: 15px">Miss the deadline and one life is gone.</p>
+</div>
+<div style="border-top: 3px solid #060606; padding: 18px 0 30px">
+<div style="font-family: 'Unbounded', sans-serif; font-weight: 800; font-size: 40px; line-height: 1">5</div>
+<p style="margin: 12px 0 0; font-weight: 700; font-size: 17px">friends to return</p>
+<p style="margin: 6px 0 0; color: #3D3A33; font-size: 15px">Three returns at most. Then the fall is final.</p>
+</div>
+<div style="border-top: 3px solid #060606; padding: 18px 0 30px">
+<div style="font-family: 'Unbounded', sans-serif; font-weight: 800; font-size: 40px; line-height: 1">1</div>
+<p style="margin: 12px 0 0; font-weight: 700; font-size: 17px">winner</p>
+<p style="margin: 6px 0 0; color: #3D3A33; font-size: 15px">The last one alive gets a secret reward from Chevrette.</p>
+</div>
+</div>
 
-  <!-- ============ COMMUNITY ============ -->
-  <section class="section" id="community">
-    <div class="container grid grid-2" style="align-items:center;gap:64px;">
-      <div class="reveal">
-        <span class="eyebrow" data-i18n="home.community.eyebrow">Community</span>
-        <h2 style="margin-top:18px;" data-i18n="home.community.title">Grown by referral, not by noise.</h2>
-        <p class="lede" style="margin-top:20px;" data-i18n="home.community.lede">Chevrette doesn't rely on paid promotion or artificial hype.</p>
-      </div>
-      <div class="reveal">
-        <ul style="display:flex;flex-direction:column;gap:22px;">
-          <li style="display:flex;gap:16px;align-items:flex-start;">
-            <span class="feature-icon" style="margin-bottom:0;flex:none;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 6 9 17l-5-5"/></svg></span>
-            <p style="color:var(--text-primary);font-weight:600;padding-top:10px;" data-i18n="home.community.point1">Invite with a personal referral code</p>
-          </li>
-          <li style="display:flex;gap:16px;align-items:flex-start;">
-            <span class="feature-icon" style="margin-bottom:0;flex:none;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 6 9 17l-5-5"/></svg></span>
-            <p style="color:var(--text-primary);font-weight:600;padding-top:10px;" data-i18n="home.community.point2">Earn points when your invite joins</p>
-          </li>
-          <li style="display:flex;gap:16px;align-items:flex-start;">
-            <span class="feature-icon" style="margin-bottom:0;flex:none;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 6 9 17l-5-5"/></svg></span>
-            <p style="color:var(--text-primary);font-weight:600;padding-top:10px;" data-i18n="home.community.point3">Climb the global leaderboard together</p>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </section>
+<div style="margin-top: 14px; display: flex; flex-wrap: wrap; align-items: center; gap: 18px">
+<a href="https://play.google.com/store/apps/details?id=com.chevrette.app&amp;pcampaignid=web_share" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 12px; min-height: 60px; padding: 0 34px; background: #060606; color: #EDEAE2; border-radius: 100px; font-weight: 800; font-size: 16px; letter-spacing: 2px; text-decoration: none">
+JOIN SURVIVAL
+<svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+</a>
+<span style="font-size: 14px; color: #3D3A33; font-weight: 600">Update the app and open the SURVIVAL tab.</span>
+</div>
+</div>
 
-  <!-- ============ ADVERTISE ============ -->
-  <section class="section" style="padding-top:0;">
-    <div class="container">
-      <div class="mini-cta reveal">
-        <div class="mini-cta-text">
-          <span class="eyebrow" data-i18n="home.advertiseCta.eyebrow">Advertise with Chevrette</span>
-          <h2 style="margin-top:16px;" data-i18n="home.advertiseCta.title">Looking to promote your project, product or brand?</h2>
-        </div>
-        <a href="advertise.html" class="btn btn-primary btn-lg" data-i18n="home.advertiseCta.button">Advertise with Chevrette</a>
-      </div>
-    </div>
-  </section>
+<div aria-hidden="true" style="margin-top: clamp(40px, 6vw, 90px); display: flex; align-items: flex-end; justify-content: center; gap: 1.3vw; padding: 0 1.3vw">
+<div style="flex: 1 1 0; height: 9vw; background: #060606; border-radius: 20vw 20vw 0 0; color: #EDEAE2; font-size: 2.4vw; line-height: 1; display: flex; justify-content: center; padding-top: 1.6vw; box-sizing: border-box">+</div>
+<div style="flex: 1 1 0; height: 14vw; background: #060606; border-radius: 20vw 20vw 0 0; color: #EDEAE2; font-size: 2.4vw; line-height: 1; display: flex; justify-content: center; padding-top: 2vw; box-sizing: border-box">+</div>
+<div style="flex: 1 1 0; height: 7vw; background: #060606; border-radius: 20vw 20vw 0 0; color: #EDEAE2; font-size: 2.4vw; line-height: 1; display: flex; justify-content: center; padding-top: 1.4vw; box-sizing: border-box">+</div>
+<div style="flex: 1 1 0; height: 18vw; background: #060606; border-radius: 20vw 20vw 0 0; color: #EDEAE2; font-size: 2.4vw; line-height: 1; display: flex; justify-content: center; padding-top: 2.4vw; box-sizing: border-box">+</div>
+<div style="flex: 1 1 0; height: 11vw; background: #060606; border-radius: 20vw 20vw 0 0; color: #EDEAE2; font-size: 2.4vw; line-height: 1; display: flex; justify-content: center; padding-top: 1.8vw; box-sizing: border-box">+</div>
+<div style="flex: 1.25 1 0; height: 22vw; border: 2px dashed #060606; border-bottom: none; border-radius: 20vw 20vw 0 0; color: #060606; font-family: 'Unbounded', sans-serif; font-weight: 800; font-size: 1.7vw; letter-spacing: 1px; display: flex; justify-content: center; padding-top: 5vw; box-sizing: border-box">YOU?</div>
+<div style="flex: 1 1 0; height: 12vw; background: #060606; border-radius: 20vw 20vw 0 0; color: #EDEAE2; font-size: 2.4vw; line-height: 1; display: flex; justify-content: center; padding-top: 1.8vw; box-sizing: border-box">+</div>
+<div style="flex: 1 1 0; height: 17vw; background: #060606; border-radius: 20vw 20vw 0 0; color: #EDEAE2; font-size: 2.4vw; line-height: 1; display: flex; justify-content: center; padding-top: 2.2vw; box-sizing: border-box">+</div>
+<div style="flex: 1 1 0; height: 8vw; background: #060606; border-radius: 20vw 20vw 0 0; color: #EDEAE2; font-size: 2.4vw; line-height: 1; display: flex; justify-content: center; padding-top: 1.5vw; box-sizing: border-box">+</div>
+<div style="flex: 1 1 0; height: 13vw; background: #060606; border-radius: 20vw 20vw 0 0; color: #EDEAE2; font-size: 2.4vw; line-height: 1; display: flex; justify-content: center; padding-top: 1.9vw; box-sizing: border-box">+</div>
+<div style="flex: 1 1 0; height: 10vw; background: #060606; border-radius: 20vw 20vw 0 0; color: #EDEAE2; font-size: 2.4vw; line-height: 1; display: flex; justify-content: center; padding-top: 1.7vw; box-sizing: border-box">+</div>
+</div>
+</section>
 
-  <!-- ============ CTA ============ -->
-  <section class="cta">
-    <div class="container">
-      <div class="cta-box reveal">
-        <img src="assets/horn-line.svg" class="divider-horn mx-auto" alt="" aria-hidden="true" style="display:block;">
-        <h2 data-i18n="home.cta.title">Join the foundation stage.</h2>
-        <p data-i18n="home.cta.lede">Chevrette is available today on Google Play. Install the app and be part of the ecosystem from the very beginning.</p>
-        <div class="cta-actions">
-          <a href="https://play.google.com/store/apps/details?id=com.chevrette.app&amp;pcampaignid=web_share" target="_blank" rel="noopener" class="btn btn-primary btn-lg">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M5 3.5v17a.5.5 0 0 0 .76.43l14-8.5a.5.5 0 0 0 0-.86l-14-8.5A.5.5 0 0 0 5 3.5z"/></svg>
-            <span data-i18n="home.cta.primary">Get it on Google Play</span>
-          </a>
-          <a href="faq.html" class="btn btn-ghost btn-lg" data-i18n="home.cta.secondary">Read the FAQ</a>
-        </div>
-      </div>
-    </div>
-  </section>
+<!-- FEATURES -->
+<section id="features" style="max-width: 1320px; margin: 0 auto; padding: clamp(80px, 10vw, 150px) 24px 0">
+<div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 24px">
+<h2 class="rv" style="flex: 1 1 520px; min-width: 0; margin: 0; font-family: 'Unbounded', sans-serif; font-weight: 800; font-size: clamp(34px, 5.4vw, 80px); line-height: 1; letter-spacing: -0.03em">Five minutes a day.<br><span style="color: var(--accent)">A universe</span> that grows with you.</h2>
+<p style="flex: 0 1 300px; margin: 0; font-size: 12px; letter-spacing: 4px; color: var(--accent); font-weight: 800">INSIDE THE APP</p>
+</div>
 
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-top">
-        <div class="footer-brand">
-          <a href="index.html" class="brand"><img src="assets/brand/chevrette-mark-transparent.png" alt="Chevrette"> Chevrette</a>
-          <p data-i18n="footer.tagline">A premium digital ecosystem, built on quality, simplicity and long-term growth.</p>
-          <div class="socials" style="margin-top:22px;">
-            <a href="https://x.com/chevrette_net?s=21" target="_blank" rel="noopener" aria-label="X (Twitter)">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-7.6 8.7L23.3 22H16.9l-5-6.5-5.7 6.5H2.9l8.1-9.3L2 2h6.6l4.5 6 5.8-6Zm-1.1 18h1.7L7.3 3.9H5.5L17.8 20Z"/></svg>
-            </a>
-            <a href="https://t.me/chevrette_network" target="_blank" rel="noopener" aria-label="Telegram">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.9 4.3 18.7 20c-.2 1-.9 1.3-1.7.8l-4.7-3.5-2.3 2.2c-.3.3-.5.5-1 .5l.3-4.9 8.9-8c.4-.3-.1-.5-.6-.2L6.8 13 2.2 11.6c-1-.3-1-1 .2-1.5L20.6 3.1c.8-.3 1.6.2 1.3 1.2Z"/></svg>
-            </a>
-            <a href="https://www.youtube.com/@ChevretteNetwork" target="_blank" rel="noopener" aria-label="YouTube">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-            </a>
-            <a href="https://www.tiktok.com/@chevrette_network" target="_blank" rel="noopener" aria-label="TikTok">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
-            </a>
-            <a href="https://medium.com/@chevrette.shop" target="_blank" rel="noopener" aria-label="Medium">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/></svg>
-            </a>
-            <a href="mailto:support@chevrette.shop" aria-label="Email">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18v12H3z"/><path d="m3 7 9 6 9-6"/></svg>
-            </a>
-          </div>
-        </div>
-        <div class="footer-cols">
-          <div class="footer-col">
-            <h4 data-i18n="footer.colProduct">Product</h4>
-            <a href="features.html" data-i18n="nav.features">Features</a>
-            <a href="roadmap.html" data-i18n="nav.roadmap">Roadmap</a>
-            <a href="whitepaper.html" data-i18n="nav.whitepaper">White Paper</a>
-            <a href="nft.html" data-i18n="nav.nft">NFT</a>
-            <a href="https://play.google.com/store/apps/details?id=com.chevrette.app&amp;pcampaignid=web_share" target="_blank" rel="noopener">Google Play</a>
-          </div>
-          <div class="footer-col">
-            <h4 data-i18n="footer.colCompany">Company</h4>
-            <a href="about.html" data-i18n="nav.about">About</a>
-            <a href="faq.html" data-i18n="nav.faq">FAQ</a>
-            <a href="contact.html" data-i18n="nav.contact">Contact</a>
-          </div>
-          <div class="footer-col">
-            <h4 data-i18n="footer.colLegal">Legal</h4>
-            <a href="privacy.html" data-i18n="footer.privacy">Privacy Policy</a>
-            <a href="terms.html" data-i18n="footer.terms">Terms of Service</a>
-          </div>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; <span data-year>2026</span> Chevrette. <span data-i18n="footer.rights">All rights reserved.</span> <span data-i18n="footer.androidNote">Currently available for Android only.</span></p>
-        <div class="lang-switch">
-          <a href="/index.html" data-lang="en" class="active">EN</a>
-          <a href="/ru/index.html" data-lang="ru">RU</a>
-        </div>
-      </div>
-    </div>
-  </footer>
+<div style="margin-top: clamp(40px, 5vw, 72px); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap: 20px">
 
-<script src="js/i18n.js?v=202610031200"></script>
-<script src="js/main.js?v=202610031200"></script>
+<article class="span2 card rv" style="position: relative; border: 1px solid rgba(255,255,255,.16); border-radius: 32px; background: #07070C; overflow: hidden; display: flex; flex-wrap: wrap; min-height: 460px">
+<img loading="lazy" decoding="async" class="spin" aria-hidden="true" src="assets/home/galaxy-v1.webp" alt="" style="position: absolute; right: -22%; top: -40%; width: 110%; max-width: none; opacity: .75">
+<div style="position: relative; flex: 1 1 240px; min-width: 0; padding: 38px; display: flex; flex-direction: column; justify-content: space-between; gap: 28px">
+<div>
+<p style="margin: 0; font-size: 12px; letter-spacing: 3px; color: var(--accent); font-weight: 800">01 · GALAXY</p>
+<h3 style="margin: 16px 0 0; font-family: 'Unbounded', sans-serif; font-weight: 800; font-size: clamp(26px, 2.8vw, 40px); line-height: 1.08">Forge a star that is yours forever.</h3>
+<p style="margin: 16px 0 0; max-width: 420px; color: #E6E2D8">Every member can create one star in the shared Chevrette Galaxy. It carries your name and its own coordinates, and no account can ever make a second one.</p>
+</div>
+<div style="display: flex; align-items: baseline; gap: 14px">
+<span style="font-family: 'Unbounded', sans-serif; font-weight: 800; font-size: 64px; color: var(--accent); line-height: 1">850+</span>
+<span style="font-size: 14px; color: #E6E2D8; font-weight: 600">stars shining so far</span>
+</div>
+</div>
+<div style="position: relative; flex: 1 1 260px; min-width: 0; height: 460px; display: flex; justify-content: center; padding: 44px 36px 0; box-sizing: border-box">
+<img loading="lazy" decoding="async" src="assets/screenshots/galaxy-v3.jpg" alt="Chevrette Galaxy screen with a spiral of member stars" style="width: min(100%, 290px); height: auto; align-self: flex-start; border-radius: 30px; border: 1px solid rgba(255,255,255,.3); transform: rotate(5deg); box-shadow: 0 30px 80px rgba(0,0,0,.7)">
+</div>
+</article>
+
+<article class="card rv" style="border: 1px solid rgba(255,255,255,.16); border-radius: 32px; background: #0B0B0E; overflow: hidden; display: flex; flex-direction: column">
+<div style="padding: 34px 34px 0">
+<p style="margin: 0; font-size: 12px; letter-spacing: 3px; color: var(--accent); font-weight: 800">02 · DAILY POINTS</p>
+<h3 style="margin: 16px 0 0; font-family: 'Unbounded', sans-serif; font-weight: 800; font-size: 24px; line-height: 1.15">50 points, every 24 hours.</h3>
+<p style="margin: 12px 0 0; color: #C9C5BA; font-size: 15px">One tap a day. A simple habit that compounds.</p>
+</div>
+<div style="height: 270px; display: flex; justify-content: center; padding: 34px 34px 0; margin-top: auto">
+<img loading="lazy" decoding="async" src="assets/screenshots/daily-points-v3.jpg" alt="Daily claim screen showing the points balance" style="width: min(100%, 240px); height: auto; align-self: flex-start; border-radius: 26px; border: 1px solid rgba(255,255,255,.26); transform: rotate(-5deg)">
+</div>
+</article>
+
+<article class="card rv" style="border: 1px solid rgba(255,255,255,.16); border-radius: 32px; background: #0B0B0E; overflow: hidden; display: flex; flex-direction: column">
+<div style="padding: 34px 34px 0">
+<p style="margin: 0; font-size: 12px; letter-spacing: 3px; color: var(--accent); font-weight: 800">03 · COUNTRY RACE</p>
+<h3 style="margin: 16px 0 0; font-family: 'Unbounded', sans-serif; font-weight: 800; font-size: 24px; line-height: 1.15">Play for your flag.</h3>
+<p style="margin: 12px 0 0; color: #C9C5BA; font-size: 15px">Your daily activity counts for your country. Vietnam took Season 1. Season 2 is live.</p>
+</div>
+<div style="height: 270px; display: flex; justify-content: center; padding: 34px 34px 0; margin-top: auto">
+<img loading="lazy" decoding="async" src="assets/screenshots/country-competition-v3.jpg" alt="Country competition screen with standings" style="width: min(100%, 240px); height: auto; align-self: flex-start; border-radius: 26px; border: 1px solid rgba(255,255,255,.26); transform: rotate(5deg)">
+</div>
+</article>
+
+<article class="card rv" style="border: 1px solid rgba(255,255,255,.16); border-radius: 32px; background: var(--accent); color: #0A0804; overflow: hidden; display: flex; flex-direction: column">
+<div style="padding: 34px 34px 0">
+<p style="margin: 0; font-size: 12px; letter-spacing: 3px; font-weight: 800">04 · DAILY WORD</p>
+<h3 style="margin: 16px 0 0; font-family: 'Unbounded', sans-serif; font-weight: 800; font-size: 24px; line-height: 1.15">One word. One challenge.</h3>
+<p style="margin: 12px 0 0; font-size: 15px; font-weight: 600; color: #2A2110">Crack the Chevrette Code of the day and take +100 points.</p>
+</div>
+<div style="height: 270px; display: flex; justify-content: center; padding: 34px 34px 0; margin-top: auto">
+<img loading="lazy" decoding="async" src="assets/screenshots/daily-word-v3.jpg" alt="Daily Word puzzle screen" style="width: min(100%, 240px); height: auto; align-self: flex-start; border-radius: 26px; border: 1px solid rgba(0,0,0,.5); transform: rotate(-5deg); box-shadow: 0 24px 60px rgba(0,0,0,.45)">
+</div>
+</article>
+
+<article class="card rv" style="border: 1px solid rgba(255,255,255,.16); border-radius: 32px; background: #0B0B0E; overflow: hidden; display: flex; flex-direction: column">
+<div style="padding: 34px 34px 0">
+<p style="margin: 0; font-size: 12px; letter-spacing: 3px; color: var(--accent); font-weight: 800">05 · INVITE FRIENDS</p>
+<h3 style="margin: 16px 0 0; font-family: 'Unbounded', sans-serif; font-weight: 800; font-size: 24px; line-height: 1.15">+500 for every friend.</h3>
+<p style="margin: 12px 0 0; color: #C9C5BA; font-size: 15px">Share your code. You get 500 points, your friend starts with a 50 point bonus.</p>
+</div>
+<div style="height: 270px; display: flex; justify-content: center; padding: 34px 34px 0; margin-top: auto">
+<img loading="lazy" decoding="async" src="assets/screenshots/referral-v3.jpg" alt="Invite friends screen with a personal code" style="width: min(100%, 240px); height: auto; align-self: flex-start; border-radius: 26px; border: 1px solid rgba(255,255,255,.26); transform: rotate(5deg)">
+</div>
+</article>
+
+<article class="span2 card rv" style="border: 1px solid rgba(227,181,86,.5); border-radius: 32px; background: #0D0B06; padding: 38px; display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 32px">
+<div style="flex: 1 1 320px; min-width: 0">
+<p style="margin: 0; font-size: 12px; letter-spacing: 3px; color: var(--accent); font-weight: 800">06 · JOURNEY</p>
+<h3 style="margin: 16px 0 0; font-family: 'Unbounded', sans-serif; font-weight: 800; font-size: clamp(26px, 2.8vw, 40px); line-height: 1.08">Level up your name.</h3>
+<p style="margin: 14px 0 0; max-width: 440px; color: #C9C5BA">Everything you do earns XP. Unlock titles and avatar frames that show how far you have come.</p>
+</div>
+<div style="flex: 1 1 320px; min-width: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px">
+<div style="border-top: 2px solid var(--accent); padding-top: 16px">
+<div style="font-family: 'Unbounded', sans-serif; font-weight: 800; font-size: clamp(36px, 4vw, 60px); line-height: 1">30</div>
+<div style="margin-top: 8px; font-size: 13px; color: #C9C5BA">achievements</div>
+</div>
+<div style="border-top: 2px solid var(--accent); padding-top: 16px">
+<div style="font-family: 'Unbounded', sans-serif; font-weight: 800; font-size: clamp(36px, 4vw, 60px); line-height: 1">9</div>
+<div style="margin-top: 8px; font-size: 13px; color: #C9C5BA">titles</div>
+</div>
+<div style="border-top: 2px solid var(--accent); padding-top: 16px">
+<div style="font-family: 'Unbounded', sans-serif; font-weight: 800; font-size: clamp(36px, 4vw, 60px); line-height: 1">8</div>
+<div style="margin-top: 8px; font-size: 13px; color: #C9C5BA">frames</div>
+</div>
+</div>
+</article>
+
+<article class="card rv" style="border: 1px solid rgba(255,255,255,.16); border-radius: 32px; background: #0B0B0E; padding: 34px; display: flex; flex-direction: column; justify-content: space-between; gap: 28px">
+<div>
+<p style="margin: 0; font-size: 12px; letter-spacing: 3px; color: var(--accent); font-weight: 800">07 · TASKS</p>
+<h3 style="margin: 16px 0 0; font-family: 'Unbounded', sans-serif; font-weight: 800; font-size: 24px; line-height: 1.15">Points for showing up.</h3>
+<p style="margin: 12px 0 0; color: #C9C5BA; font-size: 15px">Follow, like and repost Chevrette on X. Every task adds to your balance.</p>
+</div>
+<div style="font-family: 'Unbounded', sans-serif; font-weight: 800; font-size: 44px; line-height: 1; color: var(--accent)">+100</div>
+</article>
+
+</div>
+</section>
+
+<!-- HOW IT STARTS -->
+<section style="max-width: 1320px; margin: 0 auto; padding: clamp(80px, 10vw, 150px) 24px 0">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 0 32px">
+<div style="padding: 0 0 34px; border-bottom: 1px solid rgba(255,255,255,.18)">
+<div style="font-family: 'Unbounded', sans-serif; font-weight: 800; font-size: clamp(110px, 14vw, 210px); line-height: .9; color: #F4F1EA">1</div>
+<h3 style="margin: 18px 0 0; font-family: 'Unbounded', sans-serif; font-size: 22px; font-weight: 800">Install the app</h3>
+<p style="margin: 10px 0 0; color: #C9C5BA; font-size: 15px">Free on Google Play. Sign up with Google or email in under a minute.</p>
+</div>
+<div style="padding: 0 0 34px; border-bottom: 1px solid rgba(255,255,255,.18)">
+<div style="font-family: 'Unbounded', sans-serif; font-weight: 800; font-size: clamp(110px, 14vw, 210px); line-height: .9; color: #F4F1EA">2</div>
+<h3 style="margin: 18px 0 0; font-family: 'Unbounded', sans-serif; font-size: 22px; font-weight: 800">Claim every day</h3>
+<p style="margin: 10px 0 0; color: #C9C5BA; font-size: 15px">Collect your points, solve the word, finish tasks and confirm your survival.</p>
+</div>
+<div style="padding: 0 0 34px; border-bottom: 1px solid rgba(255,255,255,.18)">
+<div style="font-family: 'Unbounded', sans-serif; font-weight: 800; font-size: clamp(110px, 14vw, 210px); line-height: .9; color: var(--accent)">3</div>
+<h3 style="margin: 18px 0 0; font-family: 'Unbounded', sans-serif; font-size: 22px; font-weight: 800">Leave your mark</h3>
+<p style="margin: 10px 0 0; color: #C9C5BA; font-size: 15px">Forge your star, lift your country and climb the Journey ranks.</p>
+</div>
+</div>
+</section>
+
+<!-- NFT -->
+<section id="nft" style="padding: clamp(80px, 10vw, 150px) 0 0; overflow: hidden">
+<div style="max-width: 1320px; margin: 0 auto; padding: 0 24px; display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 24px">
+<div style="flex: 1 1 460px; min-width: 0">
+<p style="margin: 0; font-size: 12px; letter-spacing: 4px; color: var(--accent); font-weight: 800">NFT · MINTING LIVE</p>
+<h2 class="rv" style="margin: 16px 0 0; font-family: 'Unbounded', sans-serif; font-weight: 800; font-size: clamp(34px, 5.4vw, 80px); line-height: 1; letter-spacing: -0.03em">Genesis<br>and Premium.</h2>
+</div>
+<div style="flex: 0 1 380px; min-width: 0">
+<p style="margin: 0; color: #C9C5BA">Two collectible art collections on Ethereum. Premium is 222 hand-crafted pieces.</p>
+<a href="nft.html" style="margin-top: 20px; display: inline-flex; align-items: center; gap: 10px; min-height: 54px; padding: 0 26px; border: 1px solid rgba(255,255,255,.3); color: #F4F1EA; border-radius: 100px; font-weight: 800; text-decoration: none">
+Explore the collection
+<svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+</a>
+</div>
+</div>
+<div style="margin-top: clamp(48px, 7vw, 100px); display: flex; justify-content: center; align-items: center; padding: 3vw 0 6vw">
+<img loading="lazy" decoding="async" src="assets/nft-preview/preview-01.webp" alt="Genesis NFT: cosmic goat in a denim jacket" style="width: 27vw; max-width: 330px; aspect-ratio: 1; object-fit: cover; border-radius: 2.2vw; transform: rotate(-9deg) translateY(2.4vw); border: 3px solid #F4F1EA; box-sizing: border-box">
+<img loading="lazy" decoding="async" src="assets/nft-premium-preview/premium-001.webp" alt="Premium NFT: goat in a knitted hat" style="width: 27vw; max-width: 330px; aspect-ratio: 1; object-fit: cover; border-radius: 2.2vw; margin-left: -3vw; transform: rotate(-3deg); border: 3px solid #F4F1EA; box-sizing: border-box; position: relative">
+<img loading="lazy" decoding="async" src="assets/nft-preview/preview-07.webp" alt="Genesis NFT: cosmic goat in a plaid shirt" style="width: 27vw; max-width: 330px; aspect-ratio: 1; object-fit: cover; border-radius: 2.2vw; margin-left: -3vw; transform: rotate(3deg); border: 3px solid #F4F1EA; box-sizing: border-box; position: relative">
+<img loading="lazy" decoding="async" src="assets/nft-premium-preview/premium-112.webp" alt="Premium NFT: goat in a wide hat" style="width: 27vw; max-width: 330px; aspect-ratio: 1; object-fit: cover; border-radius: 2.2vw; margin-left: -3vw; transform: rotate(9deg) translateY(2.4vw); border: 3px solid #F4F1EA; box-sizing: border-box; position: relative">
+</div>
+</section>
+
+<!-- COMMUNITY -->
+<section id="community" style="max-width: 1320px; margin: 0 auto; padding: clamp(60px, 8vw, 120px) 24px 0; display: flex; flex-wrap: wrap; gap: 48px">
+<div style="flex: 1 1 420px; min-width: 0">
+<p style="margin: 0; font-size: 12px; letter-spacing: 4px; color: var(--accent); font-weight: 800">COMMUNITY</p>
+<h2 class="rv" style="margin: 16px 0 0; font-family: 'Unbounded', sans-serif; font-weight: 800; font-size: clamp(34px, 4.6vw, 68px); line-height: 1; letter-spacing: -0.03em">Grown by friends, not by noise.</h2>
+<p style="margin: 20px 0 0; max-width: 480px; color: #C9C5BA">Chevrette spreads from one person to the next. Follow along, share ideas and tell us what to build.</p>
+<div style="margin-top: 40px; padding: 30px; border-radius: 28px; background: #EDEAE2; color: #060606; max-width: 480px">
+<p style="margin: 0; font-size: 12px; letter-spacing: 3px; color: #3D3A33; font-weight: 800">FOR BRANDS</p>
+<p style="margin: 10px 0 0; font-family: 'Unbounded', sans-serif; font-size: 20px; font-weight: 800; line-height: 1.2">Promote your project to the Chevrette audience.</p>
+<a href="advertise.html" style="margin-top: 20px; display: inline-flex; align-items: center; min-height: 50px; padding: 0 24px; background: #060606; color: #EDEAE2; border-radius: 100px; font-weight: 800; font-size: 14px; text-decoration: none">Advertise with Chevrette</a>
+</div>
+</div>
+<div style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column">
+<a class="row-link" href="https://x.com/chevrette_net" target="_blank" rel="noopener" style="display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 92px; border-top: 1px solid rgba(255,255,255,.2); color: #F4F1EA; text-decoration: none; font-family: 'Unbounded', sans-serif; font-weight: 800; font-size: clamp(24px, 3vw, 40px)">X<span style="font-family: 'Manrope', sans-serif; font-size: 14px; font-weight: 600; color: #A29E94">@chevrette_net</span></a>
+<a class="row-link" href="https://t.me/chevrette_network" target="_blank" rel="noopener" style="display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 92px; border-top: 1px solid rgba(255,255,255,.2); color: #F4F1EA; text-decoration: none; font-family: 'Unbounded', sans-serif; font-weight: 800; font-size: clamp(24px, 3vw, 40px)">Telegram<span style="font-family: 'Manrope', sans-serif; font-size: 14px; font-weight: 600; color: #A29E94">chevrette_network</span></a>
+<a class="row-link" href="https://www.youtube.com/@ChevretteNetwork" target="_blank" rel="noopener" style="display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 92px; border-top: 1px solid rgba(255,255,255,.2); color: #F4F1EA; text-decoration: none; font-family: 'Unbounded', sans-serif; font-weight: 800; font-size: clamp(24px, 3vw, 40px)">YouTube<span style="font-family: 'Manrope', sans-serif; font-size: 14px; font-weight: 600; color: #A29E94">@ChevretteNetwork</span></a>
+<a class="row-link" href="https://www.tiktok.com/@chevrette_network" target="_blank" rel="noopener" style="display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 92px; border-top: 1px solid rgba(255,255,255,.2); color: #F4F1EA; text-decoration: none; font-family: 'Unbounded', sans-serif; font-weight: 800; font-size: clamp(24px, 3vw, 40px)">TikTok<span style="font-family: 'Manrope', sans-serif; font-size: 14px; font-weight: 600; color: #A29E94">@chevrette_network</span></a>
+<a class="row-link" href="https://medium.com/@chevrette.shop" target="_blank" rel="noopener" style="display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 92px; border-top: 1px solid rgba(255,255,255,.2); border-bottom: 1px solid rgba(255,255,255,.2); color: #F4F1EA; text-decoration: none; font-family: 'Unbounded', sans-serif; font-weight: 800; font-size: clamp(24px, 3vw, 40px)">Medium<span style="font-family: 'Manrope', sans-serif; font-size: 14px; font-weight: 600; color: #A29E94">@chevrette.shop</span></a>
+</div>
+</section>
+
+<!-- FINAL CTA -->
+<section style="position: relative; margin-top: clamp(80px, 10vw, 150px); height: clamp(520px, 52vw, 760px); overflow: hidden; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 0 24px">
+<div aria-hidden="true" style="position: absolute; left: 50%; top: 50%; width: max(120vw, 900px); aspect-ratio: 1; transform: translate(-50%, -50%) perspective(1500px) rotateX(58deg)">
+<img loading="lazy" decoding="async" class="spin" src="assets/home/galaxy-v1.webp" alt="" style="width: 100%; height: 100%; display: block">
+</div>
+<h2 class="rv" style="position: relative; margin: 0; font-family: 'Unbounded', sans-serif; font-weight: 800; font-size: clamp(40px, 9.4vw, 140px); line-height: .92; letter-spacing: -0.04em">YOUR STAR<br><span style="color: var(--accent)">IS WAITING.</span></h2>
+<a href="https://play.google.com/store/apps/details?id=com.chevrette.app&amp;pcampaignid=web_share" target="_blank" rel="noopener" style="position: relative; margin-top: clamp(28px, 3.4vw, 48px); display: inline-flex; align-items: center; gap: 12px; min-height: 66px; padding: 0 38px; background: var(--accent); color: #0A0804; border-radius: 100px; font-weight: 800; font-size: 18px; text-decoration: none">
+<svg aria-hidden="true" viewBox="0 0 24 24" width="19" height="19" fill="currentColor"><path d="M5 3.5v17a.5.5 0 0 0 .76.43l14-8.5a.5.5 0 0 0 0-.86l-14-8.5A.5.5 0 0 0 5 3.5z"></path></svg>
+Get it on Google Play
+</a>
+</section>
+
+<!-- FOOTER -->
+<footer style="border-top: 1px solid rgba(255,255,255,.14)">
+<div style="max-width: 1320px; margin: 0 auto; padding: 64px 24px 0; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 40px">
+<div style="flex: 1 1 280px; min-width: 0">
+<img loading="lazy" decoding="async" src="assets/home/mark.png" alt="Chevrette" style="width: 48px; height: 48px; object-fit: contain">
+<p style="margin: 16px 0 0; max-width: 320px; color: #A29E94; font-size: 14px">A digital ecosystem built on quality, simplicity and long-term growth.</p>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 56px; font-size: 14px">
+<div style="display: flex; flex-direction: column; gap: 12px">
+<span style="font-size: 12px; letter-spacing: 3px; color: #A29E94; font-weight: 800">PRODUCT</span>
+<a href="features.html" style="color: #E6E2D8; text-decoration: none">Features</a>
+<a href="roadmap.html" style="color: #E6E2D8; text-decoration: none">Roadmap</a>
+<a href="whitepaper.html" style="color: #E6E2D8; text-decoration: none">White Paper</a>
+<a href="nft.html" style="color: #E6E2D8; text-decoration: none">NFT</a>
+</div>
+<div style="display: flex; flex-direction: column; gap: 12px">
+<span style="font-size: 12px; letter-spacing: 3px; color: #A29E94; font-weight: 800">COMPANY</span>
+<a href="about.html" style="color: #E6E2D8; text-decoration: none">About</a>
+<a href="faq.html" style="color: #E6E2D8; text-decoration: none">FAQ</a>
+<a href="contact.html" style="color: #E6E2D8; text-decoration: none">Contact</a>
+</div>
+<div style="display: flex; flex-direction: column; gap: 12px">
+<span style="font-size: 12px; letter-spacing: 3px; color: #A29E94; font-weight: 800">LEGAL</span>
+<a href="privacy.html" style="color: #E6E2D8; text-decoration: none">Privacy Policy</a>
+<a href="terms.html" style="color: #E6E2D8; text-decoration: none">Terms of Service</a>
+</div>
+</div>
+</div>
+<p style="max-width: 1320px; margin: 48px auto 0; padding: 0 24px; color: #A29E94; font-size: 13px">© 2026 Chevrette. All rights reserved. Currently available for Android only.</p>
+<div aria-hidden="true" style="margin-top: 28px; height: 7.6vw; overflow: hidden; text-align: center; font-family: 'Unbounded', sans-serif; font-weight: 800; font-size: 12.4vw; line-height: 1; letter-spacing: -0.02em; white-space: nowrap; color: #17171C">CHEVRETTE</div>
+</footer>
+
+</div>
+<script>
+(function(){
+  var d=document, root=d.documentElement; root.classList.add('js');
+  var menu=d.getElementById('menu'), open=d.querySelector('.burger[aria-controls]');
+  function set(o){ menu.classList.toggle('open',o); d.body.style.overflow=o?'hidden':''; open.setAttribute('aria-expanded',o?'true':'false'); }
+  open.addEventListener('click',function(){ set(true); });
+  menu.addEventListener('click',function(e){ if(e.target.closest('[data-close]')||e.target.closest('a')) set(false); });
+  d.addEventListener('keydown',function(e){ if(e.key==='Escape') set(false); });
+  var els=d.querySelectorAll('.rv');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(en){ en.forEach(function(x){ if(x.isIntersecting){ x.target.classList.add('in'); io.unobserve(x.target); } }); },{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+    els.forEach(function(el){ io.observe(el); });
+  } else { els.forEach(function(el){ el.classList.add('in'); }); }
+})();
+</script>
 </body>
 </html>
