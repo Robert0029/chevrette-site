@@ -427,30 +427,21 @@
     if(taken){
       var base = pl.data.color || col;
       g.appendChild(el("path",{d:rpath(pl.x0+3,pl.y0+4,pl.x1+3,pl.y1+4,rr[0],rr[1],rr[2],rr[3]),fill:"rgba(0,0,0,.45)"}));
-      var body=el("path",{d:d,fill:dk(base,0.72),stroke:col,"stroke-width":pl.premium?2.2:1.6}); body.setAttribute("filter","url(#soft)"); g.appendChild(body);
-      g.appendChild(el("path",{d:d,fill:"none",stroke:lt(base,0.1),"stroke-width":pl.premium?1.8:1.2,opacity:.9}));
-      // windows
-      if(pl.w>58&&pl.h>56){var sbx=pl.mx-21,sbxe=pl.mx+21,sby=pl.my-20,sbye=pl.my+20;
-        for(var gx=pl.x0+11;gx<pl.x1-9;gx+=12){for(var gy=pl.y0+16;gy<pl.y1-9;gy+=12){
-          if(gx>sbx-7&&gx<sbxe+2&&gy>sby-7&&gy<sbye+2)continue; if(rnd()<0.5)continue;
-          var li=rnd();g.appendChild(el("rect",{x:gx,y:gy,width:4,height:5,rx:1,fill:li>0.45?"#ffd98a":"#6b7490",opacity:li>0.45?(0.35+rnd()*0.5).toFixed(2):0.3}));}}}
-      // logo tile
-      var ts=Math.max(26,Math.min(Math.min(pl.w,pl.h)*(pl.w>86&&pl.h>98?0.42:0.56),64));
-      var tx=pl.mx-ts/2, ty=pl.my-ts/2-(pl.h>116?8:0);
+      // clip to the plot shape so the logo fills the whole block
+      var cid="clip"+pl.no;
+      var cp=el("clipPath",{id:cid}); cp.appendChild(el("path",{d:d})); g.appendChild(cp);
       if(pl.data.logo_url){
-        var cid="clip"+pl.no;
-        var cp=el("clipPath",{id:cid}); cp.appendChild(el("rect",{x:tx,y:ty,width:ts,height:ts,rx:ts*0.26})); g.appendChild(cp);
-        g.appendChild(el("rect",{x:tx,y:ty,width:ts,height:ts,rx:ts*0.26,fill:"#000"}));
-        var im=el("image",{x:tx,y:ty,width:ts,height:ts,"clip-path":"url(#"+cid+")",preserveAspectRatio:"xMidYMid slice"});
+        g.appendChild(el("path",{d:d,fill:dk(base,0.45)}));
+        var im=el("image",{x:pl.x0,y:pl.y0,width:pl.w,height:pl.h,"clip-path":"url(#"+cid+")",preserveAspectRatio:"xMidYMid slice"});
         im.setAttributeNS("http://www.w3.org/1999/xlink","href",pl.data.logo_url); im.setAttribute("href",pl.data.logo_url);
         g.appendChild(im);
       } else {
-        var sign=el("rect",{x:tx,y:ty,width:ts,height:ts,rx:ts*0.26,fill:base}); sign.setAttribute("filter","url(#glow)"); g.appendChild(sign);
-        g.appendChild(el("rect",{x:tx,y:ty,width:ts,height:ts,rx:ts*0.26,fill:base,stroke:lt(base,0.4),"stroke-width":1.3}));
-        var mono=el("text",{x:pl.mx,y:ty+ts*0.66,"text-anchor":"middle",fill:"#0b0d16","font-size":(ts*0.46).toFixed(0),"font-weight":"800","font-family":"Arial"});
+        var bg=el("path",{d:d,fill:base}); bg.setAttribute("filter","url(#soft)"); g.appendChild(bg);
+        var ms=Math.min(pl.w,pl.h)*0.52;
+        var mono=el("text",{x:pl.mx,y:pl.my+ms*0.34,"text-anchor":"middle",fill:"#0b0d16","font-size":ms.toFixed(0),"font-weight":"800","font-family":"Arial"});
         mono.textContent=(initials(pl.data.shop_name)||"★").toUpperCase(); g.appendChild(mono);
       }
-      if(pl.data.shop_name&&pl.h>118&&pl.w>92){var nm=el("text",{x:pl.mx,y:ty+ts+20,"text-anchor":"middle",fill:"#f0ece0","font-size":"13","font-weight":"700","font-family":"Arial"});nm.textContent=pl.data.shop_name;g.appendChild(nm);}
+      g.appendChild(el("path",{d:d,fill:"none",stroke:col,"stroke-width":pl.premium?2.6:1.8}));
       // discount badge
       if(pl.data.discount){
         var bw=Math.min(54,pl.w-14), bx=pl.x1-bw-6, by=pl.y0+6;
