@@ -551,7 +551,11 @@
     pop.style.left=x+"px";pop.style.top=y+"px";
   }
   document.getElementById("popX").onclick=function(){pop.classList.remove("show");};
-  document.addEventListener("click",function(ev){if(!pop.contains(ev.target)&&!(ev.target.closest&&ev.target.closest(".plot")))pop.classList.remove("show");});
+  document.addEventListener("click",function(ev){
+    var t=document.elementFromPoint(ev.clientX, ev.clientY);
+    var onPlot=t&&t.closest&&t.closest(".plot");
+    if(t&&!pop.contains(t)&&!onPlot)pop.classList.remove("show");
+  });
 
   // ---------- FORM MODAL ----------
   var modal=document.getElementById("modal"), form=document.getElementById("cityForm"), fmsg=document.getElementById("formmsg");
