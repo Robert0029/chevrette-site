@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Chevrette City — ваш магазин на карте</title>
+<meta name="description" content="Chevrette City — арендуйте участок на карте Chevrette и покажите свой магазин сообществу. Всего 100 участков.">
+<meta property="og:title" content="Chevrette City">
+<meta property="og:description" content="Живая карта магазинов. Арендуйте участок, поставьте логотип и ведите тысячи исследователей прямо в ваш магазин.">
+<meta property="og:url" content="https://chevrette.shop/ru/city.html">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#030304">
+<link rel="icon" href="/assets/icons/favicon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --black:#030304; --surface:#0B0B0E; --surface2:#121216; --surface3:#1D1D23;
+    --gold:#E3B556; --gold-hi:#F3D48B; --bone:#EDEAE2; --white:#F4F1EA;
+    --txt2:#C9C5BA; --txt3:#8A867C;
+    --border:rgba(255,255,255,.08); --glass:rgba(255,255,255,.04); --glassb:rgba(255,255,255,.09);
+    --disp:'Unbounded', system-ui, sans-serif; --body:'Manrope', system-ui, sans-serif;
+    --pill:999px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{background:#000;scroll-behavior:smooth;}
+  body{background:var(--black);color:var(--white);font-family:var(--body);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+  a{color:inherit;text-decoration:none;}
+  .disp{font-family:var(--disp);font-weight:800;text-transform:uppercase;}
+  .gold{color:var(--gold);}
+  .wrap{max-width:1280px;margin:0 auto;}
+  .glass{background:var(--glass);border:1px solid var(--glassb);border-radius:16px;}
+
+  /* NAV */
+  nav{position:sticky;top:0;z-index:40;height:68px;display:flex;align-items:center;justify-content:space-between;
+    padding:0 32px;border-bottom:1px solid var(--border);background:rgba(3,3,4,.86);backdrop-filter:blur(12px);}
+  .brand{display:flex;align-items:center;gap:11px;}
+  .brand img{width:30px;height:30px;object-fit:contain;}
+  .brand b{font-family:var(--disp);font-weight:800;font-size:16px;letter-spacing:.14em;}
+  .menu{display:flex;gap:24px;font-size:13.5px;color:var(--txt2);font-weight:600;}
+  .menu a:hover{color:var(--white);}
+  .menu a.active{color:var(--gold);}
+  .nav-right{display:flex;align-items:center;gap:14px;}
+  .lang{font-size:12px;color:var(--txt3);font-weight:700;letter-spacing:.08em;}
+  .btn-gold{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:#0A0804;
+    font-weight:800;font-size:13px;letter-spacing:.03em;padding:11px 20px;border-radius:var(--pill);text-transform:uppercase;border:none;cursor:pointer;}
+  .btn-gold:hover{background:var(--gold-hi);}
+  .hamb{display:none;background:none;border:none;color:var(--white);font-size:24px;cursor:pointer;line-height:1;}
+  .langsw{display:flex;border:1px solid rgba(255,255,255,.18);border-radius:var(--pill);overflow:hidden;font-size:12px;font-weight:800;letter-spacing:.06em;}
+  .langsw a{padding:8px 13px;color:var(--txt2);}
+  .langsw a.on{background:var(--white);color:#030304;}
+  .mmenu{display:none;position:fixed;top:68px;left:0;right:0;z-index:39;background:rgba(6,7,13,.985);backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--border);padding:12px 24px 20px;flex-direction:column;}
+  .mmenu.open{display:flex;}
+  .mmenu a{padding:14px 2px;font-size:16px;font-weight:700;color:var(--txt2);border-bottom:1px solid rgba(255,255,255,.06);}
+  .mmenu a.active{color:var(--gold);}
+  .mmlang{display:flex;gap:8px;margin-top:14px;border-bottom:none !important;}
+  .mmlang a{border:1px solid var(--glassb);border-radius:var(--pill);padding:8px 16px;font-size:13px;font-weight:800;}
+  .mmlang a.on{background:var(--white);color:#030304;}
+
+  /* HERO */
+  .hero{position:relative;padding:52px 32px 30px;text-align:center;}
+  .eyebrow{font-size:12px;font-weight:800;letter-spacing:.3em;color:var(--gold);text-transform:uppercase;}
+  .hero h1{font-family:var(--disp);font-weight:800;font-size:clamp(40px,6.6vw,76px);line-height:.98;letter-spacing:-.03em;text-transform:none;margin:16px 0 0;}
+  .hero p{max-width:620px;margin:18px auto 0;font-size:18px;color:var(--txt2);}
+  .opening{font-size:13px;letter-spacing:.24em;color:var(--txt2);text-transform:uppercase;font-weight:700;margin-top:30px;}
+  .count{display:flex;gap:14px;justify-content:center;margin:16px 0 6px;flex-wrap:wrap;}
+  .cbox{width:112px;padding:16px 0;border-radius:18px;background:var(--glass);border:1px solid var(--glassb);}
+  .cbox .n{font-family:var(--disp);font-weight:800;font-size:48px;line-height:1;color:var(--gold);}
+  .cbox .l{font-size:11px;letter-spacing:.2em;color:var(--txt3);margin-top:7px;text-transform:uppercase;font-weight:700;}
+  .csep{align-self:center;font-family:var(--disp);font-size:34px;color:var(--txt3);}
+  .founding{display:inline-flex;align-items:center;gap:9px;margin-top:24px;background:linear-gradient(135deg,rgba(227,181,86,.2),rgba(227,181,86,.1));
+    border:1px solid rgba(227,181,86,.5);color:var(--gold-hi);font-weight:800;font-size:15px;padding:12px 22px;border-radius:var(--pill);}
+
+  /* TICKER */
+  .ticker{margin-top:28px;background:var(--gold);color:#0A0804;transform:rotate(-1.2deg) scale(1.03);padding:12px 0;overflow:hidden;white-space:nowrap;}
+  .ticker .run{display:inline-block;font-family:var(--disp);font-weight:800;font-size:16px;letter-spacing:.14em;animation:scroll 26s linear infinite;}
+  @keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+  /* MAP */
+  .sec{padding:52px 32px 10px;}
+  .sec h2{font-family:var(--disp);font-weight:800;font-size:clamp(26px,3vw,34px);}
+  .sec .lead{color:var(--txt3);font-size:14px;max-width:460px;margin-top:6px;}
+  .mapwrap{position:relative;margin-top:20px;border-radius:24px;overflow:hidden;border:1px solid var(--glassb);background:#06070f;touch-action:none;}
+  #citymap{display:block;width:100%;height:auto;cursor:grab;}
+  #citymap.drag{cursor:grabbing;}
+  .mapcount{position:absolute;top:16px;right:16px;z-index:3;background:rgba(6,7,15,.75);border:1px solid rgba(227,181,86,.35);
+    border-radius:13px;padding:9px 15px;text-align:right;pointer-events:none;}
+  .mapcount .b{font-family:var(--disp);font-weight:800;font-size:19px;color:var(--gold);}
+  .mapcount .l{font-size:10px;letter-spacing:.16em;color:var(--txt3);text-transform:uppercase;}
+  .zoom{position:absolute;left:16px;bottom:16px;z-index:3;display:flex;flex-direction:column;gap:8px;}
+  .zoom button{width:42px;height:42px;border-radius:12px;background:rgba(6,7,15,.8);border:1px solid var(--glassb);color:var(--white);
+    font-size:20px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;}
+  .zoom button:hover{border-color:var(--gold);color:var(--gold);}
+  .hint{position:absolute;left:0;right:0;bottom:16px;text-align:center;z-index:2;font-size:12px;color:var(--txt3);pointer-events:none;}
+  .tiers{display:flex;gap:12px;margin-top:18px;flex-wrap:wrap;}
+  .tier{flex:1 1 200px;border-radius:16px;padding:15px 18px;background:var(--glass);border:1px solid var(--glassb);}
+  .tier .d{display:flex;align-items:center;gap:8px;font-weight:800;font-size:13px;text-transform:uppercase;letter-spacing:.04em;}
+  .tier .dot{width:12px;height:12px;border-radius:4px;}
+  .tier .p{font-family:var(--disp);font-weight:800;font-size:17px;margin-top:7px;}
+  .tier .p small{font-size:12px;color:var(--txt3);font-weight:600;text-transform:none;letter-spacing:0;}
+
+  /* HOW + INFO */
+  .grid2{display:grid;grid-template-columns:1.05fr 1fr;gap:28px;padding:54px 32px;align-items:start;}
+  .steps h2{font-family:var(--disp);font-weight:800;font-size:28px;margin-bottom:22px;}
+  .st{display:flex;gap:16px;margin-bottom:20px;}
+  .st .num{font-family:var(--disp);font-weight:800;font-size:24px;color:var(--gold);min-width:42px;}
+  .st h3{font-size:17px;font-weight:800;}
+  .st p{color:var(--txt2);font-size:15px;margin-top:3px;}
+  .infocard{padding:26px;border-radius:22px;}
+  .infocard h3{font-family:var(--disp);font-weight:800;font-size:22px;}
+  .infocard p{color:var(--txt2);font-size:15px;margin-top:10px;}
+  .infocard .pts{margin-top:16px;display:flex;flex-direction:column;gap:10px;}
+  .infocard .pt{display:flex;gap:10px;font-size:14px;color:var(--txt2);}
+  .infocard .pt b{color:var(--white);}
+  .infocard .cta{margin-top:22px;}
+  .infocard .cta button{width:100%;justify-content:center;height:52px;font-size:14px;}
+
+  /* FOOTER */
+  footer{border-top:1px solid var(--border);padding:32px;display:flex;align-items:center;justify-content:space-between;color:var(--txt3);font-size:13px;flex-wrap:wrap;gap:12px;}
+  footer .brand b{font-size:15px;}
+
+  /* POPUP (shop card) */
+  .pop{position:fixed;z-index:60;width:300px;max-width:calc(100vw - 32px);background:var(--surface2);border:1px solid var(--glassb);
+    border-radius:18px;padding:18px;box-shadow:0 30px 70px -20px rgba(0,0,0,.8);display:none;}
+  .pop.show{display:block;}
+  .pop .top{display:flex;align-items:center;gap:12px;}
+  .pop .logo{width:52px;height:52px;border-radius:13px;flex:none;background:#000;object-fit:cover;}
+  .pop .nm{font-weight:800;font-size:17px;}
+  .pop .cat{font-size:12px;color:var(--gold);text-transform:uppercase;letter-spacing:.06em;font-weight:700;}
+  .pop .desc{font-size:14px;color:var(--txt2);margin-top:12px;}
+  .pop .disc{display:inline-block;margin-top:10px;background:#e4453a;color:#fff;font-weight:800;font-size:12px;padding:5px 11px;border-radius:8px;letter-spacing:.03em;}
+  .pop .go{display:block;text-align:center;margin-top:14px;background:var(--gold);color:#0A0804;font-weight:800;padding:11px;border-radius:11px;font-size:13px;text-transform:uppercase;}
+  .pop .x{position:absolute;top:10px;right:12px;color:var(--txt3);cursor:pointer;font-size:18px;background:none;border:none;}
+
+  /* MODAL (application form) */
+  .modal{position:fixed;inset:0;z-index:80;background:rgba(2,3,8,.72);backdrop-filter:blur(4px);display:none;align-items:flex-start;justify-content:center;padding:40px 16px;overflow:auto;}
+  .modal.show{display:flex;}
+  .sheet{width:100%;max-width:460px;background:var(--surface2);border:1px solid var(--glassb);border-radius:22px;padding:26px;position:relative;}
+  .sheet h3{font-family:var(--disp);font-weight:800;font-size:22px;text-transform:uppercase;}
+  .sheet .sub{color:var(--txt3);font-size:13px;margin:6px 0 16px;}
+  .sheet .x{position:absolute;top:16px;right:18px;color:var(--txt3);cursor:pointer;font-size:22px;background:none;border:none;}
+  .field{margin-bottom:12px;}
+  .field label{font-size:11px;letter-spacing:.12em;color:var(--txt3);text-transform:uppercase;font-weight:700;display:block;margin-bottom:6px;}
+  .field input,.field select,.field textarea{width:100%;background:rgba(255,255,255,.03);border:1px solid var(--glassb);border-radius:12px;
+    padding:13px 14px;color:var(--white);font-size:14px;font-family:var(--body);color-scheme:dark;}
+  .field select{appearance:none;-webkit-appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--txt3) 50%),linear-gradient(135deg,var(--txt3) 50%,transparent 50%);background-position:calc(100% - 18px) 20px,calc(100% - 13px) 20px;background-size:5px 5px,5px 5px;background-repeat:no-repeat;}
+  .field select option{background:#15151A;color:#F4F1EA;}
+  .field textarea{min-height:76px;resize:vertical;}
+  .field input:focus,.field select,.field textarea:focus{outline:none;border-color:var(--gold);}
+  .consent{display:flex;gap:9px;align-items:flex-start;font-size:12px;color:var(--txt3);margin:4px 0 14px;}
+  .hp{position:absolute;left:-9999px;top:-9999px;}
+  .submit{width:100%;justify-content:center;height:52px;font-size:14px;}
+  .formmsg{font-size:13px;margin-top:12px;text-align:center;min-height:18px;}
+  .formmsg.ok{color:#7fd38a;} .formmsg.err{color:#e4766b;}
+
+  @media (max-width:760px){
+    nav{padding:0 16px;height:58px;} .menu{display:none;} .langsw{display:none;} .hamb{display:block;} .mmenu{top:58px;}
+    .hero{padding:34px 16px 24px;} .hero p{font-size:15px;}
+    .count{gap:8px;} .cbox{width:68px;padding:12px 0;border-radius:14px;} .cbox .n{font-size:30px;} .cbox .l{font-size:9px;} .csep{font-size:24px;}
+    .founding{font-size:12px;padding:10px 15px;}
+    .sec{padding:36px 16px 8px;} .grid2{grid-template-columns:1fr;gap:22px;padding:38px 16px;}
+    footer{padding:24px 16px;justify-content:center;text-align:center;}
+    .zoom button{width:38px;height:38px;}
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="brand" href="index.html"><img src="/assets/home/mark.png" alt=""><b>Chevrette</b></a>
+  <div class="menu">
+    <a href="index.html#survivor">Выживание</a>
+    <a href="features.html">Что внутри</a>
+    <a href="nft.html">NFT</a>
+    <a href="index.html#community">Сообщество</a>
+    <a href="roadmap.html">Дорожная карта</a>
+    <a class="active" href="city.html">City</a>
+    <a href="faq.html">FAQ</a>
+  </div>
+  <div class="nav-right">
+    <div class="langsw"><a href="/city.html">EN</a><a class="on" href="/ru/city.html">RU</a></div>
+    <a class="btn-gold getapp" href="https://play.google.com/store/apps/details?id=com.chevrette.app" target="_blank" rel="noopener">▶ Скачать</a>
+    <button class="hamb" id="hamb" aria-label="Menu">☰</button>
+  </div>
+</nav>
+<div class="mmenu" id="mmenu">
+  <a href="index.html#survivor">Выживание</a>
+  <a href="features.html">Что внутри</a>
+  <a href="nft.html">NFT</a>
+  <a href="index.html#community">Сообщество</a>
+  <a href="roadmap.html">Дорожная карта</a>
+  <a class="active" href="city.html">City</a>
+  <a href="faq.html">FAQ</a>
+  <div class="mmlang"><a href="/city.html">EN</a><a class="on" href="/ru/city.html">RU</a></div>
+</div>
+
+<!-- HERO -->
+<div class="hero wrap">
+  <div class="eyebrow">Chevrette City · Скоро открытие</div>
+  <h1>Ваш магазин<br>на <span class="gold">карте.</span></h1>
+  <p>Живой город из 100 участков. Арендуйте место, поставьте логотип и ведите тысячи исследователей Chevrette прямо в ваш магазин.</p>
+  <div class="opening">До открытия осталось</div>
+  <div class="count" id="count">
+    <div class="cbox"><div class="n" id="cd-d">—</div><div class="l">Дни</div></div>
+    <div class="csep">:</div>
+    <div class="cbox"><div class="n" id="cd-h">—</div><div class="l">Часы</div></div>
+    <div class="csep">:</div>
+    <div class="cbox"><div class="n" id="cd-m">—</div><div class="l">Мин</div></div>
+    <div class="csep">:</div>
+    <div class="cbox"><div class="n" id="cd-s">—</div><div class="l">Сек</div></div>
+  </div>
+  <div class="founding">🎁 Заявка сейчас → 2 недели БЕСПЛАТНО для первых магазинов</div>
+</div>
+
+<!-- TICKER -->
+<div class="ticker"><span class="run" id="run"></span></div>
+
+<!-- MAP -->
+<div class="sec wrap">
+  <h2>Карта города</h2>
+  <div class="lead">Каждый участок — реальный магазин. Чем ближе к центру, тем больше внимания и выше цена. Нажмите на свободный участок, чтобы занять его.</div>
+  <div class="mapwrap" id="mapwrap">
+    <div class="mapcount"><div class="b"><span id="takenN">0</span> / 100</div><div class="l">участков занято</div></div>
+    <div class="zoom">
+      <button id="zin" aria-label="Zoom in">+</button>
+      <button id="zout" aria-label="Zoom out">−</button>
+      <button id="zreset" aria-label="Reset" style="font-size:14px;">⟳</button>
+    </div>
+    <svg id="citymap" viewBox="0 0 1200 820" preserveAspectRatio="xMidYMid meet"></svg>
+    <div class="hint">Двигайте карту · колесо или щипок — зум · нажмите на участок</div>
+  </div>
+  <div class="tiers">
+    <div class="tier"><div class="d"><span class="dot" style="background:#E3B556"></span>Центр города</div><div class="p">Премиум <small>· высшая цена</small></div></div>
+    <div class="tier"><div class="d"><span class="dot" style="background:#b98be0"></span>Средний пояс</div><div class="p">Средне <small>· хороший трафик</small></div></div>
+    <div class="tier"><div class="d"><span class="dot" style="background:#6fb6c9"></span>Окраина</div><div class="p">Старт <small>· низкая цена</small></div></div>
+    <div class="tier"><div class="d"><span class="dot" style="background:#3fae6a"></span>Парки</div><div class="p">Свободно <small>· атмосфера</small></div></div>
+  </div>
+</div>
+
+<!-- HOW + INFO -->
+<div class="grid2 wrap">
+  <div class="steps">
+    <h2>Как это работает</h2>
+    <div class="st"><div class="num">01</div><div><h3>Выберите свободный участок</h3><p>Нажмите на участок со знаком «+». Больше и ближе к центру = больше внимания.</p></div></div>
+    <div class="st"><div class="num">02</div><div><h3>Отправьте заявку</h3><p>Заполните короткую форму. Мы ответим, договоримся о цене и сроке (3 месяца / 1 год).</p></div></div>
+    <div class="st"><div class="num">03</div><div><h3>Ваш логотип на карте</h3><p>Логотип заполняет участок. Нажатие на него → карточка с магазином, ссылкой и скидками.</p></div></div>
+    <div class="st"><div class="num">04</div><div><h3>Исследователи заходят к вам</h3><p>Тысячи участников Chevrette гуляют по городу и переходят прямо в ваш магазин.</p></div></div>
+  </div>
+  <div class="infocard glass">
+    <h3>Первые магазины</h3>
+    <p>Мы открываем город ограниченным числом первых мест. Займите одно сейчас — первые <b>2 недели бесплатно</b>.</p>
+    <div class="pts">
+      <div class="pt">🎯 <span>Всего <b>100 участков</b> — навсегда. Редкость настоящая.</span></div>
+      <div class="pt">🏙️ <span>Центральные участки — максимум трафика и высшая цена.</span></div>
+      <div class="pt">🤝 <span>Это реклама, а не спекуляция — место для магазина, а не токен на перепродажу.</span></div>
+      <div class="pt">⏱️ <span>Аренда на срок. Не продлили? Участок возвращается в город.</span></div>
+    </div>
+    <div class="cta"><button class="btn-gold" id="openFormTop">Занять участок →</button></div>
+  </div>
+</div>
+
+<footer>
+  <a class="brand" href="index.html"><img src="/assets/home/mark.png" alt="" style="width:26px;height:26px;"><b>Chevrette</b></a>
+  <div>Chevrette City · Живая карта магазинов · © 2026 Chevrette</div>
+</footer>
+
+<!-- SHOP POPUP -->
+<div class="pop" id="pop">
+  <button class="x" id="popX">×</button>
+  <div class="top"><img class="logo" id="popLogo" alt="" src=""><div><div class="nm" id="popName"></div><div class="cat" id="popCat"></div></div></div>
+  <div class="disc" id="popDisc" style="display:none;"></div>
+  <div class="desc" id="popDesc"></div>
+  <a class="go" id="popGo" target="_blank" rel="noopener">Перейти в магазин →</a>
+</div>
+
+<!-- APPLICATION MODAL -->
+<div class="modal" id="modal">
+  <div class="sheet">
+    <button class="x" id="modalX">×</button>
+    <h3>Занять участок</h3>
+    <div class="sub">Первые магазины, подавшие заявку сейчас, получают 2 недели бесплатно.</div>
+    <form id="cityForm" autocomplete="off">
+      <div class="field"><label>Участок</label><input id="f-plot" name="plot" readonly></div>
+      <div class="field"><label>Название магазина *</label><input name="shop" maxlength="100" placeholder="Ваш магазин" required></div>
+      <div class="field"><label>Сайт / ссылка</label><input name="website" maxlength="300" placeholder="https://…"></div>
+      <div class="field"><label>Категория</label>
+        <select name="category">
+          <option value="">Выберите…</option>
+          <option>Одежда</option><option>Техника и гаджеты</option><option>Еда и напитки</option>
+          <option>Красота</option><option>Игры</option><option>Услуги</option><option>Крипто / Web3</option><option>Другое</option>
+        </select>
+      </div>
+      <div class="field"><label>Ваш контакт (Telegram / email) *</label><input name="contact" maxlength="120" placeholder="@telegram или email" required></div>
+      <div class="field"><label>Сообщение</label><textarea name="message" maxlength="2000" placeholder="Расскажите о магазине…"></textarea></div>
+      <input class="hp" name="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <label class="consent"><input type="checkbox" id="f-consent"><span>Согласен(на), что мои данные используются для связи по этому участку.</span></label>
+      <button type="submit" class="btn-gold submit">Отправить заявку →</button>
+      <div class="formmsg" id="formmsg"></div>
+    </form>
+  </div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  // ---------- CONFIG ----------
+  var SB_URL = "https://qfeadxjmkvljzfpenkvy.supabase.co";
+  var SB_KEY = "sb_publishable_JQorN6JHun4MwObrCQBd_w_FC4JZs-P";
+  var OPENING = new Date("2026-11-25T18:00:00+03:00");   // grand opening (easy to change)
+
+  // ---------- COUNTDOWN ----------
+  function pad(n){return (n<10?"0":"")+n;}
+  function tick(){
+    var diff = Math.max(0, OPENING - new Date());
+    var s=Math.floor(diff/1000), d=Math.floor(s/86400), h=Math.floor(s%86400/3600), m=Math.floor(s%3600/60), ss=s%60;
+    document.getElementById("cd-d").textContent=pad(d);
+    document.getElementById("cd-h").textContent=pad(h);
+    document.getElementById("cd-m").textContent=pad(m);
+    document.getElementById("cd-s").textContent=pad(ss);
+  }
+  tick(); setInterval(tick,1000);
+
+  // ---------- TICKER ----------
+  var t="100 УЧАСТКОВ  ✦  ВАШ ЛОГОТИП НА КАРТЕ  ✦  ВАШ МАГАЗИН В ОДИН КЛИК  ✦  ПЕРВЫЕ МАГАЗИНЫ  ✦  ";
+  document.getElementById("run").textContent = t+t;
+
+  // ---------- MOBILE MENU ----------
+  var hamb=document.getElementById("hamb"), mmenu=document.getElementById("mmenu");
+  if(hamb){hamb.addEventListener("click",function(){var o=mmenu.classList.toggle("open");hamb.textContent=o?"✕":"☰";});}
+
+  // ---------- MAP GENERATION (deterministic, exactly 100 plots) ----------
+  var NS="http://www.w3.org/2000/svg";
+  var svg=document.getElementById("citymap");
+  function el(n,a){var e=document.createElementNS(NS,n);for(var k in a)e.setAttribute(k,a[k]);return e;}
+  var seed=424242; function rnd(){seed=(seed*1664525+1013904223)%4294967296;return seed/4294967296;}
+  function hx(h){h=h.replace("#","");return [parseInt(h.substr(0,2),16),parseInt(h.substr(2,2),16),parseInt(h.substr(4,2),16)];}
+  function mix(h,tt,tg){var a=hx(h);return "rgb("+Math.round(a[0]+(tg[0]-a[0])*tt)+","+Math.round(a[1]+(tg[1]-a[1])*tt)+","+Math.round(a[2]+(tg[2]-a[2])*tt)+")";}
+  function dk(h,tt){return mix(h,tt,[6,8,16]);} function lt(h,tt){return mix(h,tt,[255,255,255]);}
+
+  var A={x0:36,y0:30,x1:1164,y1:790}, CX=(A.x0+A.x1)/2, CY=(A.y0+A.y1)/2;
+  var leaves=[];
+  // 4 quadrants -> a premium core touching the center + 2 splittable rects each
+  function quad(qx0,qy0,qx1,qy1,corner){var w=qx1-qx0,h=qy1-qy0,cw=w*0.40,ch=h*0.40,core,r1,r2;
+    if(corner==="br"){var xs=qx1-cw,ys=qy1-ch;core={x0:xs,y0:ys,x1:qx1,y1:qy1,corner:corner,premium:true};r1={x0:qx0,y0:qy0,x1:xs,y1:qy1};r2={x0:xs,y0:qy0,x1:qx1,y1:ys};}
+    else if(corner==="bl"){var xs2=qx0+cw,ys2=qy1-ch;core={x0:qx0,y0:ys2,x1:xs2,y1:qy1,corner:corner,premium:true};r1={x0:xs2,y0:qy0,x1:qx1,y1:qy1};r2={x0:qx0,y0:qy0,x1:xs2,y1:ys2};}
+    else if(corner==="tr"){var xs3=qx1-cw,ys3=qy0+ch;core={x0:xs3,y0:qy0,x1:qx1,y1:ys3,corner:corner,premium:true};r1={x0:qx0,y0:qy0,x1:xs3,y1:qy1};r2={x0:xs3,y0:ys3,x1:qx1,y1:qy1};}
+    else{var xs4=qx0+cw,ys4=qy0+ch;core={x0:qx0,y0:qy0,x1:xs4,y1:ys4,corner:corner,premium:true};r1={x0:xs4,y0:qy0,x1:qx1,y1:qy1};r2={x0:qx0,y0:ys4,x1:xs4,y1:qy1};}
+    leaves.push(core,r1,r2);}
+  quad(A.x0,A.y0,CX,CY,"br");quad(CX,A.y0,A.x1,CY,"bl");quad(A.x0,CY,CX,A.y1,"tr");quad(CX,CY,A.x1,A.y1,"tl");
+  function area(r){return (r.x1-r.x0)*(r.y1-r.y0);}
+  var GAP=9, MIN=28;
+  function surv(r){return (r.x1-r.x0-2*GAP)>=MIN && (r.y1-r.y0-2*GAP)>=MIN;}
+  function countSurv(){var c=0;for(var i=0;i<leaves.length;i++)if(surv(leaves[i]))c++;return c;}
+  // split the leaf with the LONGEST side (keeps pieces squarish); stop once the
+  // biggest leaf is too small to split without making slivers.
+  function longer(r){return Math.max(r.x1-r.x0, r.y1-r.y0);}
+  var guard=0, SPLITMIN=2*(MIN+2*GAP)+6; // ~118: both halves stay above the min size
+  while(countSurv()<108 && guard<3000){
+    var idx=-1,bestL=-1;
+    for(var li=0;li<leaves.length;li++){if(leaves[li].premium)continue;var L=longer(leaves[li]);if(L>bestL){bestL=L;idx=li;}}
+    if(idx<0 || bestL<SPLITMIN) break;
+    var r=leaves[idx],w=r.x1-r.x0,h=r.y1-r.y0,lng=w>=h,tt=0.44+rnd()*0.12,c1,c2;
+    if(lng){var xm=r.x0+w*tt;c1={x0:r.x0,y0:r.y0,x1:xm,y1:r.y1};c2={x0:xm,y0:r.y0,x1:r.x1,y1:r.y1};}
+    else{var ym=r.y0+h*tt;c1={x0:r.x0,y0:r.y0,x1:r.x1,y1:ym};c2={x0:r.x0,y0:ym,x1:r.x1,y1:r.y1};}
+    leaves.splice(idx,1,c1,c2); guard++;
+  }
+  // inset survivors for roads
+  var cand=[];
+  for(var i2=0;i2<leaves.length;i2++){var r0=leaves[i2]; if(!surv(r0))continue;
+    var x0=r0.x0+GAP,y0=r0.y0+GAP,x1=r0.x1-GAP,y1=r0.y1-GAP,mx=(x0+x1)/2,my=(y0+y1)/2;
+    cand.push({x0:x0,y0:y0,x1:x1,y1:y1,w:x1-x0,h:y1-y0,mx:mx,my:my,premium:!!r0.premium,corner:r0.corner,area:(x1-x0)*(y1-y0),dist:Math.hypot(mx-CX,my-CY)});
+  }
+  // exactly 100 plots = the 100 largest survivors; the few extra become parks
+  cand.sort(function(a,b){return b.area-a.area;});
+  var plots=cand.slice(0,100), scenery=cand.slice(100);
+  for(var s2=0;s2<scenery.length;s2++){scenery[s2].park=true;}
+  // stable numbering in reading order (top rows, then left to right)
+  plots.sort(function(a,b){var ra=Math.round(a.my/70),rb=Math.round(b.my/70);return ra!==rb?ra-rb:a.mx-b.mx;});
+  for(var p=0;p<plots.length;p++){plots[p].no=p+1;plots[p].tier=plots[p].premium?"center":(plots[p].dist<300?"inner":"outskirts");}
+
+  // ---------- RENDER ----------
+  var defs=el("defs",{});
+  defs.innerHTML='<filter id="soft" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="2.4"/></filter>'
+    +'<filter id="glow" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="7" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>'
+    +'<radialGradient id="plaza" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="rgba(227,181,86,.6)"/><stop offset="45%" stop-color="rgba(227,181,86,.2)"/><stop offset="100%" stop-color="rgba(227,181,86,0)"/></radialGradient>'
+    +'<radialGradient id="bgg" cx="50%" cy="50%" r="62%"><stop offset="0%" stop-color="#0e1120"/><stop offset="70%" stop-color="#07080f"/><stop offset="100%" stop-color="#05060b"/></radialGradient>'
+    +'<radialGradient id="lamp" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="rgba(255,214,140,.8)"/><stop offset="100%" stop-color="rgba(255,214,140,0)"/></radialGradient>';
+  svg.appendChild(defs);
+  var VP=el("g",{id:"vp"}); svg.appendChild(VP);
+  VP.appendChild(el("rect",{x:0,y:0,width:1200,height:820,fill:"url(#bgg)"}));
+  for(var st=0;st<120;st++){VP.appendChild(el("circle",{cx:rnd()*1200,cy:rnd()*820,r:(rnd()*1.3+.3).toFixed(1),fill:"#fff",opacity:(rnd()*.5+.1).toFixed(2)}));}
+  var roadG=el("g",{}); VP.appendChild(roadG);
+  roadG.appendChild(el("rect",{x:A.x0-12,y:A.y0-12,width:A.x1-A.x0+24,height:A.y1-A.y0+24,rx:22,fill:"#2f3647"}));
+  function rr0(x0,y0,x1,y1,r){return "M"+(x0+r)+" "+y0+" L"+(x1-r)+" "+y0+" Q"+x1+" "+y0+" "+x1+" "+(y0+r)+" L"+x1+" "+(y1-r)+" Q"+x1+" "+y1+" "+(x1-r)+" "+y1+" L"+(x0+r)+" "+y1+" Q"+x0+" "+y1+" "+x0+" "+(y1-r)+" L"+x0+" "+(y0+r)+" Q"+x0+" "+y0+" "+(x0+r)+" "+y0+" Z";}
+  function rpath(x0,y0,x1,y1,a,b,c,d){return "M"+(x0+a)+" "+y0+" L"+(x1-b)+" "+y0+" Q"+x1+" "+y0+" "+x1+" "+(y0+b)+" L"+x1+" "+(y1-c)+" Q"+x1+" "+y1+" "+(x1-c)+" "+y1+" L"+(x0+d)+" "+y1+" Q"+x0+" "+y1+" "+x0+" "+(y1-d)+" L"+x0+" "+(y0+a)+" Q"+x0+" "+y0+" "+(x0+a)+" "+y0+" Z";}
+  // road under every block (plots + scenery)
+  var allBlocks=plots.concat(scenery);
+  for(var b2=0;b2<allBlocks.length;b2++){var bl=allBlocks[b2];roadG.appendChild(el("path",{d:rr0(bl.x0-GAP+2,bl.y0-GAP+2,bl.x1+GAP-2,bl.y1+GAP-2,10),fill:"#0f1422"}));}
+
+  var plotG=el("g",{}); VP.appendChild(plotG);
+  function initials(name){var w=(name||"").trim().split(/\s+/);return ((w[0]||"")[0]||"")+((w[1]||"")[0]||"");}
+  var colorByTier={center:"#E3B556",inner:"#b98be0",outskirts:"#6fb6c9"};
+
+  // scenery (parks / empty dark blocks — no number)
+  for(var sc=0;sc<scenery.length;sc++){var g2=scenery[sc];
+    if(g2.park){plotG.appendChild(el("path",{d:rpath(g2.x0,g2.y0,g2.x1,g2.y1,8,8,8,8),fill:"#163a28",stroke:"#3fae6a","stroke-width":1.3}));
+      var nt=Math.max(3,Math.floor(g2.w*g2.h/3000));for(var k=0;k<nt;k++){plotG.appendChild(el("circle",{cx:g2.x0+10+rnd()*(g2.w-20),cy:g2.y0+10+rnd()*(g2.h-20),r:(4+rnd()*3).toFixed(1),fill:k%3?"#2f7d50":"#3fae6a"}));}}
+    else{plotG.appendChild(el("path",{d:rpath(g2.x0,g2.y0,g2.x1,g2.y1,8,8,8,8),fill:"#0b0f17",stroke:"rgba(255,255,255,.05)","stroke-width":1}));}
+  }
+
+  // plotsById for data merge
+  var byNo={};
+  function drawPlot(pl){
+    // clear previous node
+    if(pl._node){pl._node.parentNode&&pl._node.parentNode.removeChild(pl._node);}
+    var g=el("g",{"class":"plot","data-no":pl.no,style:"cursor:pointer"});
+    var col=colorByTier[pl.tier];
+    var rr=[8,8,8,8];
+    if(pl.premium){var big=Math.min(40,pl.w*0.5,pl.h*0.5);
+      if(pl.corner==="br")rr=[8,8,big,8];else if(pl.corner==="bl")rr=[8,8,8,big];else if(pl.corner==="tr")rr=[8,big,8,8];else rr=[big,8,8,8];}
+    var d=rpath(pl.x0,pl.y0,pl.x1,pl.y1,rr[0],rr[1],rr[2],rr[3]);
+    var taken = pl.data && pl.data.status==="taken";
+    if(taken){
+      var base = pl.data.color || col;
+      g.appendChild(el("path",{d:rpath(pl.x0+3,pl.y0+4,pl.x1+3,pl.y1+4,rr[0],rr[1],rr[2],rr[3]),fill:"rgba(0,0,0,.45)"}));
+      var body=el("path",{d:d,fill:dk(base,0.72),stroke:col,"stroke-width":pl.premium?2.2:1.6}); body.setAttribute("filter","url(#soft)"); g.appendChild(body);
+      g.appendChild(el("path",{d:d,fill:"none",stroke:lt(base,0.1),"stroke-width":pl.premium?1.8:1.2,opacity:.9}));
+      // windows
+      if(pl.w>58&&pl.h>56){var sbx=pl.mx-21,sbxe=pl.mx+21,sby=pl.my-20,sbye=pl.my+20;
+        for(var gx=pl.x0+11;gx<pl.x1-9;gx+=12){for(var gy=pl.y0+16;gy<pl.y1-9;gy+=12){
+          if(gx>sbx-7&&gx<sbxe+2&&gy>sby-7&&gy<sbye+2)continue; if(rnd()<0.5)continue;
+          var li=rnd();g.appendChild(el("rect",{x:gx,y:gy,width:4,height:5,rx:1,fill:li>0.45?"#ffd98a":"#6b7490",opacity:li>0.45?(0.35+rnd()*0.5).toFixed(2):0.3}));}}}
+      // logo tile
+      var ts=Math.max(26,Math.min(Math.min(pl.w,pl.h)*(pl.w>86&&pl.h>98?0.42:0.56),64));
+      var tx=pl.mx-ts/2, ty=pl.my-ts/2-(pl.h>116?8:0);
+      if(pl.data.logo_url){
+        var cid="clip"+pl.no;
+        var cp=el("clipPath",{id:cid}); cp.appendChild(el("rect",{x:tx,y:ty,width:ts,height:ts,rx:ts*0.26})); g.appendChild(cp);
+        g.appendChild(el("rect",{x:tx,y:ty,width:ts,height:ts,rx:ts*0.26,fill:"#000"}));
+        var im=el("image",{x:tx,y:ty,width:ts,height:ts,"clip-path":"url(#"+cid+")",preserveAspectRatio:"xMidYMid slice"});
+        im.setAttributeNS("http://www.w3.org/1999/xlink","href",pl.data.logo_url); im.setAttribute("href",pl.data.logo_url);
+        g.appendChild(im);
+      } else {
+        var sign=el("rect",{x:tx,y:ty,width:ts,height:ts,rx:ts*0.26,fill:base}); sign.setAttribute("filter","url(#glow)"); g.appendChild(sign);
+        g.appendChild(el("rect",{x:tx,y:ty,width:ts,height:ts,rx:ts*0.26,fill:base,stroke:lt(base,0.4),"stroke-width":1.3}));
+        var mono=el("text",{x:pl.mx,y:ty+ts*0.66,"text-anchor":"middle",fill:"#0b0d16","font-size":(ts*0.46).toFixed(0),"font-weight":"800","font-family":"Arial"});
+        mono.textContent=(initials(pl.data.shop_name)||"★").toUpperCase(); g.appendChild(mono);
+      }
+      if(pl.data.shop_name&&pl.h>118&&pl.w>92){var nm=el("text",{x:pl.mx,y:ty+ts+20,"text-anchor":"middle",fill:"#f0ece0","font-size":"13","font-weight":"700","font-family":"Arial"});nm.textContent=pl.data.shop_name;g.appendChild(nm);}
+      // discount badge
+      if(pl.data.discount){
+        var bw=Math.min(54,pl.w-14), bx=pl.x1-bw-6, by=pl.y0+6;
+        g.appendChild(el("rect",{x:bx,y:by,width:bw,height:20,rx:6,fill:"#e4453a"}));
+        var dt=el("text",{x:bx+bw/2,y:by+14,"text-anchor":"middle",fill:"#fff","font-size":"11","font-weight":"800","font-family":"Arial"});dt.textContent=pl.data.discount;g.appendChild(dt);
+      }
+    } else {
+      // available
+      g.appendChild(el("path",{d:d,fill:"rgba(227,181,86,.04)",stroke:"rgba(227,181,86,.5)","stroke-width":1.5,"stroke-dasharray":"6 6"}));
+      var plus=el("text",{x:pl.mx,y:pl.my-2,"text-anchor":"middle",fill:"rgba(227,181,86,.85)","font-size":Math.min(24,pl.w*0.3).toFixed(0),"font-family":"Arial","font-weight":"700"});plus.textContent="+";g.appendChild(plus);
+      var no=el("text",{x:pl.mx,y:pl.my+16,"text-anchor":"middle",fill:"rgba(227,181,86,.55)","font-size":"11","font-weight":"700","font-family":"Arial"});no.textContent="#"+pl.no;g.appendChild(no);
+    }
+    pl._node=g; plotG.appendChild(g);
+  }
+  for(var pp=0;pp<plots.length;pp++){byNo[plots[pp].no]=plots[pp]; drawPlot(plots[pp]);}
+
+  // avenues, lamps, cars, fountain (scenery on top is fine behind plaza)
+  var aveG=el("g",{}); VP.appendChild(aveG);
+  aveG.appendChild(el("line",{x1:CX,y1:A.y0,x2:CX,y2:A.y1,stroke:"rgba(255,214,140,.4)","stroke-width":2.2,"stroke-dasharray":"12 14"}));
+  aveG.appendChild(el("line",{x1:A.x0,y1:CY,x2:A.x1,y2:CY,stroke:"rgba(255,214,140,.4)","stroke-width":2.2,"stroke-dasharray":"12 14"}));
+  for(var lp=0;lp<9;lp++){var lx=A.x0+40+rnd()*(A.x1-A.x0-80),ly=A.y0+30+rnd()*(A.y1-A.y0-60);aveG.appendChild(el("circle",{cx:lx,cy:ly,r:14,fill:"url(#lamp)"}));}
+  VP.appendChild(el("circle",{cx:CX,cy:CY,r:130,fill:"url(#plaza)"}));
+  VP.appendChild(el("circle",{cx:CX,cy:CY,r:46,fill:"#0e1526",stroke:"rgba(227,181,86,.7)","stroke-width":2.2,filter:"url(#glow)"}));
+  VP.appendChild(el("circle",{cx:CX,cy:CY,r:28,fill:"rgba(90,200,255,.14)",stroke:"rgba(120,210,255,.5)","stroke-width":1.4}));
+  VP.appendChild(el("circle",{cx:CX,cy:CY,r:11,fill:"rgba(120,210,255,.35)"}));
+  var tcc=el("text",{x:CX,y:CY-54,"text-anchor":"middle",fill:"#E3B556","font-size":"13","font-weight":"800","font-family":"Arial","letter-spacing":"2"});tcc.textContent="ЦЕНТР ГОРОДА";VP.appendChild(tcc);
+
+  // ---------- DATA FROM SUPABASE ----------
+  function loadPlots(){
+    fetch(SB_URL+"/rest/v1/city_plots?select=plot_no,status,shop_name,logo_url,website,category,description,discount&status=eq.taken",
+      {headers:{apikey:SB_KEY,Authorization:"Bearer "+SB_KEY}})
+      .then(function(r){return r.ok?r.json():[];})
+      .then(function(rows){
+        var taken=0;
+        for(var i=0;i<rows.length;i++){var row=rows[i],pl=byNo[row.plot_no];if(!pl)continue;pl.data=row;drawPlot(pl);taken++;}
+        document.getElementById("takenN").textContent=taken;
+      }).catch(function(){});
+  }
+  loadPlots();
+
+  // ---------- PAN / ZOOM ----------
+  var scale=1, tx=0, ty=0, W=1200, H=820;
+  function clamp(){var min=1; if(scale<min)scale=min; if(scale>6)scale=6;
+    var maxX=(scale-1)*W, maxY=(scale-1)*H;
+    if(tx>0)tx=0; if(tx< -maxX)tx=-maxX; if(ty>0)ty=0; if(ty< -maxY)ty=-maxY; if(scale<=1){tx=0;ty=0;}}
+  function apply(){clamp();VP.setAttribute("transform","translate("+tx+","+ty+") scale("+scale+")");}
+  function zoomAt(cx,cy,factor){var nx=(cx-tx)/scale, ny=(cy-ty)/scale; scale*=factor; tx=cx-nx*scale; ty=cy-ny*scale; apply();}
+  function svgPt(ev){var rect=svg.getBoundingClientRect();var x=(ev.clientX-rect.left)/rect.width*W;var y=(ev.clientY-rect.top)/rect.height*H;return{x:x,y:y};}
+  document.getElementById("zin").onclick=function(){zoomAt(W/2,H/2,1.3);};
+  document.getElementById("zout").onclick=function(){zoomAt(W/2,H/2,1/1.3);};
+  document.getElementById("zreset").onclick=function(){scale=1;tx=0;ty=0;apply();};
+  svg.addEventListener("wheel",function(ev){ev.preventDefault();var p=svgPt(ev);zoomAt(p.x,p.y,ev.deltaY<0?1.12:1/1.12);},{passive:false});
+
+  var dragging=false,moved=false,lx=0,ly=0,pid=null;
+  var pts={}; var pinchD=0;
+  svg.addEventListener("pointerdown",function(ev){
+    svg.setPointerCapture(ev.pointerId); pts[ev.pointerId]={x:ev.clientX,y:ev.clientY};
+    if(Object.keys(pts).length===1){dragging=true;moved=false;lx=ev.clientX;ly=ev.clientY;svg.classList.add("drag");}
+    else if(Object.keys(pts).length===2){var k=Object.keys(pts);pinchD=Math.hypot(pts[k[0]].x-pts[k[1]].x,pts[k[0]].y-pts[k[1]].y);}
+  });
+  svg.addEventListener("pointermove",function(ev){
+    if(!pts[ev.pointerId])return; pts[ev.pointerId]={x:ev.clientX,y:ev.clientY};
+    var keys=Object.keys(pts);
+    if(keys.length===2){var nd=Math.hypot(pts[keys[0]].x-pts[keys[1]].x,pts[keys[0]].y-pts[keys[1]].y);
+      if(pinchD){var rect=svg.getBoundingClientRect();var mx=(pts[keys[0]].x+pts[keys[1]].x)/2-rect.left, my=(pts[keys[0]].y+pts[keys[1]].y)/2-rect.top;zoomAt(mx/rect.width*W,my/rect.height*H,nd/pinchD);}
+      pinchD=nd; moved=true; return;}
+    if(dragging){var dx=ev.clientX-lx, dy=ev.clientY-ly; if(Math.abs(dx)+Math.abs(dy)>3)moved=true;
+      tx+=dx*(W/svg.getBoundingClientRect().width); ty+=dy*(H/svg.getBoundingClientRect().height); lx=ev.clientX;ly=ev.clientY;apply();}
+  });
+  function up(ev){delete pts[ev.pointerId];if(Object.keys(pts).length<2)pinchD=0;if(Object.keys(pts).length===0){dragging=false;svg.classList.remove("drag");}}
+  svg.addEventListener("pointerup",up); svg.addEventListener("pointercancel",up);
+
+  // ---------- CLICK PLOT ----------
+  svg.addEventListener("click",function(ev){
+    if(moved)return;
+    var g=ev.target.closest&&ev.target.closest(".plot"); if(!g)return;
+    var no=+g.getAttribute("data-no"); var pl=byNo[no]; if(!pl)return;
+    if(pl.data&&pl.data.status==="taken"){ showPop(pl, ev); } else { openForm(no, pl.tier); }
+  });
+
+  // ---------- POPUP ----------
+  var pop=document.getElementById("pop");
+  function showPop(pl,ev){
+    document.getElementById("popName").textContent=pl.data.shop_name||("Plot #"+pl.no);
+    document.getElementById("popCat").textContent=pl.data.category||"";
+    document.getElementById("popDesc").textContent=pl.data.description||"";
+    var disc=document.getElementById("popDisc");
+    if(pl.data.discount){disc.style.display="inline-block";disc.textContent=pl.data.discount+" скидка";}else{disc.style.display="none";}
+    var logo=document.getElementById("popLogo");
+    if(pl.data.logo_url){logo.style.display="block";logo.src=pl.data.logo_url;}else{logo.style.display="none";}
+    var go=document.getElementById("popGo");
+    if(pl.data.website){go.style.display="block";go.href=pl.data.website;}else{go.style.display="none";}
+    pop.classList.add("show");
+    var pw=pop.offsetWidth,ph=pop.offsetHeight;
+    var x=Math.min(window.innerWidth-pw-16,Math.max(16,ev.clientX-pw/2));
+    var y=Math.min(window.innerHeight-ph-16,Math.max(16,ev.clientY+14));
+    pop.style.left=x+"px";pop.style.top=y+"px";
+  }
+  document.getElementById("popX").onclick=function(){pop.classList.remove("show");};
+  document.addEventListener("click",function(ev){if(!pop.contains(ev.target)&&!(ev.target.closest&&ev.target.closest(".plot")))pop.classList.remove("show");});
+
+  // ---------- FORM MODAL ----------
+  var modal=document.getElementById("modal"), form=document.getElementById("cityForm"), fmsg=document.getElementById("formmsg");
+  function openForm(no,tier){
+    document.getElementById("f-plot").value="#"+no+(tier?(" · "+({center:"Центр города",inner:"Средний пояс",outskirts:"Окраина"}[tier])):"");
+    form.setAttribute("data-plot",no); fmsg.textContent=""; fmsg.className="formmsg"; modal.classList.add("show");
+  }
+  document.getElementById("modalX").onclick=function(){modal.classList.remove("show");};
+  modal.addEventListener("click",function(ev){if(ev.target===modal)modal.classList.remove("show");});
+  document.getElementById("openFormTop").onclick=function(){
+    // open on first available plot
+    var firstAvail=null;for(var n=1;n<=100;n++){var pl=byNo[n];if(pl&&!(pl.data&&pl.data.status==="taken")){firstAvail=pl;break;}}
+    if(firstAvail)openForm(firstAvail.no,firstAvail.tier);
+  };
+  var sending=false, lastSent=0;
+  var RU=(document.documentElement.lang||navigator.language||"en").toLowerCase().indexOf("ru")===0;
+  var MSG=RU?{sending:"Отправляем…",ok:"Спасибо! Заявка отправлена — мы свяжемся с вами.",invalid:"Проверьте: магазин и контакт обязательны.",rate:"Слишком много заявок, попробуйте позже.",taken:"Этот участок уже занят.",fail:"Не удалось отправить. Напишите на support@chevrette.shop.",consent:"Подтвердите согласие."}
+    :{sending:"Sending…",ok:"Thank you! Your application was sent — we’ll be in touch.",invalid:"Please fill shop name and contact.",rate:"Too many requests, try later.",taken:"This plot is already taken.",fail:"Could not send. Email support@chevrette.shop.",consent:"Please accept the consent."};
+  form.addEventListener("submit",function(e){
+    e.preventDefault();
+    if(!document.getElementById("f-consent").checked){fmsg.className="formmsg err";fmsg.textContent=MSG.consent;return;}
+    if(sending)return; if(Date.now()-lastSent<12000){fmsg.className="formmsg err";fmsg.textContent=MSG.rate;return;}
+    var body={p_plot:+form.getAttribute("data-plot"),p_shop:form.shop.value,p_website:form.website.value,
+      p_category:form.category.value,p_contact:form.contact.value,p_message:form.message.value,p_lang:RU?"ru":"en",p_hp:form.hp.value};
+    sending=true;fmsg.className="formmsg";fmsg.textContent=MSG.sending;
+    fetch(SB_URL+"/rest/v1/rpc/submit_city_application",{method:"POST",
+      headers:{"Content-Type":"application/json",apikey:SB_KEY,Authorization:"Bearer "+SB_KEY},body:JSON.stringify(body)})
+      .then(function(r){return r.json().then(function(j){return{s:r.status,j:j};});})
+      .then(function(res){sending=false;var j=res.j||{};
+        if(res.s===200&&j.ok){lastSent=Date.now();form.reset();fmsg.className="formmsg ok";fmsg.textContent=MSG.ok;setTimeout(function(){modal.classList.remove("show");},1800);}
+        else if(j.error==="taken"){fmsg.className="formmsg err";fmsg.textContent=MSG.taken;}
+        else if(j.error==="rate"){fmsg.className="formmsg err";fmsg.textContent=MSG.rate;}
+        else if(j.error==="invalid"){fmsg.className="formmsg err";fmsg.textContent=MSG.invalid;}
+        else{fmsg.className="formmsg err";fmsg.textContent=MSG.fail;}
+      }).catch(function(){sending=false;fmsg.className="formmsg err";fmsg.textContent=MSG.fail;});
+  });
+
+  apply();
+})();
+</script>
+</body>
+</html>

@@ -47,7 +47,18 @@
   .btn-gold{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:#0A0804;
     font-weight:800;font-size:13px;letter-spacing:.03em;padding:11px 20px;border-radius:var(--pill);text-transform:uppercase;border:none;cursor:pointer;}
   .btn-gold:hover{background:var(--gold-hi);}
-  .hamb{display:none;background:none;border:none;color:var(--white);font-size:22px;cursor:pointer;}
+  .hamb{display:none;background:none;border:none;color:var(--white);font-size:24px;cursor:pointer;line-height:1;}
+  .langsw{display:flex;border:1px solid rgba(255,255,255,.18);border-radius:var(--pill);overflow:hidden;font-size:12px;font-weight:800;letter-spacing:.06em;}
+  .langsw a{padding:8px 13px;color:var(--txt2);}
+  .langsw a.on{background:var(--white);color:#030304;}
+  .mmenu{display:none;position:fixed;top:68px;left:0;right:0;z-index:39;background:rgba(6,7,13,.985);backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--border);padding:12px 24px 20px;flex-direction:column;}
+  .mmenu.open{display:flex;}
+  .mmenu a{padding:14px 2px;font-size:16px;font-weight:700;color:var(--txt2);border-bottom:1px solid rgba(255,255,255,.06);}
+  .mmenu a.active{color:var(--gold);}
+  .mmlang{display:flex;gap:8px;margin-top:14px;border-bottom:none !important;}
+  .mmlang a{border:1px solid var(--glassb);border-radius:var(--pill);padding:8px 16px;font-size:13px;font-weight:800;}
+  .mmlang a.on{background:var(--white);color:#030304;}
 
   /* HERO */
   .hero{position:relative;padding:52px 32px 30px;text-align:center;}
@@ -134,7 +145,9 @@
   .field{margin-bottom:12px;}
   .field label{font-size:11px;letter-spacing:.12em;color:var(--txt3);text-transform:uppercase;font-weight:700;display:block;margin-bottom:6px;}
   .field input,.field select,.field textarea{width:100%;background:rgba(255,255,255,.03);border:1px solid var(--glassb);border-radius:12px;
-    padding:13px 14px;color:var(--white);font-size:14px;font-family:var(--body);}
+    padding:13px 14px;color:var(--white);font-size:14px;font-family:var(--body);color-scheme:dark;}
+  .field select{appearance:none;-webkit-appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--txt3) 50%),linear-gradient(135deg,var(--txt3) 50%,transparent 50%);background-position:calc(100% - 18px) 20px,calc(100% - 13px) 20px;background-size:5px 5px,5px 5px;background-repeat:no-repeat;}
+  .field select option{background:#15151A;color:#F4F1EA;}
   .field textarea{min-height:76px;resize:vertical;}
   .field input:focus,.field select,.field textarea:focus{outline:none;border-color:var(--gold);}
   .consent{display:flex;gap:9px;align-items:flex-start;font-size:12px;color:var(--txt3);margin:4px 0 14px;}
@@ -144,7 +157,7 @@
   .formmsg.ok{color:#7fd38a;} .formmsg.err{color:#e4766b;}
 
   @media (max-width:760px){
-    nav{padding:0 16px;height:58px;} .menu{display:none;} .lang{display:none;} .hamb{display:block;}
+    nav{padding:0 16px;height:58px;} .menu{display:none;} .langsw{display:none;} .hamb{display:block;} .mmenu{top:58px;}
     .hero{padding:34px 16px 24px;} .hero p{font-size:15px;}
     .count{gap:8px;} .cbox{width:68px;padding:12px 0;border-radius:14px;} .cbox .n{font-size:30px;} .cbox .l{font-size:9px;} .csep{font-size:24px;}
     .founding{font-size:12px;padding:10px 15px;}
@@ -160,17 +173,30 @@
 <nav>
   <a class="brand" href="index.html"><img src="assets/home/mark.png" alt=""><b>Chevrette</b></a>
   <div class="menu">
+    <a href="index.html#survivor">Survival</a>
     <a href="features.html">Inside the app</a>
     <a href="nft.html">NFT</a>
+    <a href="index.html#community">Community</a>
     <a href="roadmap.html">Roadmap</a>
     <a class="active" href="city.html">City</a>
     <a href="faq.html">FAQ</a>
   </div>
   <div class="nav-right">
-    <span class="lang">EN</span>
-    <a class="btn-gold" href="https://play.google.com/store/apps/details?id=com.chevrette.app" target="_blank" rel="noopener">▶ Get the app</a>
+    <div class="langsw"><a class="on" href="city.html">EN</a><a href="/ru/city.html">RU</a></div>
+    <a class="btn-gold getapp" href="https://play.google.com/store/apps/details?id=com.chevrette.app" target="_blank" rel="noopener">▶ Get the app</a>
+    <button class="hamb" id="hamb" aria-label="Menu">☰</button>
   </div>
 </nav>
+<div class="mmenu" id="mmenu">
+  <a href="index.html#survivor">Survival</a>
+  <a href="features.html">Inside the app</a>
+  <a href="nft.html">NFT</a>
+  <a href="index.html#community">Community</a>
+  <a href="roadmap.html">Roadmap</a>
+  <a class="active" href="city.html">City</a>
+  <a href="faq.html">FAQ</a>
+  <div class="mmlang"><a class="on" href="city.html">EN</a><a href="/ru/city.html">RU</a></div>
+</div>
 
 <!-- HERO -->
 <div class="hero wrap">
@@ -301,6 +327,10 @@
   // ---------- TICKER ----------
   var t="100 PLOTS  ✦  YOUR LOGO ON THE MAP  ✦  YOUR SHOP, ONE TAP AWAY  ✦  FOUNDING SHOPS  ✦  ";
   document.getElementById("run").textContent = t+t;
+
+  // ---------- MOBILE MENU ----------
+  var hamb=document.getElementById("hamb"), mmenu=document.getElementById("mmenu");
+  if(hamb){hamb.addEventListener("click",function(){var o=mmenu.classList.toggle("open");hamb.textContent=o?"✕":"☰";});}
 
   // ---------- MAP GENERATION (deterministic, exactly 100 plots) ----------
   var NS="http://www.w3.org/2000/svg";
@@ -536,7 +566,7 @@
     if(firstAvail)openForm(firstAvail.no,firstAvail.tier);
   };
   var sending=false, lastSent=0;
-  var RU=(navigator.language||"en").toLowerCase().indexOf("ru")===0;
+  var RU=(document.documentElement.lang||navigator.language||"en").toLowerCase().indexOf("ru")===0;
   var MSG=RU?{sending:"Отправляем…",ok:"Спасибо! Заявка отправлена — мы свяжемся с вами.",invalid:"Проверьте: магазин и контакт обязательны.",rate:"Слишком много заявок, попробуйте позже.",taken:"Этот участок уже занят.",fail:"Не удалось отправить. Напишите на support@chevrette.shop.",consent:"Подтвердите согласие."}
     :{sending:"Sending…",ok:"Thank you! Your application was sent — we’ll be in touch.",invalid:"Please fill shop name and contact.",rate:"Too many requests, try later.",taken:"This plot is already taken.",fail:"Could not send. Email support@chevrette.shop.",consent:"Please accept the consent."};
   form.addEventListener("submit",function(e){
