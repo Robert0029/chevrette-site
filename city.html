@@ -526,7 +526,8 @@
   // ---------- CLICK PLOT ----------
   svg.addEventListener("click",function(ev){
     if(moved)return;
-    var g=ev.target.closest&&ev.target.closest(".plot"); if(!g)return;
+    var tgt=document.elementFromPoint(ev.clientX, ev.clientY);
+    var g=tgt&&tgt.closest&&tgt.closest(".plot"); if(!g)return;
     var no=+g.getAttribute("data-no"); var pl=byNo[no]; if(!pl)return;
     if(pl.data&&pl.data.status==="taken"){ showPop(pl, ev); } else { openForm(no, pl.tier); }
   });
