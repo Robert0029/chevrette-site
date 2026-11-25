@@ -522,7 +522,7 @@ Get the app
 
   // ---------- PROJECTS LIST ----------
   var CAT_TR={};
-  function safeUrl(u){return (u&&/^https?:\/\//i.test(u))?u:null;}
+  function safeUrl(u){return (u&&/^(https?:\/\/|mailto:[^\s@]+@[^\s@]+$)/i.test(u))?u:null;}
   function focusPlot(pl){
     document.getElementById("mapwrap").scrollIntoView({behavior:"smooth",block:"center"});
     scale=2.2; tx=W/2-pl.mx*scale; ty=H/2-pl.my*scale; apply();
@@ -548,7 +548,7 @@ Get the app
       var acts=document.createElement("div"); acts.className="pacts";
       var chip=document.createElement("span"); chip.className="pchip"; chip.textContent="Plot #"+row.plot_no; acts.appendChild(chip);
       var url=safeUrl(row.website);
-      if(url){var a=document.createElement("a"); a.className="pbtn go"; a.href=url; a.target="_blank"; a.rel="noopener nofollow"; a.textContent="Visit ↗"; acts.appendChild(a);}
+      if(url){var a=document.createElement("a"); a.className="pbtn go"; a.href=url; a.target="_blank"; a.rel="noopener nofollow"; a.textContent=/^mailto:/i.test(url)?"Email ✉":"Visit ↗"; acts.appendChild(a);}
       var sb=document.createElement("button"); sb.type="button"; sb.className="pbtn"; sb.textContent="Show on map"; sb.onclick=function(){focusPlot(pl);}; acts.appendChild(sb);
       body.appendChild(acts);
       card.appendChild(av); card.appendChild(body); box.appendChild(card);
@@ -620,7 +620,7 @@ Get the app
     var logo=document.getElementById("popLogo");
     if(pl.data.logo_url){logo.style.display="block";logo.src=pl.data.logo_url;}else{logo.style.display="none";}
     var go=document.getElementById("popGo");
-    if(pl.data.website&&/^https?:\/\//i.test(pl.data.website)){go.style.display="block";go.href=pl.data.website;}else{go.style.display="none";}
+    if(pl.data.website&&/^(https?:\/\/|mailto:)/i.test(pl.data.website)){go.style.display="block";go.href=pl.data.website;}else{go.style.display="none";}
     pop.classList.add("show");
     var pw=pop.offsetWidth,ph=pop.offsetHeight;
     var x=Math.min(window.innerWidth-pw-16,Math.max(16,ev.clientX-pw/2));
