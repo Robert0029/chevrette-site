@@ -3,178 +3,242 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://chevrette.shop/</loc>
-    <changefreq>weekly</changefreq>
+    <lastmod>2026-11-25</lastmod>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://chevrette.shop/"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://chevrette.shop/ru/index.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://chevrette.shop/ru/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://chevrette.shop/"/>
   </url>
   <url>
-    <loc>https://chevrette.shop/ru/index.html</loc>
-    <changefreq>weekly</changefreq>
+    <loc>https://chevrette.shop/ru/</loc>
+    <lastmod>2026-11-25</lastmod>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://chevrette.shop/"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://chevrette.shop/ru/index.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://chevrette.shop/ru/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://chevrette.shop/"/>
   </url>
   <url>
-    <loc>https://chevrette.shop/about.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://chevrette.shop/about.html"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://chevrette.shop/ru/about.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chevrette.shop/about.html"/>
+    <loc>https://chevrette.shop/goat-empire/</loc>
+    <lastmod>2026-11-25</lastmod>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://chevrette.shop/goat-empire/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://chevrette.shop/ru/goat-empire/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chevrette.shop/goat-empire/"/>
   </url>
   <url>
-    <loc>https://chevrette.shop/ru/about.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://chevrette.shop/about.html"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://chevrette.shop/ru/about.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chevrette.shop/about.html"/>
+    <loc>https://chevrette.shop/ru/goat-empire/</loc>
+    <lastmod>2026-11-25</lastmod>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://chevrette.shop/goat-empire/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://chevrette.shop/ru/goat-empire/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chevrette.shop/goat-empire/"/>
   </url>
   <url>
-    <loc>https://chevrette.shop/features.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://chevrette.shop/features.html"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://chevrette.shop/ru/features.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chevrette.shop/features.html"/>
+    <loc>https://chevrette.shop/city</loc>
+    <lastmod>2026-11-25</lastmod>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://chevrette.shop/city"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://chevrette.shop/ru/city"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chevrette.shop/city"/>
   </url>
   <url>
-    <loc>https://chevrette.shop/ru/features.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://chevrette.shop/features.html"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://chevrette.shop/ru/features.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chevrette.shop/features.html"/>
+    <loc>https://chevrette.shop/ru/city</loc>
+    <lastmod>2026-11-25</lastmod>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://chevrette.shop/city"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://chevrette.shop/ru/city"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chevrette.shop/city"/>
   </url>
   <url>
-    <loc>https://chevrette.shop/nft.html</loc>
-    <changefreq>weekly</changefreq>
+    <loc>https://chevrette.shop/features</loc>
+    <lastmod>2026-11-25</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://chevrette.shop/features"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://chevrette.shop/ru/features"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chevrette.shop/features"/>
+  </url>
+  <url>
+    <loc>https://chevrette.shop/ru/features</loc>
+    <lastmod>2026-11-25</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://chevrette.shop/features"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://chevrette.shop/ru/features"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chevrette.shop/features"/>
+  </url>
+  <url>
+    <loc>https://chevrette.shop/nft</loc>
+    <lastmod>2026-11-25</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://chevrette.shop/nft"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://chevrette.shop/ru/nft"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chevrette.shop/nft"/>
+  </url>
+  <url>
+    <loc>https://chevrette.shop/ru/nft</loc>
+    <lastmod>2026-11-25</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://chevrette.shop/nft"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://chevrette.shop/ru/nft"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chevrette.shop/nft"/>
+  </url>
+  <url>
+    <loc>https://chevrette.shop/roadmap</loc>
+    <lastmod>2026-11-25</lastmod>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://chevrette.shop/nft.html"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://chevrette.shop/ru/nft.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chevrette.shop/nft.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://chevrette.shop/roadmap"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://chevrette.shop/ru/roadmap"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chevrette.shop/roadmap"/>
   </url>
   <url>
-    <loc>https://chevrette.shop/ru/nft.html</loc>
-    <changefreq>weekly</changefreq>
+    <loc>https://chevrette.shop/ru/roadmap</loc>
+    <lastmod>2026-11-25</lastmod>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://chevrette.shop/nft.html"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://chevrette.shop/ru/nft.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chevrette.shop/nft.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://chevrette.shop/roadmap"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://chevrette.shop/ru/roadmap"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chevrette.shop/roadmap"/>
   </url>
   <url>
-    <loc>https://chevrette.shop/roadmap.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://chevrette.shop/roadmap.html"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://chevrette.shop/ru/roadmap.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chevrette.shop/roadmap.html"/>
-  </url>
-  <url>
-    <loc>https://chevrette.shop/ru/roadmap.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://chevrette.shop/roadmap.html"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://chevrette.shop/ru/roadmap.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chevrette.shop/roadmap.html"/>
-  </url>
-  <url>
-    <loc>https://chevrette.shop/advertise.html</loc>
-    <changefreq>monthly</changefreq>
+    <loc>https://chevrette.shop/faq</loc>
+    <lastmod>2026-11-25</lastmod>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://chevrette.shop/advertise.html"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://chevrette.shop/ru/advertise.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chevrette.shop/advertise.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://chevrette.shop/faq"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://chevrette.shop/ru/faq"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chevrette.shop/faq"/>
   </url>
   <url>
-    <loc>https://chevrette.shop/ru/advertise.html</loc>
-    <changefreq>monthly</changefreq>
+    <loc>https://chevrette.shop/ru/faq</loc>
+    <lastmod>2026-11-25</lastmod>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://chevrette.shop/advertise.html"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://chevrette.shop/ru/advertise.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chevrette.shop/advertise.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://chevrette.shop/faq"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://chevrette.shop/ru/faq"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chevrette.shop/faq"/>
   </url>
   <url>
-    <loc>https://chevrette.shop/faq.html</loc>
-    <changefreq>monthly</changefreq>
+    <loc>https://chevrette.shop/about</loc>
+    <lastmod>2026-11-25</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://chevrette.shop/about"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://chevrette.shop/ru/about"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chevrette.shop/about"/>
+  </url>
+  <url>
+    <loc>https://chevrette.shop/ru/about</loc>
+    <lastmod>2026-11-25</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://chevrette.shop/about"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://chevrette.shop/ru/about"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chevrette.shop/about"/>
+  </url>
+  <url>
+    <loc>https://chevrette.shop/advertise</loc>
+    <lastmod>2026-11-25</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://chevrette.shop/advertise"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://chevrette.shop/ru/advertise"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chevrette.shop/advertise"/>
+  </url>
+  <url>
+    <loc>https://chevrette.shop/ru/advertise</loc>
+    <lastmod>2026-11-25</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://chevrette.shop/advertise"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://chevrette.shop/ru/advertise"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chevrette.shop/advertise"/>
+  </url>
+  <url>
+    <loc>https://chevrette.shop/contact</loc>
+    <lastmod>2026-11-25</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://chevrette.shop/contact"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://chevrette.shop/ru/contact"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chevrette.shop/contact"/>
+  </url>
+  <url>
+    <loc>https://chevrette.shop/ru/contact</loc>
+    <lastmod>2026-11-25</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://chevrette.shop/contact"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://chevrette.shop/ru/contact"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chevrette.shop/contact"/>
+  </url>
+  <url>
+    <loc>https://chevrette.shop/whitepaper</loc>
+    <lastmod>2026-11-25</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://chevrette.shop/whitepaper"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://chevrette.shop/ru/whitepaper"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chevrette.shop/whitepaper"/>
+  </url>
+  <url>
+    <loc>https://chevrette.shop/ru/whitepaper</loc>
+    <lastmod>2026-11-25</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://chevrette.shop/whitepaper"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://chevrette.shop/ru/whitepaper"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chevrette.shop/whitepaper"/>
+  </url>
+  <url>
+    <loc>https://chevrette.shop/privacy</loc>
+    <lastmod>2026-11-25</lastmod>
     <priority>0.6</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://chevrette.shop/faq.html"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://chevrette.shop/ru/faq.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chevrette.shop/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://chevrette.shop/privacy"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://chevrette.shop/ru/privacy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chevrette.shop/privacy"/>
   </url>
   <url>
-    <loc>https://chevrette.shop/ru/faq.html</loc>
-    <changefreq>monthly</changefreq>
+    <loc>https://chevrette.shop/ru/privacy</loc>
+    <lastmod>2026-11-25</lastmod>
     <priority>0.6</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://chevrette.shop/faq.html"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://chevrette.shop/ru/faq.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chevrette.shop/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://chevrette.shop/privacy"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://chevrette.shop/ru/privacy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chevrette.shop/privacy"/>
   </url>
   <url>
-    <loc>https://chevrette.shop/contact.html</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://chevrette.shop/contact.html"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://chevrette.shop/ru/contact.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chevrette.shop/contact.html"/>
-  </url>
-  <url>
-    <loc>https://chevrette.shop/ru/contact.html</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://chevrette.shop/contact.html"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://chevrette.shop/ru/contact.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chevrette.shop/contact.html"/>
-  </url>
-  <url>
-    <loc>https://chevrette.shop/privacy.html</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://chevrette.shop/privacy.html"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://chevrette.shop/ru/privacy.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chevrette.shop/privacy.html"/>
-  </url>
-  <url>
-    <loc>https://chevrette.shop/ru/privacy.html</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://chevrette.shop/privacy.html"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://chevrette.shop/ru/privacy.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chevrette.shop/privacy.html"/>
-  </url>
-  <url>
-    <loc>https://chevrette.shop/terms.html</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://chevrette.shop/terms.html"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://chevrette.shop/ru/terms.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chevrette.shop/terms.html"/>
-  </url>
-  <url>
-    <loc>https://chevrette.shop/ru/terms.html</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://chevrette.shop/terms.html"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://chevrette.shop/ru/terms.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chevrette.shop/terms.html"/>
-  </url>
-  <url>
-    <loc>https://chevrette.shop/whitepaper.html</loc>
-    <changefreq>monthly</changefreq>
+    <loc>https://chevrette.shop/terms</loc>
+    <lastmod>2026-11-25</lastmod>
     <priority>0.6</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://chevrette.shop/whitepaper.html"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://chevrette.shop/ru/whitepaper.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chevrette.shop/whitepaper.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://chevrette.shop/terms"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://chevrette.shop/ru/terms"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chevrette.shop/terms"/>
   </url>
   <url>
-    <loc>https://chevrette.shop/ru/whitepaper.html</loc>
-    <changefreq>monthly</changefreq>
+    <loc>https://chevrette.shop/ru/terms</loc>
+    <lastmod>2026-11-25</lastmod>
     <priority>0.6</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://chevrette.shop/whitepaper.html"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://chevrette.shop/ru/whitepaper.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chevrette.shop/whitepaper.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://chevrette.shop/terms"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://chevrette.shop/ru/terms"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chevrette.shop/terms"/>
+  </url>
+  <url>
+    <loc>https://chevrette.shop/goat-empire/privacy</loc>
+    <lastmod>2026-11-25</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://chevrette.shop/goat-empire/privacy"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://chevrette.shop/goat-empire/privacy-ru"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chevrette.shop/goat-empire/privacy"/>
+  </url>
+  <url>
+    <loc>https://chevrette.shop/goat-empire/privacy-ru</loc>
+    <lastmod>2026-11-25</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://chevrette.shop/goat-empire/privacy"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://chevrette.shop/goat-empire/privacy-ru"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chevrette.shop/goat-empire/privacy"/>
+  </url>
+  <url>
+    <loc>https://chevrette.shop/goat-empire/terms</loc>
+    <lastmod>2026-11-25</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://chevrette.shop/goat-empire/terms"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://chevrette.shop/goat-empire/terms-ru"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chevrette.shop/goat-empire/terms"/>
+  </url>
+  <url>
+    <loc>https://chevrette.shop/goat-empire/terms-ru</loc>
+    <lastmod>2026-11-25</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://chevrette.shop/goat-empire/terms"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://chevrette.shop/goat-empire/terms-ru"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chevrette.shop/goat-empire/terms"/>
   </url>
 </urlset>
