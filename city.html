@@ -153,6 +153,11 @@
   }
 
   html{overflow-x:clip;}
+  .openbadge{display:inline-flex;align-items:center;gap:12px;margin-top:30px;border:1px solid rgba(74,222,128,.4);background:rgba(74,222,128,.08);color:#4ade80;border-radius:999px;padding:12px 22px;font-size:14px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;}
+  .openbadge i{width:10px;height:10px;border-radius:50%;background:#4ade80;display:block;box-shadow:0 0 0 0 rgba(74,222,128,.6);animation:livepulse 1.8s infinite;}
+  @keyframes livepulse{0%{box-shadow:0 0 0 0 rgba(74,222,128,.55)}70%{box-shadow:0 0 0 10px rgba(74,222,128,0)}100%{box-shadow:0 0 0 0 rgba(74,222,128,0)}}
+  .opencta{margin-top:18px;}
+  @media (max-width:640px){.openbadge{font-size:11px;letter-spacing:.08em;padding:10px 16px;gap:9px;}}
   /* ---------- PROJECTS LIST ---------- */
   .plist{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:28px;}
   .pcard{display:flex;gap:20px;align-items:flex-start;background:var(--glass);border:1px solid var(--glassb);border-radius:22px;padding:22px;transition:border-color .2s,transform .2s;}
@@ -228,19 +233,11 @@ Get the app
 
 <!-- HERO -->
 <div class="hero wrap">
-  <div class="eyebrow">Chevrette City · Opening soon</div>
+  <div class="eyebrow">Chevrette City · Now open</div>
   <h1>Put your project<br>on the <span class="gold">map.</span></h1>
   <p>A living city of 100 plots. Rent your spot, drop your logo, and send thousands of Chevrette explorers straight to your page.</p>
-  <div class="opening">Grand opening in</div>
-  <div class="count" id="count">
-    <div class="cbox"><div class="n" id="cd-d">—</div><div class="l">Days</div></div>
-    <div class="csep">:</div>
-    <div class="cbox"><div class="n" id="cd-h">—</div><div class="l">Hours</div></div>
-    <div class="csep">:</div>
-    <div class="cbox"><div class="n" id="cd-m">—</div><div class="l">Min</div></div>
-    <div class="csep">:</div>
-    <div class="cbox"><div class="n" id="cd-s">—</div><div class="l">Sec</div></div>
-  </div>
+  <div class="openbadge"><i></i>City is open — applications are open</div>
+  <div class="opencta"><a class="btn-gold" href="#mapwrap">Claim a free plot ↓</a></div>
   <div class="founding">🎁 Apply now → 2 weeks FREE for founding projects</div>
 </div>
 
@@ -260,12 +257,6 @@ Get the app
     </div>
     <svg id="citymap" viewBox="0 0 1200 820" preserveAspectRatio="xMidYMid meet"></svg>
     <div class="hint">Drag to move · scroll or pinch to zoom · tap a plot</div>
-  </div>
-  <div class="tiers">
-    <div class="tier"><div class="d"><span class="dot" style="background:#E3B556"></span>City Center</div><div class="p">Premium <small>· top price</small></div></div>
-    <div class="tier"><div class="d"><span class="dot" style="background:#b98be0"></span>Inner ring</div><div class="p">Mid <small>· strong traffic</small></div></div>
-    <div class="tier"><div class="d"><span class="dot" style="background:#6fb6c9"></span>Outskirts</div><div class="p">Starter <small>· lowest price</small></div></div>
-    <div class="tier"><div class="d"><span class="dot" style="background:#3fae6a"></span>Parks</div><div class="p">Free space <small>· atmosphere</small></div></div>
   </div>
 </div>
 
@@ -349,17 +340,6 @@ Get the app
   var SB_KEY = "sb_publishable_JQorN6JHun4MwObrCQBd_w_FC4JZs-P";
   var OPENING = new Date("2026-11-25T18:00:00+03:00");   // grand opening (easy to change)
 
-  // ---------- COUNTDOWN ----------
-  function pad(n){return (n<10?"0":"")+n;}
-  function tick(){
-    var diff = Math.max(0, OPENING - new Date());
-    var s=Math.floor(diff/1000), d=Math.floor(s/86400), h=Math.floor(s%86400/3600), m=Math.floor(s%3600/60), ss=s%60;
-    document.getElementById("cd-d").textContent=pad(d);
-    document.getElementById("cd-h").textContent=pad(h);
-    document.getElementById("cd-m").textContent=pad(m);
-    document.getElementById("cd-s").textContent=pad(ss);
-  }
-  tick(); setInterval(tick,1000);
 
   // ---------- TICKER ----------
   var t="100 PLOTS  ✦  YOUR LOGO ON THE MAP  ✦  YOUR PROJECT, ONE TAP AWAY  ✦  FOUNDING PROJECTS  ✦  ";
@@ -531,7 +511,7 @@ Get the app
   }
   function renderList(rows){
     var box=document.getElementById("plist"); box.innerHTML="";
-    rows=rows.slice().sort(function(a,b){return a.plot_no-b.plot_no;});
+    rows=rows.slice().sort(function(a,b){var ca=(byNo[a.plot_no]&&byNo[a.plot_no].tier==="center")?0:1, cb=(byNo[b.plot_no]&&byNo[b.plot_no].tier==="center")?0:1; return ca-cb||a.plot_no-b.plot_no;});
     document.getElementById("pempty").style.display=rows.length?"none":"block";
     rows.forEach(function(row){
       var pl=byNo[row.plot_no]; if(!pl)return;

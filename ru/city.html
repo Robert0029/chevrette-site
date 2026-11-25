@@ -153,6 +153,11 @@
   }
 
   html{overflow-x:clip;}
+  .openbadge{display:inline-flex;align-items:center;gap:12px;margin-top:30px;border:1px solid rgba(74,222,128,.4);background:rgba(74,222,128,.08);color:#4ade80;border-radius:999px;padding:12px 22px;font-size:14px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;}
+  .openbadge i{width:10px;height:10px;border-radius:50%;background:#4ade80;display:block;box-shadow:0 0 0 0 rgba(74,222,128,.6);animation:livepulse 1.8s infinite;}
+  @keyframes livepulse{0%{box-shadow:0 0 0 0 rgba(74,222,128,.55)}70%{box-shadow:0 0 0 10px rgba(74,222,128,0)}100%{box-shadow:0 0 0 0 rgba(74,222,128,0)}}
+  .opencta{margin-top:18px;}
+  @media (max-width:640px){.openbadge{font-size:11px;letter-spacing:.08em;padding:10px 16px;gap:9px;}}
   /* ---------- PROJECTS LIST ---------- */
   .plist{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:28px;}
   .pcard{display:flex;gap:20px;align-items:flex-start;background:var(--glass);border:1px solid var(--glassb);border-radius:22px;padding:22px;transition:border-color .2s,transform .2s;}
@@ -228,19 +233,11 @@
 
 <!-- HERO -->
 <div class="hero wrap">
-  <div class="eyebrow">Chevrette City · Скоро открытие</div>
+  <div class="eyebrow">Chevrette City · Уже открыт</div>
   <h1>Ваш проект<br>на <span class="gold">карте.</span></h1>
   <p>Живой город из 100 участков. Арендуйте место, поставьте логотип и ведите тысячи исследователей Chevrette прямо на вашу страницу.</p>
-  <div class="opening">До открытия осталось</div>
-  <div class="count" id="count">
-    <div class="cbox"><div class="n" id="cd-d">—</div><div class="l">Дни</div></div>
-    <div class="csep">:</div>
-    <div class="cbox"><div class="n" id="cd-h">—</div><div class="l">Часы</div></div>
-    <div class="csep">:</div>
-    <div class="cbox"><div class="n" id="cd-m">—</div><div class="l">Мин</div></div>
-    <div class="csep">:</div>
-    <div class="cbox"><div class="n" id="cd-s">—</div><div class="l">Сек</div></div>
-  </div>
+  <div class="openbadge"><i></i>Город открыт — заявки принимаются</div>
+  <div class="opencta"><a class="btn-gold" href="#mapwrap">Занять бесплатный участок ↓</a></div>
   <div class="founding">🎁 Заявка сейчас → 2 недели БЕСПЛАТНО для первых проектов</div>
 </div>
 
@@ -260,12 +257,6 @@
     </div>
     <svg id="citymap" viewBox="0 0 1200 820" preserveAspectRatio="xMidYMid meet"></svg>
     <div class="hint">Двигайте карту · колесо или щипок — зум · нажмите на участок</div>
-  </div>
-  <div class="tiers">
-    <div class="tier"><div class="d"><span class="dot" style="background:#E3B556"></span>Центр города</div><div class="p">Премиум <small>· высшая цена</small></div></div>
-    <div class="tier"><div class="d"><span class="dot" style="background:#b98be0"></span>Средний пояс</div><div class="p">Средне <small>· хороший трафик</small></div></div>
-    <div class="tier"><div class="d"><span class="dot" style="background:#6fb6c9"></span>Окраина</div><div class="p">Старт <small>· низкая цена</small></div></div>
-    <div class="tier"><div class="d"><span class="dot" style="background:#3fae6a"></span>Парки</div><div class="p">Свободно <small>· атмосфера</small></div></div>
   </div>
 </div>
 
@@ -349,17 +340,6 @@
   var SB_KEY = "sb_publishable_JQorN6JHun4MwObrCQBd_w_FC4JZs-P";
   var OPENING = new Date("2026-11-25T18:00:00+03:00");   // grand opening (easy to change)
 
-  // ---------- COUNTDOWN ----------
-  function pad(n){return (n<10?"0":"")+n;}
-  function tick(){
-    var diff = Math.max(0, OPENING - new Date());
-    var s=Math.floor(diff/1000), d=Math.floor(s/86400), h=Math.floor(s%86400/3600), m=Math.floor(s%3600/60), ss=s%60;
-    document.getElementById("cd-d").textContent=pad(d);
-    document.getElementById("cd-h").textContent=pad(h);
-    document.getElementById("cd-m").textContent=pad(m);
-    document.getElementById("cd-s").textContent=pad(ss);
-  }
-  tick(); setInterval(tick,1000);
 
   // ---------- TICKER ----------
   var t="100 УЧАСТКОВ  ✦  ВАШ ЛОГОТИП НА КАРТЕ  ✦  ВАШ ПРОЕКТ В ОДИН КЛИК  ✦  ПЕРВЫЕ ПРОЕКТЫ  ✦  ";
@@ -531,7 +511,7 @@
   }
   function renderList(rows){
     var box=document.getElementById("plist"); box.innerHTML="";
-    rows=rows.slice().sort(function(a,b){return a.plot_no-b.plot_no;});
+    rows=rows.slice().sort(function(a,b){var ca=(byNo[a.plot_no]&&byNo[a.plot_no].tier==="center")?0:1, cb=(byNo[b.plot_no]&&byNo[b.plot_no].tier==="center")?0:1; return ca-cb||a.plot_no-b.plot_no;});
     document.getElementById("pempty").style.display=rows.length?"none":"block";
     rows.forEach(function(row){
       var pl=byNo[row.plot_no]; if(!pl)return;
