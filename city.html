@@ -151,6 +151,28 @@
     footer{padding:24px 16px;justify-content:center;text-align:center;}
     .zoom button{width:38px;height:38px;}
   }
+
+  html{overflow-x:clip;}
+  /* ---------- PROJECTS LIST ---------- */
+  .plist{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:28px;}
+  .pcard{display:flex;gap:20px;align-items:flex-start;background:var(--glass);border:1px solid var(--glassb);border-radius:22px;padding:22px;transition:border-color .2s,transform .2s;}
+  .pcard:hover{border-color:rgba(227,181,86,.45);transform:translateY(-2px);}
+  .pav{flex:none;width:84px;height:84px;border-radius:50%;overflow:hidden;border:2px solid rgba(255,255,255,.14);background:#0b0d16;display:flex;align-items:center;justify-content:center;font-family:var(--disp);font-weight:800;font-size:30px;color:#0b0d16;}
+  .pav img{width:100%;height:100%;object-fit:cover;display:block;}
+  .pbody{min-width:0;flex:1;}
+  .pbadge{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(74,222,128,.35);background:rgba(74,222,128,.08);color:#4ade80;border-radius:999px;padding:5px 13px;font-size:12px;font-weight:800;letter-spacing:.12em;}
+  .pbadge i{width:8px;height:8px;border-radius:50%;background:#4ade80;display:block;}
+  .pname{font-family:var(--disp);font-weight:800;font-size:22px;line-height:1.15;margin:12px 0 6px;overflow-wrap:anywhere;}
+  .pcat{font-size:14px;font-weight:700;color:var(--gold);}
+  .pdesc{margin:8px 0 0;color:var(--txt2);font-size:15px;line-height:1.5;}
+  .pacts{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;align-items:center;}
+  .pchip{display:inline-flex;align-items:center;min-height:36px;padding:0 13px;border:1px solid var(--glassb);border-radius:12px;font-size:13px;font-weight:800;color:var(--txt2);}
+  .pbtn{display:inline-flex;align-items:center;gap:6px;min-height:36px;padding:0 15px;border-radius:12px;font-size:13px;font-weight:800;text-decoration:none;cursor:pointer;border:1px solid var(--glassb);background:transparent;color:var(--white);font-family:var(--body);}
+  .pbtn.go{background:var(--gold);color:#0A0804;border-color:var(--gold);}
+  .pempty{margin-top:24px;color:var(--txt2);}
+  .plot.flash{animation:plotflash .55s ease-in-out 4;}
+  @keyframes plotflash{0%,100%{opacity:1}50%{opacity:.3}}
+  @media (max-width:820px){.plist{grid-template-columns:1fr;}.pav{width:64px;height:64px;font-size:24px;}.pcard{gap:16px;padding:18px;}.pname{font-size:19px;}}
 </style>
 </head>
 <body>
@@ -245,6 +267,15 @@ Get the app
     <div class="tier"><div class="d"><span class="dot" style="background:#6fb6c9"></span>Outskirts</div><div class="p">Starter <small>· lowest price</small></div></div>
     <div class="tier"><div class="d"><span class="dot" style="background:#3fae6a"></span>Parks</div><div class="p">Free space <small>· atmosphere</small></div></div>
   </div>
+</div>
+
+<!-- PROJECTS LIST -->
+<div class="sec wrap" id="projects">
+  <div class="eyebrow">ON THE MAP</div>
+  <h2>Projects in the city</h2>
+  <div class="lead">Every project from the map in one list. Tap “Show on map” to find its plot.</div>
+  <div class="plist" id="plist"></div>
+  <div class="pempty" id="pempty" style="display:none">No projects yet — be the first to claim a plot on the map above.</div>
 </div>
 
 <!-- HOW + INFO -->
@@ -489,6 +520,41 @@ Get the app
   VP.appendChild(el("circle",{cx:CX,cy:CY,r:11,fill:"rgba(120,210,255,.35)"}));
   var tcc=el("text",{x:CX,y:CY-54,"text-anchor":"middle",fill:"#E3B556","font-size":"13","font-weight":"800","font-family":"Arial","letter-spacing":"2"});tcc.textContent="CITY CENTER";VP.appendChild(tcc);
 
+  // ---------- PROJECTS LIST ----------
+  var CAT_TR={};
+  function safeUrl(u){return (u&&/^https?:\/\//i.test(u))?u:null;}
+  function focusPlot(pl){
+    document.getElementById("mapwrap").scrollIntoView({behavior:"smooth",block:"center"});
+    scale=2.2; tx=W/2-pl.mx*scale; ty=H/2-pl.my*scale; apply();
+    var g=svg.querySelector('.plot[data-no="'+pl.no+'"]');
+    if(g){g.classList.remove("flash"); void g.getBoundingClientRect(); g.classList.add("flash");}
+  }
+  function renderList(rows){
+    var box=document.getElementById("plist"); box.innerHTML="";
+    rows=rows.slice().sort(function(a,b){return a.plot_no-b.plot_no;});
+    document.getElementById("pempty").style.display=rows.length?"none":"block";
+    rows.forEach(function(row){
+      var pl=byNo[row.plot_no]; if(!pl)return;
+      var card=document.createElement("div"); card.className="pcard";
+      var av=document.createElement("div"); av.className="pav";
+      if(row.logo_url){var im=document.createElement("img"); im.src=row.logo_url; im.alt=row.shop_name||""; im.loading="lazy"; av.appendChild(im);}
+      else {av.style.background=colorByTier[pl.tier]||"#E3B556"; av.textContent=(initials(row.shop_name)||"★").toUpperCase();}
+      var body=document.createElement("div"); body.className="pbody";
+      var badge=document.createElement("span"); badge.className="pbadge"; badge.innerHTML="<i></i>"; badge.appendChild(document.createTextNode("LIVE"));
+      var nm=document.createElement("div"); nm.className="pname"; nm.textContent=row.shop_name||("Plot #"+row.plot_no);
+      body.appendChild(badge); body.appendChild(nm);
+      if(row.category){var c=document.createElement("div"); c.className="pcat"; c.textContent=CAT_TR[row.category]||row.category; body.appendChild(c);}
+      if(row.description){var d=document.createElement("p"); d.className="pdesc"; d.textContent=row.description; body.appendChild(d);}
+      var acts=document.createElement("div"); acts.className="pacts";
+      var chip=document.createElement("span"); chip.className="pchip"; chip.textContent="Plot #"+row.plot_no; acts.appendChild(chip);
+      var url=safeUrl(row.website);
+      if(url){var a=document.createElement("a"); a.className="pbtn go"; a.href=url; a.target="_blank"; a.rel="noopener nofollow"; a.textContent="Visit ↗"; acts.appendChild(a);}
+      var sb=document.createElement("button"); sb.type="button"; sb.className="pbtn"; sb.textContent="Show on map"; sb.onclick=function(){focusPlot(pl);}; acts.appendChild(sb);
+      body.appendChild(acts);
+      card.appendChild(av); card.appendChild(body); box.appendChild(card);
+    });
+  }
+
   // ---------- DATA FROM SUPABASE ----------
   function loadPlots(){
     fetch(SB_URL+"/rest/v1/city_plots?select=plot_no,status,shop_name,logo_url,website,category,description,discount&status=eq.taken",
@@ -497,7 +563,7 @@ Get the app
       .then(function(rows){
         var taken=0;
         for(var i=0;i<rows.length;i++){var row=rows[i],pl=byNo[row.plot_no];if(!pl)continue;pl.data=row;drawPlot(pl);taken++;}
-        document.getElementById("takenN").textContent=taken;
+        document.getElementById("takenN").textContent=taken; renderList(rows);
       }).catch(function(){});
   }
   loadPlots();
@@ -554,7 +620,7 @@ Get the app
     var logo=document.getElementById("popLogo");
     if(pl.data.logo_url){logo.style.display="block";logo.src=pl.data.logo_url;}else{logo.style.display="none";}
     var go=document.getElementById("popGo");
-    if(pl.data.website){go.style.display="block";go.href=pl.data.website;}else{go.style.display="none";}
+    if(pl.data.website&&/^https?:\/\//i.test(pl.data.website)){go.style.display="block";go.href=pl.data.website;}else{go.style.display="none";}
     pop.classList.add("show");
     var pw=pop.offsetWidth,ph=pop.offsetHeight;
     var x=Math.min(window.innerWidth-pw-16,Math.max(16,ev.clientX-pw/2));
